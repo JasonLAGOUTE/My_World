@@ -12,7 +12,10 @@ SRC =	src/main.c \
 		src/map/draw.c \
 		src/map/map.c \
 		src/utils/radiant.c \
-		src/window/window.c
+		src/window/window.c \
+		src/menu/display.c \
+		src/framebuffer/framebuffer.c \
+		src/menu/boxes.c
 
 OBJ = $(SRC:.c=.o)
 

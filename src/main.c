@@ -7,23 +7,34 @@
 
 #include "my_world.h"
 
+static void gather(window_t *window, framebuffer_t *fb, camera_t cam)
+{
+    if (window->menu == true) {
+        display_menu(window, fb);
+    } else {
+        sfRenderWindow_clear(window->wd, sfBlack);
+        draw_map(window->wd, cam);
+        sfRenderWindow_display(window->wd);
+    }
+}
+
 int main(void)
 {
     sfEvent event;
     window_t *window = window_unit();
-    camera_t cam = {64,(sfVector2i){WIDTH/2, LENGTH/4},(sfVector2i){45,35}};
+    framebuffer_t *framebuffer = framebuffer_create(WIDTH, LENGTH);
+    camera_t cam = {64, (sfVector2i){WIDTH/2, LENGTH/4}, (sfVector2i){45,35}};
 
     if (!window->wd)
         return 84;
+    sfSprite_setTexture(framebuffer->sprite, framebuffer->texture, sfTrue);
     sfRenderWindow_setFramerateLimit(window->wd, 64);
     while (sfRenderWindow_isOpen(window->wd)) {
         while (sfRenderWindow_pollEvent(window->wd, &event)) {
             even(event, window);
             keyboard_control(event, &cam);
         }
-        sfRenderWindow_clear(window->wd, sfBlack);
-        draw_map(window->wd, cam);
-        sfRenderWindow_display(window->wd);
+        gather(window, framebuffer, cam);
     }
     sfRenderWindow_destroy(window->wd);
     return 0;
