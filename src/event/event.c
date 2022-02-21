@@ -31,4 +31,8 @@ void keyboard_control(sfEvent event, camera_t *cam)
         cam->angle.y -= 1;
     if (event.key.code == sfKeyA)
         cam->angle.y += 1;
+    if (event.key.code == sfKeyAdd)
+        cam->zoom += 2;
+    if (event.key.code == sfKeySubtract)
+        cam->zoom -= 2;
 }

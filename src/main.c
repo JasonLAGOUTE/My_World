@@ -11,7 +11,7 @@ int main(void)
 {
     sfEvent event;
     window_t *window = window_unit();
-    camera_t cam = {64,(sfVector2i){200,0},(sfVector2i){45,35}};
+    camera_t cam = {64,(sfVector2i){WIDTH/2, LENGTH/4},(sfVector2i){45,35}};
 
     if (!window->wd)
         return 84;
