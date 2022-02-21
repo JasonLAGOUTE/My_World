@@ -15,5 +15,6 @@ window_t *window_unit(void)
     wid->mode.bitsPerPixel = 32;
     wid->wd = sfRenderWindow_create(wid->mode, "My_World",
         sfResize | sfClose, NULL);
+    wid->menu = true;
     return wid;
 }
