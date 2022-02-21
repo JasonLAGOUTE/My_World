@@ -15,6 +15,10 @@ void even(sfEvent event, window_t *window)
         if (event.key.code == sfKeyEscape)
             sfRenderWindow_close(window->wd);
     }
+    if (event.type == sfEvtMouseButtonReleased) {
+        if (event.mouseButton.button == sfMouseLeft)
+            verif_box(window, event.mouseButton);
+    }
 }
 
 void keyboard_control(sfEvent event, camera_t *cam)
