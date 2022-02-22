@@ -7,13 +7,13 @@
 
 #include "my_world.h"
 
-static void gather(window_t *window, framebuffer_t *fb, camera_t cam, map_t *map)
+static void gather(window_t *window, font_map_t *map, camera_t cam, menu_t *menu)
 {
     if (window->menu == true) {
-        display_menu(window, fb);
+        display_menu(window, menu);
     } else {
-        sfRenderWindow_clear(window->wd, sfBlack);
-        draw_map(window->wd, cam, map);
+        sfRenderWindow_drawSprite(window->wd, map->sprite, NULL);
+        draw_map(window->wd, cam);
         sfRenderWindow_display(window->wd);
     }
 }
@@ -22,21 +22,22 @@ int main(void)
 {
     sfEvent event;
     window_t *window = window_unit();
-    framebuffer_t *framebuffer = framebuffer_create(WIDTH, LENGTH);
     camera_t cam = {64, (sfVector2i){WIDTH/2, LENGTH/4}, (sfVector2i){45,35}};
+    font_map_t *font_map = init_struct_map();
+    menu_t *menu = init_struct_menu();
+    map_t *map = create_struct_map(cam);
 
     if (!window->wd)
         return 84;
-    sfSprite_setTexture(framebuffer->sprite, framebuffer->texture, sfTrue);
+    set_texture(font_map, menu);
     sfRenderWindow_setFramerateLimit(window->wd, 60);
-    map_t *map = create_struct_map(cam);
     while (sfRenderWindow_isOpen(window->wd)) {
         while (sfRenderWindow_pollEvent(window->wd, &event)) {
             even(event, window);
             keyboard_control(event, &cam);
         }
         update_map(cam, map);
-        gather(window, framebuffer, cam, map);
+        gather(window, font_map, cam, menu);
     }
     sfRenderWindow_destroy(window->wd);
     return 0;

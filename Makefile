@@ -14,8 +14,10 @@ SRC =	src/main.c \
 		src/utils/radiant.c \
 		src/window/window.c \
 		src/menu/display.c \
-		src/framebuffer/framebuffer.c \
-		src/menu/boxes.c
+		src/init_struct/map.c \
+		src/init_struct/menu.c \
+		src/menu/boxes.c \
+		src/texture/set_texture.c
 
 OBJ = $(SRC:.c=.o)
 

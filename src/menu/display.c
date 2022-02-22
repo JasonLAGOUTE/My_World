@@ -7,9 +7,9 @@
 
 #include "my_world.h"
 
-int display_menu(window_t *window, framebuffer_t *fb)
+int display_menu(window_t *window, menu_t *menu)
 {
-    sfRenderWindow_drawSprite(window->wd, fb->sprite, NULL);
+    sfRenderWindow_drawSprite(window->wd, menu->sprite, NULL);
     sfRenderWindow_display(window->wd);
     return 0;
 }
