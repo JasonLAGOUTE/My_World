@@ -18,6 +18,10 @@ void even(sfEvent event, window_t *window, map_t *map, camera_t cam)
     if (event.type == sfEvtMouseButtonReleased) {
         if (event.mouseButton.button == sfMouseLeft && window->menu == false)
             edit_map(map, event, cam);
+        if (event.mouseButton.button == sfMouseRight && window->menu == false) {
+            cam.edit_strenght *= -1;
+            edit_map(map, event, cam);
+        }
         if (event.mouseButton.button == sfMouseLeft)
             verif_box(window, event.mouseButton);
     }
