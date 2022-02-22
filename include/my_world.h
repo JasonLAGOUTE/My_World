@@ -51,7 +51,8 @@ typedef struct framebuffer {
 
 window_t *window_unit(void);
 sfVertexArray *create_line(sfVector2f *point1, sfVector2f *point2);
-void draw_map(sfRenderWindow *window, camera_t cam);
+void draw_map(sfRenderWindow *window, camera_t cam,map_t *map);
+void update_map(camera_t camera, map_t *map);
 float degrees_to_radiant(int degrees);
 void even(sfEvent event, window_t *window);
 void keyboard_control(sfEvent event, camera_t *cam);
