@@ -16,10 +16,10 @@ void even(sfEvent event, window_t *window, map_t *map)
             sfRenderWindow_close(window->wd);
     }
     if (event.type == sfEvtMouseButtonReleased) {
+        if (event.mouseButton.button == sfMouseLeft && window->menu == false)
+            edit_map(map);
         if (event.mouseButton.button == sfMouseLeft)
             verif_box(window, event.mouseButton);
-        if (event.mouseButton.button == sfMouseLeft && window->menu == false)
-            edit_map( map);
     }
 }
 
