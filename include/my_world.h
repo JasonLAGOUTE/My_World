@@ -62,7 +62,7 @@ sfVertexArray *create_line(sfVector2f *point1, sfVector2f *point2);
 void draw_map(sfRenderWindow *window, camera_t cam, map_t *map);
 void update_map(camera_t camera, map_t *map);
 float degrees_to_radiant(int degrees);
-void even(sfEvent event, window_t *window, map_t *map);
+void even(sfEvent event, window_t *window, map_t *map, camera_t cam);
 void keyboard_control(sfEvent event, camera_t *cam);
 sfVector2f to2d(sfVector3f p, camera_t cam);
 map_t *create_struct_map(camera_t camera);
@@ -71,7 +71,7 @@ int display_menu(window_t *window, menu_t *menu);
 void verif_box(window_t *window, sfMouseButtonEvent coord);
 font_map_t *init_struct_map(void);
 menu_t *init_struct_menu(void);
+void edit_map(map_t *map, sfEvent event, camera_t cam);
 void set_texture(font_map_t *font_map, menu_t *menu);
-void edit_map(map_t *map);
 
 #endif

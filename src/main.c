@@ -33,7 +33,7 @@ int main(void)
     sfRenderWindow_setFramerateLimit(window->wd, 60);
     while (sfRenderWindow_isOpen(window->wd)) {
         while (sfRenderWindow_pollEvent(window->wd, &event)) {
-            even(event, window, map);
+            even(event, window, map , cam);
             keyboard_control(event, &cam);
         }
         update_map(cam, map);

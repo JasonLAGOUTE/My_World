@@ -7,7 +7,7 @@
 
 #include "my_world.h"
 
-void even(sfEvent event, window_t *window, map_t *map)
+void even(sfEvent event, window_t *window, map_t *map, camera_t cam)
 {
     if (event.type == sfEvtClosed)
         sfRenderWindow_close(window->wd);
@@ -17,7 +17,7 @@ void even(sfEvent event, window_t *window, map_t *map)
     }
     if (event.type == sfEvtMouseButtonReleased) {
         if (event.mouseButton.button == sfMouseLeft && window->menu == false)
-            edit_map(map);
+            edit_map(map, event, cam);
         if (event.mouseButton.button == sfMouseLeft)
             verif_box(window, event.mouseButton);
     }
