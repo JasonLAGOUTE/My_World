@@ -7,13 +7,13 @@
 
 #include "my_world.h"
 
-static void gather(window_t *window, font_map_t *map, camera_t cam, menu_t *menu)
+static void gather(window_t *window, font_map_t *font_map, camera_t cam, menu_t *menu, map_t *map)
 {
     if (window->menu == true) {
         display_menu(window, menu);
     } else {
-        sfRenderWindow_drawSprite(window->wd, map->sprite, NULL);
-        draw_map(window->wd, cam);
+        sfRenderWindow_drawSprite(window->wd, font_map->sprite, NULL);
+        draw_map(window->wd, cam, map);
         sfRenderWindow_display(window->wd);
     }
 }
@@ -37,7 +37,7 @@ int main(void)
             keyboard_control(event, &cam);
         }
         update_map(cam, map);
-        gather(window, font_map, cam, menu);
+        gather(window, font_map, cam, menu, map);
     }
     sfRenderWindow_destroy(window->wd);
     return 0;

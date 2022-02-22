@@ -9,6 +9,7 @@ SRC =	src/main.c \
 		src/event/event.c \
 		src/line/line.c \
 		src/map/calcul.c \
+		src/map/edit.c	\
 		src/map/draw.c \
 		src/map/map.c \
 		src/utils/radiant.c \

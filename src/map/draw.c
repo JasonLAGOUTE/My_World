@@ -24,10 +24,8 @@ static void condit(map_t *map, sfRenderWindow *window, int i, int j)
     }
 }
 
-void draw_map(sfRenderWindow *window, camera_t cam)
+void draw_map(sfRenderWindow *window, camera_t cam, map_t *map)
 {
-    map_t *map = create_struct_map(cam);
-
     for (int i = 0; i < MAP_X; i++) {
         for (int j = 0; j < MAP_Y; j++) {
             map->points3d = (sfVector3f){i, j, map->map[i][j]};
