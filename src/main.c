@@ -9,6 +9,7 @@
 
 static void gather(window_t *window, font_map_t *font_map, camera_t cam, menu_t *menu, map_t *map)
 {
+    update_map(cam, map);
     if (window->menu == true) {
         display_menu(window, menu);
     } else {
@@ -36,7 +37,6 @@ int main(void)
             even(event, window, map , cam);
             keyboard_control(event, &cam);
         }
-        update_map(cam, map);
         gather(window, font_map, cam, menu, map);
     }
     sfRenderWindow_destroy(window->wd);

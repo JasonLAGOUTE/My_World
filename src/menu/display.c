@@ -14,6 +14,9 @@ int display_menu(window_t *window, menu_t *menu)
     return 0;
 }
 
+
+//    sfRenderStates status;
+
 //FIRST BOX
 //125 -- 125 Y ||| 815 -- 1790 X
 //255 -- 255 Y ||| 815 -- 1790 X

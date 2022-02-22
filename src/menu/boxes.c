@@ -9,7 +9,11 @@
 
 void verif_box(window_t *window, sfMouseButtonEvent coord)
 {
-    if ((coord.x >= 815 && coord.x <= 1790) && 
-        (coord.y >= 125 && coord.y <= 255))
+    // if (((coord.x >= 815 && coord.x <= 1790) && 
+    //     (coord.y >= 125 && coord.y <= 255)) && window->menu == false)
+    //     window->menu = true;
+    // else 
+    if (((coord.x >= 815 && coord.x <= 1790) && 
+        (coord.y >= 125 && coord.y <= 255)) && window->menu == true)
         window->menu = false;
 }

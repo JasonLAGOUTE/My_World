@@ -7,8 +7,29 @@
 
 #include "my_world.h"
 
+static void condit_draw(map_t *map, sfRenderWindow *window, int i, int j)
+{
+    all_textures_t *texture = init_struct_all_textures();
+
+    if ((j + 1 < MAP_Y) && (i + 1 < MAP_X)) {
+        map->points3d = (sfVector3f){i, j + 1, map->map[i][j + 1]};
+        map->points2 = to2d(map->points3d, map->cam);
+        map->points3d = (sfVector3f){i + 1, j, map->map[i + 1][j]};
+        map->points3 = to2d(map->points3d, map->cam);
+        map->points3d = (sfVector3f){i + 1, j + 1, map->map[i + 1][j + 1]};
+        map->points4 = to2d(map->points3d, map->cam);
+        sfRenderWindow_drawVertexArray(window,
+            create_triangle_right(&map->points, &map->points4, &map->points3),
+            texture->red_sand->state);
+        sfRenderWindow_drawVertexArray(window, 
+            create_triangle_left(&map->points, &map->points4, &map->points2),
+            texture->red_sand->state);
+    }
+}
+
 static void condit(map_t *map, sfRenderWindow *window, int i, int j)
 {
+    condit_draw(map, window, i, j);
     if (i + 1 < MAP_X) {
         map->points3d = (sfVector3f){i + 1, j, map->map[i + 1][j]};
         map->points2 = to2d(map->points3d, map->cam);
@@ -16,8 +37,7 @@ static void condit(map_t *map, sfRenderWindow *window, int i, int j)
             create_line(&map->points, &map->points2), NULL);
     }
     if (j + 1 < MAP_Y) {
-        map->points3d = (sfVector3f){i, j + 1, 
-            map->map[i][j + 1]};
+        map->points3d = (sfVector3f){i, j + 1, map->map[i][j + 1]};
         map->points2 = to2d(map->points3d, map->cam);
         sfRenderWindow_drawVertexArray(window, 
             create_line(&map->points, &map->points2), NULL);
