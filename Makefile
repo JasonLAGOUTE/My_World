@@ -17,8 +17,11 @@ SRC =	src/main.c \
 		src/menu/display.c \
 		src/init_struct/map.c \
 		src/init_struct/menu.c \
+		src/init_struct/cam.c \
 		src/menu/boxes.c \
-		src/texture/set_texture.c
+		src/texture/set_texture.c \
+		src/texture/sand.c \
+		src/init_struct/all_texture.c
 
 OBJ = $(SRC:.c=.o)
 

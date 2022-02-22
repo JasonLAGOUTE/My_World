@@ -39,6 +39,8 @@ typedef struct map {
     int **map;
     sfVector2f points;
     sfVector2f points2;
+    sfVector2f points3;
+    sfVector2f points4;
     sfVector3f points3d;
     camera_t cam;
 } map_t;
@@ -58,6 +60,24 @@ typedef struct menu {
     sfSprite *sprite;
 } menu_t;
 
+typedef struct textures {
+    sfRenderStates *state;
+} textures_t;
+
+typedef struct all_textures {
+    textures_t *red_sand;
+    textures_t *white_sand;
+    textures_t *dirt_broke;
+    textures_t *dirt;
+    textures_t *grass;
+    textures_t *mars_dart;
+    textures_t *snow;
+    textures_t *stone_2;
+    textures_t *stone;
+    textures_t *water_1;
+    textures_t *water_2;
+} all_textures_t;
+
 window_t *window_unit(void);
 sfVertexArray *create_line(sfVector2f *point1, sfVector2f *point2);
 void draw_map(sfRenderWindow *window, camera_t cam, map_t *map);
@@ -74,5 +94,13 @@ font_map_t *init_struct_map(void);
 menu_t *init_struct_menu(void);
 void edit_map(map_t *map, sfEvent event, camera_t cam);
 void set_texture(font_map_t *font_map, menu_t *menu);
+textures_t *init_struct_red_sand(void);
+textures_t *init_struct_white_sand(void);
+sfVertexArray *create_triangle_right(sfVector2f *point1, sfVector2f *point2, 
+    sfVector2f *point3);
+sfVertexArray *create_triangle_left(sfVector2f *point1, sfVector2f *point2, 
+    sfVector2f *point3);
+camera_t *init_struct_cam(void);
+all_textures_t *init_struct_all_textures();
 
 #endif
