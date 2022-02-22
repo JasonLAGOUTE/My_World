@@ -34,3 +34,11 @@ map_t *create_struct_map(camera_t camera)
     map_pos->cam = camera;
     return map_pos;
 }
+
+void update_map(camera_t camera, map_t *map)
+{
+    map->points = (sfVector2f){0, 0};
+    map->points2 = (sfVector2f){0, 0};
+    map->points3d = (sfVector3f){0, 0, 0};
+    map->cam = camera;
+}

@@ -39,4 +39,6 @@ void keyboard_control(sfEvent event, camera_t *cam)
         cam->zoom += 2;
     if (event.key.code == sfKeySubtract)
         cam->zoom -= 2;
+    //if (event.mouseButton.button == sfMouseLeft)
+    //    printf("yes\n");
 }
