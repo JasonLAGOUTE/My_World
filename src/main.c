@@ -23,7 +23,7 @@ int main(void)
 {
     sfEvent event;
     window_t *window = window_unit();
-    camera_t cam = {64, (sfVector2i){WIDTH/2, LENGTH/4}, (sfVector2i){45,35}, 1};
+    camera_t cam = {64, (sfVector2i){WIDTH/2, LENGTH/4}, (sfVector2i){45,35}, 1, 100};
     font_map_t *font_map = init_struct_map();
     menu_t *menu = init_struct_menu();
     map_t *map = create_struct_map(cam);

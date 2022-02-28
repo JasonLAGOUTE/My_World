@@ -46,5 +46,9 @@ void keyboard_control(sfEvent event, camera_t *cam)
             cam->zoom += 2;
         if (event.key.code == sfKeySubtract)
             cam->zoom -= 2;
+        if (event.key.code == sfKeyK)
+            cam->radius -= 50;
+        if (event.key.code == sfKeyJ)
+            cam->radius += 50;
     }
 }

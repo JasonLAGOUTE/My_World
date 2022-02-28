@@ -33,6 +33,7 @@ typedef struct camera{
     sfVector2i offset;
     sfVector2i angle;
     int edit_strenght;
+    int radius;
 } camera_t;
 
 typedef struct map {
