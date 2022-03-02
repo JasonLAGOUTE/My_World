@@ -46,7 +46,7 @@ void edit_point(map_t *map, sfVector2f mouse, camera_t cam, sfVector2i coo)
         map->map[coo.x][coo.y] += cam.edit_strenght;
     else {
         if ((coo.y + 1 < MAP_Y) && (coo.x + 1 < MAP_X)) {
-            p3d[1] = (sfVector3f){coo.x + 1, coo.y, map->map[coo.x + 1][coo.y]};
+            p3d[0] = (sfVector3f){coo.x + 1, coo.y, map->map[coo.x + 1][coo.y]};
             p3d[1] = (sfVector3f){coo.x, coo.y + 1, map->map[coo.x][coo.y + 1]};
             p3d[2] = (sfVector3f){coo.x + 1, coo.y + 1, map->map[coo.x + 1][coo.y + 1]};
             p2d[0] = to2d(p3d[0], map->cam);

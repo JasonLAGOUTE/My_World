@@ -9,8 +9,6 @@
 
 static void condit_draw(map_t *map, sfRenderWindow *window, int i, int j)
 {
-    all_textures_t *texture = NULL;
-    
     if ((j + 1 < MAP_Y) && (i + 1 < MAP_X)) {
         map->points3d = (sfVector3f){i, j + 1, map->map[i][j + 1]};
         map->points2 = to2d(map->points3d, map->cam);
@@ -18,14 +16,12 @@ static void condit_draw(map_t *map, sfRenderWindow *window, int i, int j)
         map->points3 = to2d(map->points3d, map->cam);
         map->points3d = (sfVector3f){i + 1, j + 1, map->map[i + 1][j + 1]};
         map->points4 = to2d(map->points3d, map->cam);
-        texture = init_struct_all_textures();
         sfRenderWindow_drawVertexArray(window,
             create_triangle_right(&map->points, &map->points4, &map->points3),
-            texture->red_sand->state);
+            map->texture->white_sand->state);
         sfRenderWindow_drawVertexArray(window, 
             create_triangle_left(&map->points, &map->points4, &map->points2),
-            texture->red_sand->state);
-        free(texture->red_sand);
+            map->texture->white_sand->state);
     }
 }
 

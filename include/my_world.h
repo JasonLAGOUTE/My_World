@@ -36,16 +36,6 @@ typedef struct camera{
     int radius;
 } camera_t;
 
-typedef struct map {
-    int **map;
-    sfVector2f points;
-    sfVector2f points2;
-    sfVector2f points3;
-    sfVector2f points4;
-    sfVector3f points3d;
-    camera_t cam;
-} map_t;
-
 typedef struct framebuffer {
     size_t width;
     size_t height;
@@ -78,6 +68,17 @@ typedef struct all_textures {
     textures_t *water_1;
     textures_t *water_2;
 } all_textures_t;
+
+typedef struct map {
+    int **map;
+    sfVector2f points;
+    sfVector2f points2;
+    sfVector2f points3;
+    sfVector2f points4;
+    sfVector3f points3d;
+    camera_t cam;
+    all_textures_t *texture;
+} map_t;
 
 window_t *window_unit(void);
 sfVertexArray *create_line(sfVector2f *point1, sfVector2f *point2);

@@ -33,6 +33,7 @@ map_t *create_struct_map(camera_t camera)
     map_pos->map = create_map(MAP_X, MAP_Y);
     map_pos->cam = camera;
     map_pos->points3 = (sfVector2f){0, 0};
+    map_pos->texture = init_struct_all_textures();
     return map_pos;
 }
 
