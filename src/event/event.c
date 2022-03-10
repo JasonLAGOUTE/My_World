@@ -29,7 +29,7 @@ void even(sfEvent event, window_t *window, map_t *map, camera_t cam)
     }
 }
 
-void keyboard_control(sfEvent event, camera_t *cam)
+void keyboard_control(sfEvent event, camera_t *cam,  map_t *map)
 {
     if (event.type == sfEvtKeyPressed) {
         if (event.key.code == sfKeyDown)
@@ -52,5 +52,8 @@ void keyboard_control(sfEvent event, camera_t *cam)
             cam->radius -= 50;
         if (event.key.code == sfKeyJ)
             cam->radius += 50;
+        if (event.key.code == sfKeyS) {
+            save_map(map);
+        }
     }
 }

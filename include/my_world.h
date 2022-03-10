@@ -92,7 +92,7 @@ void draw_map(sfRenderWindow *window, camera_t cam, map_t *map);
 void update_map(camera_t camera, map_t *map);
 float degrees_to_radiant(int degrees);
 void even(sfEvent event, window_t *window, map_t *map, camera_t cam);
-void keyboard_control(sfEvent event, camera_t *cam);
+void keyboard_control(sfEvent event, camera_t *cam,  map_t *map);
 sfVector2f to2d(sfVector3f p, camera_t cam);
 map_t *create_struct_map(camera_t camera);
 framebuffer_t *framebuffer_create(size_t width, size_t height);
@@ -114,5 +114,6 @@ button_t *create_struct_buttons(char *filename, char *text);
 sfText *create_text(char *str, int char_size, sfVector2f coord,
     sfVector2f size);
 button_t *set_button_texture(void);
-
+void save_map(map_t *map);
+void load_map(map_t *map);
 #endif

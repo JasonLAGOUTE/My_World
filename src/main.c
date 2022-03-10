@@ -29,6 +29,8 @@ int main(void)
     menu_t *menu = init_struct_menu();
     map_t *map = create_struct_map(cam);
 
+    load_map(map);
+
     if (!window->wd)
         return 84;
     set_texture(font_map, menu);
@@ -36,7 +38,7 @@ int main(void)
     while (sfRenderWindow_isOpen(window->wd)) {
         while (sfRenderWindow_pollEvent(window->wd, &event)) {
             even(event, window, map , cam);
-            keyboard_control(event, &cam);
+            keyboard_control(event, &cam, map);
         }
         gather(window, font_map, cam, menu, map);
     }
