@@ -22,8 +22,10 @@ void even(sfEvent event, window_t *window, map_t *map, camera_t cam)
             cam.edit_strenght *= -1;
             edit_map(map, event, cam);
         }
-        if (event.mouseButton.button == sfMouseLeft)
-            verif_box(window, event.mouseButton);
+        if (event.mouseButton.button == sfMouseLeft && window->menu == false)
+            verif_box(window, event.mouseButton, map);
+        if (event.mouseButton.button == sfMouseLeft && window->menu == true)
+            verif_box(window, event.mouseButton, map);
     }
 }
 

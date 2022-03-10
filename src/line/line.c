@@ -27,9 +27,9 @@ sfVertexArray *create_triangle_right(sfVector2f *point1, sfVector2f *point2,
     sfVertex vertex1 = {.position = *point1, .color = sfWhite,
         .texCoords = {0, 0}};
     sfVertex vertex2 = {.position = *point2, .color = sfWhite,
-        .texCoords = {40, 40}};
+        .texCoords = {32, 32}};
     sfVertex vertex3 = {.position = *point3, .color = sfWhite,
-        .texCoords = {40, 0}};
+        .texCoords = {32, 0}};
     sfVertexArray_append(vertex_array, vertex1);
     sfVertexArray_append(vertex_array, vertex2);
     sfVertexArray_append(vertex_array, vertex3);
@@ -46,9 +46,9 @@ sfVertexArray *create_triangle_left(sfVector2f *point1, sfVector2f *point2,
     sfVertex vertex1 = {.position = *point1, .color = sfWhite,
         .texCoords = {0, 0}};
     sfVertex vertex2 = {.position = *point2, .color = sfWhite,
-        .texCoords = {40, 40}};
+        .texCoords = {32, 32}};
     sfVertex vertex3 = {.position = *point3, .color = sfWhite,
-        .texCoords = {0, 40}};
+        .texCoords = {0, 32}};
     sfVertexArray_append(vertex_array, vertex1);
     sfVertexArray_append(vertex_array, vertex2);
     sfVertexArray_append(vertex_array, vertex3);

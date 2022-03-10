@@ -21,7 +21,9 @@ SRC =	src/main.c \
 		src/menu/boxes.c \
 		src/texture/set_texture.c \
 		src/texture/sand.c \
-		src/init_struct/all_texture.c
+		src/init_struct/all_texture.c \
+		src/button/button.c \
+		src/button/text.c 
 
 OBJ = $(SRC:.c=.o)
 

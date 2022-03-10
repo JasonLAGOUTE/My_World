@@ -20,6 +20,21 @@
     #define LENGTH 1080
     #define PI 3.14159265358979323846
 
+enum texture {
+    ACTUAL,
+    WHITE_SAND,
+    RED_SAND,
+    LAST
+};
+
+typedef struct button {
+    sfTexture *texture;
+    sfRectangleShape *rect;
+    sfText *text;
+    sfVector2f coord;
+    sfVector2f size;
+} button_t;
+
 typedef struct window {
     int width;
     int height;
@@ -56,17 +71,7 @@ typedef struct textures {
 } textures_t;
 
 typedef struct all_textures {
-    textures_t *red_sand;
-    textures_t *white_sand;
-    textures_t *dirt_broke;
-    textures_t *dirt;
-    textures_t *grass;
-    textures_t *mars_dart;
-    textures_t *snow;
-    textures_t *stone_2;
-    textures_t *stone;
-    textures_t *water_1;
-    textures_t *water_2;
+    textures_t **textures_tab;
 } all_textures_t;
 
 typedef struct map {
@@ -78,6 +83,7 @@ typedef struct map {
     sfVector3f points3d;
     camera_t cam;
     all_textures_t *texture;
+    button_t *button;
 } map_t;
 
 window_t *window_unit(void);
@@ -91,7 +97,7 @@ sfVector2f to2d(sfVector3f p, camera_t cam);
 map_t *create_struct_map(camera_t camera);
 framebuffer_t *framebuffer_create(size_t width, size_t height);
 int display_menu(window_t *window, menu_t *menu);
-void verif_box(window_t *window, sfMouseButtonEvent coord);
+void verif_box(window_t *window, sfMouseButtonEvent coord, map_t *map);
 font_map_t *init_struct_map(void);
 menu_t *init_struct_menu(void);
 void edit_map(map_t *map, sfEvent event, camera_t cam);
@@ -103,6 +109,10 @@ sfVertexArray *create_triangle_right(sfVector2f *point1, sfVector2f *point2,
 sfVertexArray *create_triangle_left(sfVector2f *point1, sfVector2f *point2, 
     sfVector2f *point3);
 camera_t *init_struct_cam(void);
-all_textures_t *init_struct_all_textures();
+all_textures_t *init_struct_all_textures(void);
+button_t *create_struct_buttons(char *filename, char *text);
+sfText *create_text(char *str, int char_size, sfVector2f coord,
+    sfVector2f size);
+button_t *set_button_texture(void);
 
 #endif

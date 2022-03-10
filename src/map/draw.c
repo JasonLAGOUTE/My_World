@@ -18,17 +18,18 @@ static void condit_draw(map_t *map, sfRenderWindow *window, int i, int j)
         map->points4 = to2d(map->points3d, map->cam);
         sfRenderWindow_drawVertexArray(window,
             create_triangle_right(&map->points, &map->points4, &map->points3),
-            map->texture->white_sand->state);
-        sfRenderWindow_drawVertexArray(window, 
+            map->texture->textures_tab[ACTUAL]->state);
+        sfRenderWindow_drawVertexArray(window,
             create_triangle_left(&map->points, &map->points4, &map->points2),
-            map->texture->white_sand->state);
+            map->texture->textures_tab[ACTUAL]->state);
     }
 }
 
 sfCircleShape *create_circle(float pos1, float pos2, float radius)
 {
     sfCircleShape *circle = sfCircleShape_create();
-    sfCircleShape_setPosition(circle, (sfVector2f){pos1-(radius), pos2-(radius)});
+    sfCircleShape_setPosition(circle,
+        (sfVector2f){pos1-(radius), pos2-(radius)});
     sfCircleShape_setRadius(circle, radius);
     sfCircleShape_setFillColor(circle, (sfColor){255, 255, 255, 0});
     sfCircleShape_setOutlineColor(circle, (sfColor){255, 255, 255, 255});
@@ -59,8 +60,11 @@ void draw_map(sfRenderWindow *window, camera_t cam, map_t *map)
             map->points3d = (sfVector3f){i, j, map->map[i][j]};
             map->points = to2d(map->points3d, cam);
             condit(map, window, i, j);
-            sfCircleShape *circle = create_circle(map->points.x, map->points.y, (float)sqrt(cam.radius));
+            sfCircleShape *circle = create_circle(map->points.x, map->points.y,
+                (float)sqrt(cam.radius));
             sfRenderWindow_drawCircleShape(window, circle, NULL);
         }
     }
+    sfRenderWindow_drawRectangleShape(window, map->button->rect, NULL);
+    sfRenderWindow_drawText(window, map->button->text, NULL);
 }
