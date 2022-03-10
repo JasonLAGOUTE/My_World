@@ -29,8 +29,6 @@ int main(void)
     menu_t *menu = init_struct_menu();
     map_t *map = create_struct_map(cam);
 
-    load_map(map);
-
     if (!window->wd)
         return 84;
     set_texture(font_map, menu);

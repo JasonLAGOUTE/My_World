@@ -29,6 +29,5 @@ void load_map(map_t *map)
             fread(&map->map[i][j], sizeof(int), 1, input);
         }
     }
-    
     fclose(input);
 }
