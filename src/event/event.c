@@ -55,5 +55,11 @@ void keyboard_control(sfEvent event, camera_t *cam,  map_t *map)
         if (event.key.code == sfKeyS) {
             save_map(map);
         }
+        if (event.key.code == sfKeyR) {
+            shuffle_map(map);
+        }
+        if (event.key.code == sfKeyL) {
+            smooth_map(map);
+        }
     }
 }
