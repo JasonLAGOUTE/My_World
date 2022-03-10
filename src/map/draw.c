@@ -18,10 +18,10 @@ static void condit_draw(map_t *map, sfRenderWindow *window, int i, int j)
         map->points4 = to2d(map->points3d, map->cam);
         sfRenderWindow_drawVertexArray(window,
             create_triangle_right(&map->points, &map->points4, &map->points3),
-            map->texture->textures_tab[ACTUAL]->state);
+            map->texture->textures_tab[map->texture_map[i][j]]->state);
         sfRenderWindow_drawVertexArray(window,
             create_triangle_left(&map->points, &map->points4, &map->points2),
-            map->texture->textures_tab[ACTUAL]->state);
+            map->texture->textures_tab[map->texture_map[i][j]]->state);
     }
 }
 

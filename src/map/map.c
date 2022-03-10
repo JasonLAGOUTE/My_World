@@ -31,7 +31,9 @@ map_t *create_struct_map(camera_t camera)
     map_pos->points2 = (sfVector2f){0, 0};
     map_pos->points3d = (sfVector3f){0, 0, 0};
     map_pos->map = create_map(MAP_X, MAP_Y);
+    map_pos->texture_map = create_map(MAP_X, MAP_Y);
     map_pos->cam = camera;
+    map_pos->actual = 0;
     map_pos->points3 = (sfVector2f){0, 0};
     map_pos->texture = init_struct_all_textures();
     map_pos->button = create_struct_buttons("src/img/PNG/shiny/7.png", "White Sand");

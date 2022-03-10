@@ -19,6 +19,6 @@ void verif_box(window_t *window, sfMouseButtonEvent coord, map_t *map)
     }
     if (((coord.x >= 220 && coord.x <= 385) && 
         (coord.y >= 265 && coord.y <= 335)) && window->menu == false) {
-        map->texture->textures_tab[ACTUAL] = init_struct_white_sand();
+        map->actual = 1;
     }
 }

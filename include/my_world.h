@@ -21,9 +21,8 @@
     #define PI 3.14159265358979323846
 
 enum texture {
-    ACTUAL,
-    WHITE_SAND,
     RED_SAND,
+    WHITE_SAND,
     LAST
 };
 
@@ -76,12 +75,14 @@ typedef struct all_textures {
 
 typedef struct map {
     int **map;
+    int **texture_map;
     sfVector2f points;
     sfVector2f points2;
     sfVector2f points3;
     sfVector2f points4;
     sfVector3f points3d;
     camera_t cam;
+    int actual;
     all_textures_t *texture;
     button_t *button;
 } map_t;

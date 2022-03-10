@@ -33,6 +33,9 @@ void create_plate(map_t *map, camera_t cam, sfVector2i coord)
     map->map[coord.x+1][coord.y]+=cam.edit_strenght;
     map->map[coord.x][coord.y+1]+=cam.edit_strenght;
     map->map[coord.x+1][coord.y+1]+=cam.edit_strenght;
+
+    map->texture_map[coord.x][coord.y] = map->actual;
+ 
 }
 
 void edit_point(map_t *map, sfVector2f mouse, camera_t cam, sfVector2i coo)
