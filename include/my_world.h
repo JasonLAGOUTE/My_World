@@ -83,6 +83,7 @@ typedef struct map {
     sfVector3f points3d;
     camera_t cam;
     int actual;
+    int is_editing;
     all_textures_t *texture;
     button_t *button;
 } map_t;
