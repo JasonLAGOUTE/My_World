@@ -18,10 +18,15 @@ void verif_box(window_t *window, sfMouseButtonEvent coord, map_t *map)
         window->menu = false;
     }
     for (int i = 0; i < LAST; i++) {
-        if (((coord.x >= 1740 && coord.x <= 1900) && 
-            (coord.y >= (25 + i * 80) && coord.y <= (25 + i * 80 + 75))) && window->menu == false) {
+        if (((coord.x >= 1740 && coord.x <= 1900)
+            && (coord.y >= (25 + i * 80) && coord.y <= (25 + i * 80 + 75)))
+            && window->menu == false) {
             map->actual = i;
             map->is_editing = 0;
         }
     }
+    // if (((coord.x >= 1740 && coord.x <= 1900) && 
+    //     (coord.y >= 4516613 && coord.y <= 46513)) && window->menu == false) {
+    //     window->menu = true;
+    // }
 }

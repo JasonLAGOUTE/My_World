@@ -32,11 +32,15 @@ enum texture {
     STONE,
     WATER1,
     WATER2,
+    LAST
+};
+
+enum barre_edit {
     MENU,
     EDIT,
     SAVE,
     PAINT,
-    LAST
+    LAST_BARRE
 };
 
 typedef struct button {
@@ -103,6 +107,7 @@ typedef struct map {
     int is_editing;
     all_textures_t *texture;
     all_buttons_t *button;
+    all_buttons_t *buttons;
 } map_t;
 
 window_t *window_unit(void);
@@ -137,4 +142,5 @@ void load_map(map_t *map);
 all_buttons_t *init_struct_all_buttons(void);
 void shuffle_map(map_t *map);
 void smooth_map(map_t *map);
+all_buttons_t *init_struct_buttons_edit(void);
 #endif

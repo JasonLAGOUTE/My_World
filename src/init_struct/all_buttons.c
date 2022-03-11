@@ -23,10 +23,17 @@ all_buttons_t *init_struct_all_buttons(void)
     all->tab_textures[STONE] = create_button("img/7.png", "Second stone", 1720, 600);
     all->tab_textures[WATER1] = create_button("img/7.png", "First Water", 1720, 680);
     all->tab_textures[WATER2] = create_button("img/7.png", "Secone Water", 1720, 760);
-    all->tab_textures[MENU] = create_button("img/7.png", "Menu", 500, 500);
-    all->tab_textures[EDIT] = create_button("img/7.png", "Edit", 1720, 760);
-    all->tab_textures[SAVE] = create_button("img/7.png", "Save", 1720, 760);
-    all->tab_textures[PAINT] = create_button("img/7.png", "Paint", 1720, 760);
     return all;
 }
 
+all_buttons_t *init_struct_buttons_edit(void)
+{
+    all_buttons_t *all = malloc(sizeof(all_buttons_t));
+
+    all->tab_textures = malloc(sizeof(all_buttons_t *) * LAST_BARRE);
+    all->tab_textures[MENU] = create_button("img/6.png", "Menu", 0, -50);
+    all->tab_textures[EDIT] = create_button("img/6.png", "Edit", 180, -50);
+    all->tab_textures[SAVE] = create_button("img/6.png", "Save", 360, -50);
+    all->tab_textures[PAINT] = create_button("img/6.png", "Paint", 540, -50);
+    return all;
+}
