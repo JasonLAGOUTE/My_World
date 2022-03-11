@@ -32,8 +32,9 @@ all_buttons_t *init_struct_buttons_edit(void)
 
     all->tab_textures = malloc(sizeof(all_buttons_t *) * LAST_BARRE);
     all->tab_textures[MENU] = create_button("img/6.png", "Menu", 0, -50);
-    all->tab_textures[EDIT] = create_button("img/6.png", "Edit", 180, -50);
-    all->tab_textures[SAVE] = create_button("img/6.png", "Save", 360, -50);
+    all->tab_textures[EDIT] = create_button("img/6.png", "Edit", 360, -50);
+    all->tab_textures[SAVE] = create_button("img/6.png", "Save", 180, -50);
     all->tab_textures[PAINT] = create_button("img/6.png", "Paint", 540, -50);
+    all->tab_textures[RENDER] = create_button("img/6.png", "Render", 720, -50);
     return all;
 }

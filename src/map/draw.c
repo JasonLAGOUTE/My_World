@@ -112,13 +112,15 @@ void draw_map(sfRenderWindow *window, map_t *map)
             sfRenderWindow_drawCircleShape(window, circle, NULL);
         }
     }
-    for (int i = 0; i < LAST; i++) {
-        sfRenderWindow_drawRectangleShape(window, map->button->tab_textures[i]->rect, NULL);
-        sfRenderWindow_drawText(window, map->button->tab_textures[i]->text, NULL);
-    }
     for (int i = 0; i < LAST_BARRE; i++) {
         sfRenderWindow_drawRectangleShape(window, map->buttons->tab_textures[i]->rect, NULL);
         sfRenderWindow_drawText(window, map->buttons->tab_textures[i]->text, NULL);
+    }
+    if (map->bool_barre == 1) {
+        for (int i = 0; i < LAST; i++) {
+            sfRenderWindow_drawRectangleShape(window, map->button->tab_textures[i]->rect, NULL);
+            sfRenderWindow_drawText(window, map->button->tab_textures[i]->text, NULL);
+        }
     }
     for (int i = 0; i < MAP_X - 1; i++) {
         map->points3d = (sfVector3f){i, MAP_X - 1, map->map[i][MAP_X - 1]};

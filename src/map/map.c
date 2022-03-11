@@ -35,6 +35,7 @@ map_t *create_struct_map(camera_t camera)
     map_pos->cam = camera;
     map_pos->actual = 0;
     map_pos->is_editing = 1;
+    map_pos->bool_barre = 0;
     map_pos->points3 = (sfVector2f){0, 0};
     map_pos->texture = init_struct_all_textures();
     map_pos->button = init_struct_all_buttons();

@@ -41,6 +41,7 @@ enum barre_edit {
     EDIT,
     SAVE,
     PAINT,
+    RENDER,
     LAST_BARRE
 };
 
@@ -108,6 +109,7 @@ typedef struct map {
     int is_editing;
     all_textures_t *texture;
     all_buttons_t *button;
+    int bool_barre;
     all_buttons_t *buttons;
 } map_t;
 
