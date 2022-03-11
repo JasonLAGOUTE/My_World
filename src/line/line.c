@@ -20,34 +20,35 @@ sfVertexArray *create_line(sfVector2f *point1, sfVector2f *point2)
 }
 
 sfVertexArray *create_triangle_right(sfVector2f *point1, sfVector2f *point2, 
-    sfVector2f *point3)
+    sfVector2f *point3, sfColor colors)
 {
     sfVertexArray *vertex_array = sfVertexArray_create();
 
-    sfVertex vertex1 = {.position = *point1, .color = sfWhite,
+    sfVertex vertex1 = {.position = *point1, .color = colors,
         .texCoords = {0, 0}};
-    sfVertex vertex2 = {.position = *point2, .color = sfWhite,
+    sfVertex vertex2 = {.position = *point2, .color = colors,
         .texCoords = {32, 32}};
-    sfVertex vertex3 = {.position = *point3, .color = sfWhite,
+    sfVertex vertex3 = {.position = *point3, .color = colors,
         .texCoords = {32, 0}};
     sfVertexArray_append(vertex_array, vertex1);
     sfVertexArray_append(vertex_array, vertex2);
     sfVertexArray_append(vertex_array, vertex3);
+    
     sfVertexArray_setPrimitiveType(vertex_array, sfTriangles);
     return vertex_array;
 }
 
 
 sfVertexArray *create_triangle_left(sfVector2f *point1, sfVector2f *point2, 
-    sfVector2f *point3)
+    sfVector2f *point3, sfColor colors)
 {
     sfVertexArray *vertex_array = sfVertexArray_create();
 
-    sfVertex vertex1 = {.position = *point1, .color = sfWhite,
+    sfVertex vertex1 = {.position = *point1, .color = colors,
         .texCoords = {0, 0}};
-    sfVertex vertex2 = {.position = *point2, .color = sfWhite,
+    sfVertex vertex2 = {.position = *point2, .color = colors,
         .texCoords = {32, 32}};
-    sfVertex vertex3 = {.position = *point3, .color = sfWhite,
+    sfVertex vertex3 = {.position = *point3, .color = colors,
         .texCoords = {0, 32}};
     sfVertexArray_append(vertex_array, vertex1);
     sfVertexArray_append(vertex_array, vertex2);

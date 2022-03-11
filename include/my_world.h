@@ -129,9 +129,9 @@ void edit_map(map_t *map, sfEvent event);
 void set_texture(font_map_t *font_map, menu_t *menu);
 textures_t *init_struct_texture(char *path);
 sfVertexArray *create_triangle_right(sfVector2f *point1, sfVector2f *point2, 
-    sfVector2f *point3);
+    sfVector2f *point3, sfColor colors);
 sfVertexArray *create_triangle_left(sfVector2f *point1, sfVector2f *point2, 
-    sfVector2f *point3);
+    sfVector2f *point3, sfColor colors);
 camera_t *init_struct_cam(void);
 all_textures_t *init_struct_all_textures(void);
 button_t *create_button(char *filename, char *text, int x, int y);
@@ -146,5 +146,6 @@ void smooth_map(map_t *map);
 all_buttons_t *init_struct_buttons_edit(void);
 int **create_map(int heigth, int width);
 void reset_map(map_t *map);
+
 
 #endif

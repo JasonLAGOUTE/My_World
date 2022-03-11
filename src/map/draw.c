@@ -7,8 +7,49 @@
 
 #include "my_world.h"
 
+sfColor get_right_color(map_t *map, int i, int j)
+{   
+    if (map->map[i][j] > (map->map[i + 1][j+1] + 1) * 2 &&
+        map->map[i][j] > (map->map[i + 1][j] + 1) * 2) {
+        return sfWhite;
+    }
+    if (map->map[i][j] < map->map[i + 1][j] || map->map[i][j] > 
+        map->map[i + 1][j + 1] && map->map[i + 1][j] > map->map[i + 1][j + 1])
+        return (sfColor){150, 150, 150, 255};
+    if (map->map[i][j] < map->map[i + 1][j + 1])
+        return (sfColor){180, 180, 180, 255};
+    return (sfColor){210, 210, 210, 255};
+}
+
+sfColor get_left_color(map_t *map, int i, int j)
+{
+    if (map->map[i][j] < map->map[i + 1][j + 1] && map->map[i][j] < 
+    map->map[i][j + 1]) {
+        return (sfColor){180, 180, 180, 255};
+    }
+    if (map->map[i][j] > map->map[i + 1][j + 1] && map->map[i][j] > 
+    map->map[i][j + 1]) {
+        return (sfColor){150, 150, 150, 255};
+    }
+    if (map->map[i][j] > (map->map[i + 1][j+1] + 1) * 2 &&
+        map->map[i][j + 1] > (map->map[i + 1][j + 1] + 1) * 2) {
+        return sfWhite;
+    }
+    if (map->map[i][j] < map->map[i][j + 1] || map->map[i][j] > 
+        map->map[i + 1][j + 1] && map->map[i][j + 1] > map->map[i + 1][j + 1])
+        return sfWhite;
+    if (map->map[i][j] < map->map[i + 1][j + 1] || (map->map[i][j] > 
+    map->map[i][j + 1] && map->map[i][j] > map->map[i + 1][j + 1]))
+        return (sfColor){150, 150, 150, 255};
+
+    return (sfColor){210, 210, 210, 255};
+}
+
 static void condit_draw(map_t *map, sfRenderWindow *window, int i, int j)
 {
+    sfColor colors_1 = sfWhite;
+    sfColor colors_2 = sfWhite;
+
     if ((j + 1 < MAP_Y) && (i + 1 < MAP_X)) {
         map->points3d = (sfVector3f){i, j + 1, map->map[i][j + 1]};
         map->points2 = to2d(map->points3d, map);
@@ -16,11 +57,15 @@ static void condit_draw(map_t *map, sfRenderWindow *window, int i, int j)
         map->points3 = to2d(map->points3d, map);
         map->points3d = (sfVector3f){i + 1, j + 1, map->map[i + 1][j + 1]};
         map->points4 = to2d(map->points3d, map);
+        
+        colors_1 = get_right_color(map, i, j);
+        colors_2 = get_left_color(map, i, j);
+
         sfRenderWindow_drawVertexArray(window,
-            create_triangle_right(&map->points, &map->points4, &map->points3),
+            create_triangle_right(&map->points, &map->points4, &map->points3, colors_1),
             map->texture->textures_tab[map->texture_map[i][j]]->state);
         sfRenderWindow_drawVertexArray(window,
-            create_triangle_left(&map->points, &map->points4, &map->points2),
+            create_triangle_left(&map->points, &map->points4, &map->points2, colors_2),
             map->texture->textures_tab[map->texture_map[i][j]]->state);
     }
 }
