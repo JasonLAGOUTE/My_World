@@ -113,19 +113,19 @@ typedef struct map {
 
 window_t *window_unit(void);
 sfVertexArray *create_line(sfVector2f *point1, sfVector2f *point2);
-void draw_map(sfRenderWindow *window, camera_t cam, map_t *map);
-void update_map(camera_t camera, map_t *map);
+void draw_map(sfRenderWindow *window, map_t *map);
+void update_map(map_t *map);
 float degrees_to_radiant(int degrees);
-void even(sfEvent event, window_t *window, map_t *map, camera_t cam);
-void keyboard_control(sfEvent event, camera_t *cam,  map_t *map);
-sfVector2f to2d(sfVector3f p, camera_t cam);
+void even(sfEvent event, window_t *window, map_t *map);
+void keyboard_control(sfEvent event,  map_t *map);
+sfVector2f to2d(sfVector3f p, map_t *map);
 map_t *create_struct_map(camera_t camera);
 framebuffer_t *framebuffer_create(size_t width, size_t height);
 int display_menu(window_t *window, menu_t *menu);
 void verif_box(window_t *window, sfMouseButtonEvent coord, map_t *map);
 font_map_t *init_struct_map(void);
 menu_t *init_struct_menu(void);
-void edit_map(map_t *map, sfEvent event, camera_t cam);
+void edit_map(map_t *map, sfEvent event);
 void set_texture(font_map_t *font_map, menu_t *menu);
 textures_t *init_struct_texture(char *path);
 sfVertexArray *create_triangle_right(sfVector2f *point1, sfVector2f *point2, 
@@ -144,4 +144,7 @@ all_buttons_t *init_struct_all_buttons(void);
 void shuffle_map(map_t *map);
 void smooth_map(map_t *map);
 all_buttons_t *init_struct_buttons_edit(void);
+int **create_map(int heigth, int width);
+void reset_map(map_t *map);
+
 #endif

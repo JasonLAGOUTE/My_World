@@ -7,14 +7,14 @@
 
 #include "my_world.h"
 
-static void gather(window_t *window, font_map_t *font_map, camera_t cam, menu_t *menu, map_t *map)
+static void gather(window_t *window, font_map_t *font_map, menu_t *menu, map_t *map)
 {
-    update_map(cam, map);
+    update_map(map);
     if (window->menu == true) {
         display_menu(window, menu);
     } else {
         sfRenderWindow_drawSprite(window->wd, font_map->sprite, NULL);
-        draw_map(window->wd, cam, map);
+        draw_map(window->wd, map);
         sfRenderWindow_display(window->wd);
     }
 }
@@ -35,10 +35,10 @@ int main(void)
     sfRenderWindow_setFramerateLimit(window->wd, 60);
     while (sfRenderWindow_isOpen(window->wd)) {
         while (sfRenderWindow_pollEvent(window->wd, &event)) {
-            even(event, window, map , cam);
-            keyboard_control(event, &cam, map);
+            even(event, window, map);
+            keyboard_control(event, map);
         }
-        gather(window, font_map, cam, menu, map);
+        gather(window, font_map, menu, map);
     }
     sfRenderWindow_destroy(window->wd);
     return 0;

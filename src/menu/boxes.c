@@ -25,8 +25,19 @@ void verif_box(window_t *window, sfMouseButtonEvent coord, map_t *map)
             map->is_editing = 0;
         }
     }
-    // if (((coord.x >= 1740 && coord.x <= 1900) && 
-    //     (coord.y >= 4516613 && coord.y <= 46513)) && window->menu == false) {
-    //     window->menu = true;
-    // }
+    if (((coord.x >= 20 && coord.x <= 180) && 
+        (coord.y >= 18 && coord.y <= 91)) && window->menu == false) {
+        window->menu = true;
+        reset_map(map);
+    }
 }
+
+/**
+ * X : 20 Y : 18 | X : 180 Y : 18
+ * X : 20 Y : 91 | X : 180 Y : 91
+ */
+
+/**
+ * X : 196 Y : 18 | X : 196 + 160 Y : 18
+ * 
+ */

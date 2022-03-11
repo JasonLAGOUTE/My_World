@@ -13,6 +13,7 @@ SRC =	src/main.c \
 		src/map/save.c	\
 		src/map/draw.c \
 		src/map/map.c \
+		src/map/reset.c \
 		src/utils/radiant.c \
 		src/window/window.c \
 		src/menu/display.c \

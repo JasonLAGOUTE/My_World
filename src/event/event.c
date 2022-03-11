@@ -7,7 +7,7 @@
 
 #include "my_world.h"
 
-void even(sfEvent event, window_t *window, map_t *map, camera_t cam)
+void even(sfEvent event, window_t *window, map_t *map)
 {
     if (event.type == sfEvtClosed)
         sfRenderWindow_close(window->wd);
@@ -17,10 +17,10 @@ void even(sfEvent event, window_t *window, map_t *map, camera_t cam)
     }
     if (event.type == sfEvtMouseButtonReleased) {
         if (event.mouseButton.button == sfMouseLeft && window->menu == false)
-            edit_map(map, event, cam);
+            edit_map(map, event);
         if (event.mouseButton.button == sfMouseRight && window->menu == false) {
-            cam.edit_strenght *= -1;
-            edit_map(map, event, cam);
+            map->cam.edit_strenght *= -1;
+            edit_map(map, event);
         }
         if (event.mouseButton.button == sfMouseLeft && window->menu == false)
             verif_box(window, event.mouseButton, map);
@@ -29,29 +29,29 @@ void even(sfEvent event, window_t *window, map_t *map, camera_t cam)
     }
 }
 
-void keyboard_control(sfEvent event, camera_t *cam,  map_t *map)
+void keyboard_control(sfEvent event,  map_t *map)
 {
     if (event.type == sfEvtKeyPressed) {
         if (event.key.code == sfKeyDown)
-            cam->offset.y += 10;
+            map->cam.offset.y += 10;
         if (event.key.code == sfKeyUp)
-            cam->offset.y -= 10;
+            map->cam.offset.y -= 10;
         if (event.key.code == sfKeyRight)
-            cam->offset.x += 10;
+            map->cam.offset.x += 10;
         if (event.key.code == sfKeyLeft)
-            cam->offset.x -= 10;
+            map->cam.offset.x -= 10;
         if (event.key.code == sfKeyE)
-            cam->angle.y -= 1;
+            map->cam.angle.y -= 1;
         if (event.key.code == sfKeyA)
-            cam->angle.y += 1;
+            map->cam.angle.y += 1;
         if (event.key.code == sfKeyAdd)
-            cam->zoom += 2;
+            map->cam.zoom += 2;
         if (event.key.code == sfKeySubtract)
-            cam->zoom -= 2;
+            map->cam.zoom -= 2;
         if (event.key.code == sfKeyK)
-            cam->radius -= 50;
+            map->cam.radius -= 50;
         if (event.key.code == sfKeyJ)
-            cam->radius += 50;
+            map->cam.radius += 50;
         if (event.key.code == sfKeyS) {
             save_map(map);
         }

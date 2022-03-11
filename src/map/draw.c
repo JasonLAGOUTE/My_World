@@ -11,11 +11,11 @@ static void condit_draw(map_t *map, sfRenderWindow *window, int i, int j)
 {
     if ((j + 1 < MAP_Y) && (i + 1 < MAP_X)) {
         map->points3d = (sfVector3f){i, j + 1, map->map[i][j + 1]};
-        map->points2 = to2d(map->points3d, map->cam);
+        map->points2 = to2d(map->points3d, map);
         map->points3d = (sfVector3f){i + 1, j, map->map[i + 1][j]};
-        map->points3 = to2d(map->points3d, map->cam);
+        map->points3 = to2d(map->points3d, map);
         map->points3d = (sfVector3f){i + 1, j + 1, map->map[i + 1][j + 1]};
-        map->points4 = to2d(map->points3d, map->cam);
+        map->points4 = to2d(map->points3d, map);
         sfRenderWindow_drawVertexArray(window,
             create_triangle_right(&map->points, &map->points4, &map->points3),
             map->texture->textures_tab[map->texture_map[i][j]]->state);
@@ -36,32 +36,33 @@ sfCircleShape *create_circle(float pos1, float pos2, float radius)
     sfCircleShape_setOutlineThickness(circle, 2);
     return circle;
 }
+
 static void condit(map_t *map, sfRenderWindow *window, int i, int j)
 {
     condit_draw(map, window, i, j);
     if (i + 1 < MAP_X) {
         map->points3d = (sfVector3f){i + 1, j, map->map[i + 1][j]};
-        map->points2 = to2d(map->points3d, map->cam);
+        map->points2 = to2d(map->points3d, map);
         sfRenderWindow_drawVertexArray(window, 
             create_line(&map->points, &map->points2), NULL);
     }
     if (j + 1 < MAP_Y) {
         map->points3d = (sfVector3f){i, j + 1, map->map[i][j + 1]};
-        map->points2 = to2d(map->points3d, map->cam);
+        map->points2 = to2d(map->points3d, map);
         sfRenderWindow_drawVertexArray(window, 
             create_line(&map->points, &map->points2), NULL);
     }
 }
 
-void draw_map(sfRenderWindow *window, camera_t cam, map_t *map)
+void draw_map(sfRenderWindow *window, map_t *map)
 {
     for (int i = 0; i < MAP_X; i++) {
         for (int j = 0; j < MAP_Y; j++) {
             map->points3d = (sfVector3f){i, j, map->map[i][j]};
-            map->points = to2d(map->points3d, cam);
+            map->points = to2d(map->points3d, map);
             condit(map, window, i, j);
             sfCircleShape *circle = create_circle(map->points.x, map->points.y,
-                (float)sqrt(cam.radius));
+                (float)sqrt(map->cam.radius));
             sfRenderWindow_drawCircleShape(window, circle, NULL);
         }
     }

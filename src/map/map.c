@@ -7,7 +7,7 @@
 
 #include "my_world.h"
 
-static int **create_map(int heigth, int width)
+int **create_map(int heigth, int width)
 {
     int **map = malloc(sizeof(int *) * (heigth + 1));
 
@@ -42,10 +42,10 @@ map_t *create_struct_map(camera_t camera)
     return map_pos;
 }
 
-void update_map(camera_t camera, map_t *map)
+void update_map(map_t *map)
 {
     map->points = (sfVector2f){0, 0};
     map->points2 = (sfVector2f){0, 0};
     map->points3d = (sfVector3f){0, 0, 0};
-    map->cam = camera;
+    map->cam = map->cam;
 }
