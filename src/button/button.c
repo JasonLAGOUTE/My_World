@@ -18,12 +18,12 @@ static sfRectangleShape *create_rect(sfVector2f position, sfVector2f size,
     return rect;
 }
 
-button_t *create_struct_buttons(char *filename, char *text)
+button_t *create_button(char *filename, char *text, int x, int y)
 {
     button_t *button = malloc(sizeof(button_t));
     int char_size = 15;
 
-    button->coord = (sfVector2f){200, 200};
+    button->coord = (sfVector2f){x, y};
     button->size = (sfVector2f){200, 200};
     button->texture = sfTexture_createFromFile(filename, NULL);
     button->rect = create_rect(button->coord, button->size, button->texture);

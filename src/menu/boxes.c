@@ -17,8 +17,11 @@ void verif_box(window_t *window, sfMouseButtonEvent coord, map_t *map)
         load_map(map);
         window->menu = false;
     }
-    if (((coord.x >= 220 && coord.x <= 385) && 
-        (coord.y >= 265 && coord.y <= 335)) && window->menu == false) {
-        map->actual = 1;
+    for (int i = 0; i < LAST; i++) {
+        if (((coord.x >= 1740 && coord.x <= 1900) && 
+            (coord.y >= (25 + i * 80) && coord.y <= (25 + i * 80 + 75))) && window->menu == false) {
+            map->actual = i;
+            map->is_editing = 0;
+        }
     }
 }

@@ -65,6 +65,8 @@ void draw_map(sfRenderWindow *window, camera_t cam, map_t *map)
             sfRenderWindow_drawCircleShape(window, circle, NULL);
         }
     }
-    sfRenderWindow_drawRectangleShape(window, map->button->rect, NULL);
-    sfRenderWindow_drawText(window, map->button->text, NULL);
+    for (int i = 0; i < LAST; i++) {
+        sfRenderWindow_drawRectangleShape(window, map->button->tab_textures[i]->rect, NULL);
+        sfRenderWindow_drawText(window, map->button->tab_textures[i]->text, NULL);
+    }
 }

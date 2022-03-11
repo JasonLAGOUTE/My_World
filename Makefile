@@ -21,8 +21,9 @@ SRC =	src/main.c \
 		src/init_struct/cam.c \
 		src/menu/boxes.c \
 		src/texture/set_texture.c \
-		src/texture/sand.c \
+		src/texture/init_texture.c \
 		src/init_struct/all_texture.c \
+		src/init_struct/all_buttons.c \
 		src/button/button.c \
 		src/button/text.c 
 

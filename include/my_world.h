@@ -23,6 +23,19 @@
 enum texture {
     RED_SAND,
     WHITE_SAND,
+    DIRT,
+    DIRT_BROKE,
+    GRASS,
+    MARS_DIRT,
+    SNOW,
+    STONE2,
+    STONE,
+    WATER1,
+    WATER2,
+    MENU,
+    EDIT,
+    SAVE,
+    PAINT,
     LAST
 };
 
@@ -73,6 +86,10 @@ typedef struct all_textures {
     textures_t **textures_tab;
 } all_textures_t;
 
+typedef struct all_buttons {
+    button_t **tab_textures;
+} all_buttons_t;
+
 typedef struct map {
     int **map;
     int **texture_map;
@@ -83,8 +100,9 @@ typedef struct map {
     sfVector3f points3d;
     camera_t cam;
     int actual;
+    int is_editing;
     all_textures_t *texture;
-    button_t *button;
+    all_buttons_t *button;
 } map_t;
 
 window_t *window_unit(void);
@@ -103,18 +121,19 @@ font_map_t *init_struct_map(void);
 menu_t *init_struct_menu(void);
 void edit_map(map_t *map, sfEvent event, camera_t cam);
 void set_texture(font_map_t *font_map, menu_t *menu);
-textures_t *init_struct_red_sand(void);
-textures_t *init_struct_white_sand(void);
+textures_t *init_struct_texture(char *path);
 sfVertexArray *create_triangle_right(sfVector2f *point1, sfVector2f *point2, 
     sfVector2f *point3);
 sfVertexArray *create_triangle_left(sfVector2f *point1, sfVector2f *point2, 
     sfVector2f *point3);
 camera_t *init_struct_cam(void);
 all_textures_t *init_struct_all_textures(void);
-button_t *create_struct_buttons(char *filename, char *text);
+button_t *create_button(char *filename, char *text, int x, int y);
 sfText *create_text(char *str, int char_size, sfVector2f coord,
     sfVector2f size);
 button_t *set_button_texture(void);
 void save_map(map_t *map);
 void load_map(map_t *map);
+all_buttons_t *init_struct_all_buttons(void);
+
 #endif

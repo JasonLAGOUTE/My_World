@@ -29,13 +29,13 @@ bool point_triangl (sfVector2f pt, sfVector2f v1, sfVector2f v2, sfVector2f v3)
 
 void create_plate(map_t *map, camera_t cam, sfVector2i coord)
 {
-    map->map[coord.x][coord.y]+=cam.edit_strenght;
-    map->map[coord.x+1][coord.y]+=cam.edit_strenght;
-    map->map[coord.x][coord.y+1]+=cam.edit_strenght;
-    map->map[coord.x+1][coord.y+1]+=cam.edit_strenght;
-
-    map->texture_map[coord.x][coord.y] = map->actual;
- 
+    if (map->is_editing == 1) {
+        map->map[coord.x][coord.y]+=cam.edit_strenght;
+        map->map[coord.x+1][coord.y]+=cam.edit_strenght;
+        map->map[coord.x][coord.y+1]+=cam.edit_strenght;
+        map->map[coord.x+1][coord.y+1]+=cam.edit_strenght;
+    } else
+        map->texture_map[coord.x][coord.y] = map->actual; 
 }
 
 void edit_point(map_t *map, sfVector2f mouse, camera_t cam, sfVector2i coo)
