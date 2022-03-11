@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <time.h>
 
 #ifndef MY_WORLD_
     #define MY_WORLD_
