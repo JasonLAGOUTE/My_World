@@ -7,18 +7,18 @@
 
 #include "my_world.h"
 
-void even(sfEvent event, window_t *window, map_t *map)
+void even(sfEvent event, window_t *windo, map_t *map)
 {
-    keyboard_control(event, map, window);
+    keyboard_control(event, map, windo);
     if (event.type == sfEvtMouseButtonReleased) {
-        if (event.mouseButton.button == sfMouseLeft && window->menu == false)
+        if (event.mouseButton.button == sfMouseLeft && windo->menu == false)
             edit_map(map, event);
-        if (event.mouseButton.button == sfMouseRight && window->menu == false) {
+        if (event.mouseButton.button == sfMouseRight && windo->menu == false) {
             map->cam.edit_strenght *= -1;
             edit_map(map, event);
         }
         if (event.mouseButton.button == sfMouseLeft)
-            verif_box(window, event.mouseButton, map);
+            verif_box(windo, event.mouseButton, map);
     }
 }
 

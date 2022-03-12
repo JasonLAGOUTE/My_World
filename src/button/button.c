@@ -7,7 +7,7 @@
 
 #include "my_world.h"
 
-static sfRectangleShape *create_rect(sfVector2f position, sfVector2f size, 
+static sfRectangleShape *create_rect(sfVector2f position, sfVector2f size,
     sfTexture *texture)
 {
     sfRectangleShape *rect = sfRectangleShape_create();
@@ -26,7 +26,7 @@ button_t *crt_btn(char *filename, char *text, int x, int y)
     button->coord = (sfVector2f){x, y};
     button->size = (sfVector2f){200, 200};
     button->texture = sfTexture_createFromFile(filename, NULL);
-    button->rect = create_rect(button->coord, button->size, button->texture);
+    button->rec = create_rect(button->coord, button->size, button->texture);
     button->text = create_text(text, char_size, button->coord, button->size);
     return button;
 }

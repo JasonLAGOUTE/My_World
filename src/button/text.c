@@ -14,10 +14,10 @@ static sfVector2f to_tuple(sfVector2f pos, sfFloatRect other_pos)
     return pos;
 }
 
-sfText *create_text(char *str, int char_size, sfVector2f coord, sfVector2f size)
+sfText *create_text(char *str, int char_size, sfVector2f coo, sfVector2f size)
 {
     sfText *text = sfText_create();
-    sfFont *font = sfFont_createFromFile("assets/font/font.TTF");
+    sfFont *font = sfFont_createFromFile("font/font.ttf");
     sfVector2f origin_point = {0, 0};
     sfVector2f position_txt = {0, 0};
     sfFloatRect text_rect;
@@ -31,8 +31,8 @@ sfText *create_text(char *str, int char_size, sfVector2f coord, sfVector2f size)
     text_rect = sfText_getGlobalBounds(text);
     origin_point = to_tuple(origin_point, text_rect);
     sfText_setOrigin(text, origin_point);
-    position_txt.x = coord.x + size.x / 1.9;
-    position_txt.y = coord.y + size.y / 2.0;
+    position_txt.x = coo.x + size.x / 1.9;
+    position_txt.y = coo.y + size.y / 2.0;
     sfText_setPosition(text, position_txt);
     return text;
 }

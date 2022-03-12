@@ -47,7 +47,7 @@ enum barre_edit {
 
 typedef struct button {
     sfTexture *texture;
-    sfRectangleShape *rect;
+    sfRectangleShape *rec;
     sfText *text;
     sfVector2f coord;
     sfVector2f size;
@@ -130,9 +130,9 @@ menu_t *init_struct_menu(void);
 void edit_map(map_t *map, sfEvent event);
 void set_texture(font_map_t *font_map, menu_t *menu);
 textures_t *init_struct_texture(char *path);
-sfVertexArray *crt_triangle_r(sfVector2f *point1, sfVector2f *point2, 
+sfVertexArray *crt_triangle_r(sfVector2f *point1, sfVector2f *point2,
     sfVector2f *point3, sfColor colors);
-sfVertexArray *crt_triangle_l(sfVector2f *point1, sfVector2f *point2, 
+sfVertexArray *crt_triangle_l(sfVector2f *point1, sfVector2f *point2,
     sfVector2f *point3, sfColor colors);
 camera_t init_struct_cam(camera_t *cam);
 all_textures_t *init_struct_all_textures(void);

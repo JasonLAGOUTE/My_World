@@ -19,7 +19,7 @@ sfVertexArray *create_line(sfVector2f *point1, sfVector2f *point2)
     return vertex_array;
 }
 
-sfVertexArray *crt_triangle_r(sfVector2f *point1, sfVector2f *point2, 
+sfVertexArray *crt_triangle_r(sfVector2f *point1, sfVector2f *point2,
     sfVector2f *point3, sfColor colors)
 {
     sfVertexArray *vertex_array = sfVertexArray_create();
@@ -37,8 +37,7 @@ sfVertexArray *crt_triangle_r(sfVector2f *point1, sfVector2f *point2,
     return vertex_array;
 }
 
-
-sfVertexArray *crt_triangle_l(sfVector2f *point1, sfVector2f *point2, 
+sfVertexArray *crt_triangle_l(sfVector2f *point1, sfVector2f *point2,
     sfVector2f *point3, sfColor colors)
 {
     sfVertexArray *vertex_array = sfVertexArray_create();

@@ -30,41 +30,40 @@ bool point_triangl (sfVector2f pt, sfVector2f v1, sfVector2f v2, sfVector2f v3)
 void create_plate(map_t *map, sfVector2i coord)
 {
     if (map->is_editing == 1) {
-        map->map[coord.x][coord.y]+=map->cam.edit_strenght;
-        map->map[coord.x+1][coord.y]+=map->cam.edit_strenght;
-        map->map[coord.x][coord.y+1]+=map->cam.edit_strenght;
-        map->map[coord.x+1][coord.y+1]+=map->cam.edit_strenght;
+        map->map[coord.x][coord.y] += map->cam.edit_strenght;
+        map->map[coord.x + 1][coord.y] += map->cam.edit_strenght;
+        map->map[coord.x][coord.y + 1] += map->cam.edit_strenght;
+        map->map[coord.x + 1][coord.y + 1] += map->cam.edit_strenght;
     } else
-        map->texture_map[coord.x][coord.y] = map->actual; 
+        map->texture_map[coord.x][coord.y] = map->actual;
 }
 
-void edit_point(map_t *map, sfVector2f mouse, sfVector2i co)
+void edit_point(map_t *ma, sfVector2f mouse, sfVector2i co)
 {
-    sfVector3f point_3d = {co.x, co.y, map->map[co.x][co.y]};
-    sfVector2f p_2d = to2d(point_3d, map);
+    sfVector3f point_3d = {co.x, co.y, ma->map[co.x][co.y]};
+    sfVector2f p_2d = to2d(point_3d, ma);
     sfVector2f *p2d = malloc(sizeof(sfVector2f) * 4);
     sfVector3f *p3d = malloc(sizeof(sfVector3f) * 4);
     float distance = pow(p_2d.x -mouse.x,2) + pow(p_2d.y - mouse.y,2);
 
-    if (distance < (float)map->cam.radius)
-        map->map[co.x][co.y] += map->cam.edit_strenght;
+    if (distance < (float)ma->cam.radius)
+        ma->map[co.x][co.y] += ma->cam.edit_strenght;
     else if ((co.y + 1 < MAP_Y) && (co.x + 1 < MAP_X)) {
-        p3d[0] = (sfVector3f){co.x + 1, co.y, map->map[co.x + 1][co.y]};
-        p3d[1] = (sfVector3f){co.x, co.y + 1, map->map[co.x][co.y + 1]};
-        p3d[2] = (sfVector3f){co.x + 1, co.y + 1, map->map[co.x + 1][co.y + 1]};
-        p2d[0] = to2d(p3d[0], map);
-        p2d[1] = to2d(p3d[1], map);
-        p2d[2] = to2d(p3d[2], map);
+        p3d[0] = (sfVector3f){co.x + 1, co.y, ma->map[co.x + 1][co.y]};
+        p3d[1] = (sfVector3f){co.x, co.y + 1, ma->map[co.x][co.y + 1]};
+        p3d[2] = (sfVector3f){co.x + 1, co.y + 1, ma->map[co.x + 1][co.y + 1]};
+        p2d[0] = to2d(p3d[0], ma);
+        p2d[1] = to2d(p3d[1], ma);
+        p2d[2] = to2d(p3d[2], ma);
         if (point_triangl(mouse, p_2d, p2d[2], p2d[0]) == 1)
-            create_plate(map, co);
+            create_plate(ma, co);
         if (point_triangl(mouse, p_2d, p2d[2], p2d[1]) == 1)
-            create_plate(map, co);
+            create_plate(ma, co);
     }
 }
 
 void edit_map(map_t *map, sfEvent event)
 {
-    
     float x = event.mouseButton.x;
     float y = event.mouseButton.y;
     sfVector2f mouse = {x, y};

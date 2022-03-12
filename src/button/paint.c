@@ -9,7 +9,7 @@
 
 void button_paint(window_t *window, sfMouseButtonEvent coord, map_t *map)
 {
-    if (((coord.x >= 558 && coord.x <= 725) && 
+    if (((coord.x >= 558 && coord.x <= 725) &&
         (coord.y >= 18 && coord.y <= 91)) && window->menu == false) {
         if (map->bool_barre == 1) {
             map->is_editing = 1;

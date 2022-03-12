@@ -7,15 +7,15 @@
 
 #include "my_world.h"
 
-static void gather(window_t *window, font_map_t *font, menu_t *menu, map_t *map)
+static void gather(window_t *windo, font_map_t *font, menu_t *menu, map_t *map)
 {
     update_map(map);
-    if (window->menu == true) {
-        display_menu(window, menu);
+    if (windo->menu == true) {
+        display_menu(windo, menu);
     } else {
-        sfRenderWindow_drawSprite(window->wd, font->sprite, NULL);
-        draw_world(window->wd, map);
-        sfRenderWindow_display(window->wd);
+        sfRenderWindow_drawSprite(windo->wd, font->sprite, NULL);
+        draw_world(windo->wd, map);
+        sfRenderWindow_display(windo->wd);
     }
 }
 

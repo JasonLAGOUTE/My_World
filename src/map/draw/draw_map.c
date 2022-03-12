@@ -36,13 +36,13 @@ static void condit(map_t *map, sfRenderWindow *window, int i, int j)
     if (i + 1 < MAP_X) {
         map->points3d = (sfVector3f){i + 1, j, map->map[i + 1][j]};
         map->points2 = to2d(map->points3d, map);
-        sfRenderWindow_drawVertexArray(window, 
+        sfRenderWindow_drawVertexArray(window,
             create_line(&map->points, &map->points2), NULL);
     }
     if (j + 1 < MAP_Y) {
         map->points3d = (sfVector3f){i, j + 1, map->map[i][j + 1]};
         map->points2 = to2d(map->points3d, map);
-        sfRenderWindow_drawVertexArray(window, 
+        sfRenderWindow_drawVertexArray(window,
             create_line(&map->points, &map->points2), NULL);
     }
 }

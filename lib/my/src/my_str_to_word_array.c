@@ -37,8 +37,6 @@ char **my_str_to_word_array(char *str, char separ)
     size_t j = 0;
     size_t idx = nb_for_malloc_tab_line(str, 0, separ) + 2;
 
-    if (!tab)
-        return NULL;
     tab[j] = malloc(sizeof(char) * idx);
     for (size_t i = 0; str[i] != '\0'; i++, k++) {
         if (str[i] == separ) {
