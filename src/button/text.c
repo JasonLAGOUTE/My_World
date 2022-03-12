@@ -17,7 +17,7 @@ static sfVector2f to_tuple(sfVector2f pos, sfFloatRect other_pos)
 sfText *create_text(char *str, int char_size, sfVector2f coord, sfVector2f size)
 {
     sfText *text = sfText_create();
-    sfFont *font = sfFont_createFromFile("src/font/font.TTF");
+    sfFont *font = sfFont_createFromFile("assets/font/font.TTF");
     sfVector2f origin_point = {0, 0};
     sfVector2f position_txt = {0, 0};
     sfFloatRect text_rect;

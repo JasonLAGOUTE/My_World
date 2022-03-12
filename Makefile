@@ -10,11 +10,20 @@ SRC =	src/main.c \
 		src/line/line.c \
 		src/map/calcul.c \
 		src/map/edit.c	\
-		src/map/save.c	\
-		src/map/draw.c \
+		src/map/read_map.c	\
+		src/map/draw/draw.c \
 		src/map/map.c \
 		src/map/reset.c \
+		src/map/cube.c \
+		src/map/draw/barre_navig.c \
+		src/map/draw/paint.c \
+		src/map/draw/draw_map.c \
+		src/map/shade.c \
+		src/map/effect/shuffle.c \
+		src/map/effect/smooth.c \
+		src/map/effect/save.c \
 		src/utils/radiant.c \
+		src/utils/circle.c \
 		src/window/window.c \
 		src/menu/display.c \
 		src/init_struct/map.c \
@@ -26,7 +35,20 @@ SRC =	src/main.c \
 		src/init_struct/all_texture.c \
 		src/init_struct/all_buttons.c \
 		src/button/button.c \
-		src/button/text.c 
+		src/button/back.c \
+		src/button/in_menu.c \
+		src/button/paint.c \
+		src/button/save.c \
+		src/button/texture.c \
+		src/button/text.c \
+		src/mod/angle.c \
+		src/mod/close.c \
+		src/mod/offset.c \
+		src/mod/radius.c \
+		src/mod/save.c \
+		src/mod/shuffle.c \
+		src/mod/smooth.c \
+		src/mod/zoom.c
 
 OBJ = $(SRC:.c=.o)
 

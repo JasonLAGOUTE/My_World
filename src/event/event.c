@@ -9,12 +9,7 @@
 
 void even(sfEvent event, window_t *window, map_t *map)
 {
-    if (event.type == sfEvtClosed)
-        sfRenderWindow_close(window->wd);
-    if (event.type == sfEvtKeyReleased) {
-        if (event.key.code == sfKeyEscape)
-            sfRenderWindow_close(window->wd);
-    }
+    keyboard_control(event, map, window);
     if (event.type == sfEvtMouseButtonReleased) {
         if (event.mouseButton.button == sfMouseLeft && window->menu == false)
             edit_map(map, event);
@@ -22,44 +17,21 @@ void even(sfEvent event, window_t *window, map_t *map)
             map->cam.edit_strenght *= -1;
             edit_map(map, event);
         }
-        if (event.mouseButton.button == sfMouseLeft && window->menu == false)
-            verif_box(window, event.mouseButton, map);
-        if (event.mouseButton.button == sfMouseLeft && window->menu == true)
+        if (event.mouseButton.button == sfMouseLeft)
             verif_box(window, event.mouseButton, map);
     }
 }
 
-void keyboard_control(sfEvent event,  map_t *map)
+void keyboard_control(sfEvent event, map_t *map, window_t *window)
 {
     if (event.type == sfEvtKeyPressed) {
-        if (event.key.code == sfKeyDown)
-            map->cam.offset.y += 10;
-        if (event.key.code == sfKeyUp)
-            map->cam.offset.y -= 10;
-        if (event.key.code == sfKeyRight)
-            map->cam.offset.x += 10;
-        if (event.key.code == sfKeyLeft)
-            map->cam.offset.x -= 10;
-        if (event.key.code == sfKeyE)
-            map->cam.angle.y -= 1;
-        if (event.key.code == sfKeyA)
-            map->cam.angle.y += 1;
-        if (event.key.code == sfKeyAdd)
-            map->cam.zoom += 2;
-        if (event.key.code == sfKeySubtract)
-            map->cam.zoom -= 2;
-        if (event.key.code == sfKeyK)
-            map->cam.radius -= 50;
-        if (event.key.code == sfKeyJ)
-            map->cam.radius += 50;
-        if (event.key.code == sfKeyS) {
-            save_map(map);
-        }
-        if (event.key.code == sfKeyR) {
-            shuffle_map(map);
-        }
-        if (event.key.code == sfKeyL) {
-            smooth_map(map);
-        }
+        mod_offset(event, map);
+        mod_angle(event, map);
+        mod_zoom(event, map);
+        mod_radius(event, map);
+        mod_save(event, map);
+        mod_shuffle(event, map);
+        mod_smooth(event, map);
     }
+    mod_close(event, window);
 }

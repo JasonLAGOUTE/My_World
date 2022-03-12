@@ -38,28 +38,27 @@ void create_plate(map_t *map, sfVector2i coord)
         map->texture_map[coord.x][coord.y] = map->actual; 
 }
 
-void edit_point(map_t *map, sfVector2f mouse, sfVector2i coo)
+void edit_point(map_t *map, sfVector2f mouse, sfVector2i co)
 {
-    sfVector3f point_3d = {coo.x, coo.y, map->map[coo.x][coo.y]};
+    sfVector3f point_3d = {co.x, co.y, map->map[co.x][co.y]};
     sfVector2f p_2d = to2d(point_3d, map);
     sfVector2f *p2d = malloc(sizeof(sfVector2f) * 4);
     sfVector3f *p3d = malloc(sizeof(sfVector3f) * 4);
     float distance = pow(p_2d.x -mouse.x,2) + pow(p_2d.y - mouse.y,2);
+
     if (distance < (float)map->cam.radius)
-        map->map[coo.x][coo.y] += map->cam.edit_strenght;
-    else {
-        if ((coo.y + 1 < MAP_Y) && (coo.x + 1 < MAP_X)) {
-            p3d[0] = (sfVector3f){coo.x + 1, coo.y, map->map[coo.x + 1][coo.y]};
-            p3d[1] = (sfVector3f){coo.x, coo.y + 1, map->map[coo.x][coo.y + 1]};
-            p3d[2] = (sfVector3f){coo.x + 1, coo.y + 1, map->map[coo.x + 1][coo.y + 1]};
-            p2d[0] = to2d(p3d[0], map);
-            p2d[1] = to2d(p3d[1], map);
-            p2d[2] = to2d(p3d[2], map);
-            if (point_triangl(mouse, p_2d, p2d[2], p2d[0]) == 1)
-                create_plate(map, coo);
-            if (point_triangl(mouse, p_2d, p2d[2], p2d[1]) == 1)
-                create_plate(map, coo);
-        }
+        map->map[co.x][co.y] += map->cam.edit_strenght;
+    else if ((co.y + 1 < MAP_Y) && (co.x + 1 < MAP_X)) {
+        p3d[0] = (sfVector3f){co.x + 1, co.y, map->map[co.x + 1][co.y]};
+        p3d[1] = (sfVector3f){co.x, co.y + 1, map->map[co.x][co.y + 1]};
+        p3d[2] = (sfVector3f){co.x + 1, co.y + 1, map->map[co.x + 1][co.y + 1]};
+        p2d[0] = to2d(p3d[0], map);
+        p2d[1] = to2d(p3d[1], map);
+        p2d[2] = to2d(p3d[2], map);
+        if (point_triangl(mouse, p_2d, p2d[2], p2d[0]) == 1)
+            create_plate(map, co);
+        if (point_triangl(mouse, p_2d, p2d[2], p2d[1]) == 1)
+            create_plate(map, co);
     }
 }
 
@@ -69,9 +68,9 @@ void edit_map(map_t *map, sfEvent event)
     float x = event.mouseButton.x;
     float y = event.mouseButton.y;
     sfVector2f mouse = {x, y};
+
     for (int i = 0; i < MAP_X; i++) {
-        for (int j = 0; j < MAP_Y; j++) {
+        for (int j = 0; j < MAP_Y; j++)
             edit_point(map, mouse, (sfVector2i){i, j});
-        }
     }
 }

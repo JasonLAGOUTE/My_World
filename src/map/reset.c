@@ -19,9 +19,9 @@ void reset_map(map_t *map)
     map->texture_map = create_map(MAP_X, MAP_Y);
     map->texture = init_struct_all_textures();
     map->button = init_struct_all_buttons();
-    map->buttons = init_struct_buttons_edit();
-    map->cam = (camera_t){64, (sfVector2i){WIDTH/2, LENGTH/4},
-        (sfVector2i){45,35}, 1, 100};
+    map->btn = init_struct_buttons_edit();
+    map->cam = (camera_t){64, (sfVector2i){WIDTH / 2, LENGTH / 4},
+        (sfVector2i){45, 35}, 1, 100};
     map->actual = 0;
     map->is_editing = 1;
 }

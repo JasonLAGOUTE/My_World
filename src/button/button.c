@@ -18,7 +18,7 @@ static sfRectangleShape *create_rect(sfVector2f position, sfVector2f size,
     return rect;
 }
 
-button_t *create_button(char *filename, char *text, int x, int y)
+button_t *crt_btn(char *filename, char *text, int x, int y)
 {
     button_t *button = malloc(sizeof(button_t));
     int char_size = 15;
