@@ -30,3 +30,16 @@ button_t *crt_btn(char *filename, char *text, int x, int y)
     button->text = create_text(text, char_size, button->coord, button->size);
     return button;
 }
+
+button_t *crt_btn_t(char *filename, char *text, int x, int y)
+{
+    button_t *button = malloc(sizeof(button_t));
+    int char_size = 15;
+
+    button->coord = (sfVector2f){x, y};
+    button->size = (sfVector2f){160, 60};
+    button->texture = sfTexture_createFromFile(filename, NULL);
+    button->rec = create_rect(button->coord, button->size, button->texture);
+    button->text = create_text(text, char_size, button->coord, button->size);
+    return button;
+}

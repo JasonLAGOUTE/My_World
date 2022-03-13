@@ -12,17 +12,17 @@ all_buttons_t *init_struct_all_buttons(void)
     all_buttons_t *all = malloc(sizeof(all_buttons_t));
 
     all->tab = malloc(sizeof(all_buttons_t *) * LAST);
-    all->tab[RED_SAND] = crt_btn("img/b2.png", "Red Sand", 1720, -40);
-    all->tab[WHITE_SAND] = crt_btn("img/b2.png", "White Sand", 1720, 40);
-    all->tab[DIRT] = crt_btn("img/b2.png", "Dirt", 1720, 120);
-    all->tab[DIRT_BROKE] = crt_btn("img/b2.png", "Dirt_broke", 1720, 200);
-    all->tab[GRASS] = crt_btn("img/b2.png", "Grass", 1720, 280);
-    all->tab[MARS_DIRT] = crt_btn("img/b2.png", "Mars dirt", 1720, 360);
-    all->tab[SNOW] = crt_btn("img/b2.png", "Snow", 1720, 440);
-    all->tab[STONE2] = crt_btn("img/b2.png", "First stone", 1720, 520);
-    all->tab[STONE] = crt_btn("img/b2.png", "Second stone", 1720, 600);
-    all->tab[WATER1] = crt_btn("img/b2.png", "First Water", 1720, 680);
-    all->tab[WATER2] = crt_btn("img/b2.png", "Secone Water", 1720, 760);
+    all->tab[RED_SAND] = crt_btn_t("img/red_sand.png", "", 1740, 50);
+    all->tab[WHITE_SAND] = crt_btn_t("img/sand.png", "", 1740, 125);
+    all->tab[DIRT] = crt_btn_t("img/dirt.png", "", 1740, 200);
+    all->tab[DIRT_BROKE] = crt_btn_t("img/dirt_broke.png", "", 1740, 275);
+    all->tab[GRASS] = crt_btn_t("img/grass.png", "", 1740, 350);
+    all->tab[MARS_DIRT] = crt_btn_t("img/mars_dirt.png", "", 1740, 425);
+    all->tab[SNOW] = crt_btn_t("img/snow.png", "", 1740, 500);
+    all->tab[STONE2] = crt_btn_t("img/stone_2.png", "", 1740, 575);
+    all->tab[STONE] = crt_btn_t("img/stone.png", "", 1740, 650);
+    all->tab[WATER1] = crt_btn_t("img/water_1.png", "", 1740, 725);
+    all->tab[WATER2] = crt_btn_t("img/water_2.png", "", 1740, 800);
     return all;
 }
 

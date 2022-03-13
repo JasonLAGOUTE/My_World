@@ -191,5 +191,6 @@ void button_in_menu(window_t *window, sfMouseButtonEvent coord, map_t *map);
 all_buttons_t *init_struct_buttons_edit(void);
 void draw_edit(map_t *map, sfRenderWindow *wind);
 void button_edit(window_t *window, sfMouseButtonEvent coord, map_t *map);
+button_t *crt_btn_t(char *filename, char *text, int x, int y);
 
 #endif
