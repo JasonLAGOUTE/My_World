@@ -26,7 +26,7 @@ all_buttons_t *init_struct_all_buttons(void)
     return all;
 }
 
-all_buttons_t *init_struct_buttons_edit(void)
+all_buttons_t *init_struct_buttons_navig(void)
 {
     all_buttons_t *all = malloc(sizeof(all_buttons_t));
 
@@ -36,5 +36,18 @@ all_buttons_t *init_struct_buttons_edit(void)
     all->tab[SAVE] = crt_btn("img/b1.png", "Save", 180, -50);
     all->tab[PAINT] = crt_btn("img/b1.png", "Paint", 540, -50);
     all->tab[RENDER] = crt_btn("img/b1.png", "Render", 720, -50);
+    return all;
+}
+
+all_buttons_t *init_struct_buttons_edit(void)
+{
+    all_buttons_t *all = malloc(sizeof(all_buttons_t));
+
+    all->tab = malloc(sizeof(all_buttons_t *) * LAST_EDIT);
+    all->tab[RADIUS_EDIT] = crt_btn("img/b2.png", "Radius Map", 1720, 40);
+    all->tab[SIZE_MAP] = crt_btn("img/b2.png", "Size Map", 1720, 200);
+    all->tab[RANDOM_GEN] = crt_btn("img/b2.png", "Random Gen", 1720, 360);
+    all->tab[SIZE_RAND] = crt_btn("img/b2.png", "Random Size", 1720, 520);
+    all->tab[FORCE_EDIT] = crt_btn("img/b2.png", "Force Edit", 1720, 680);
     return all;
 }

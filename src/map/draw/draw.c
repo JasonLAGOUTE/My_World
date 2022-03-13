@@ -14,4 +14,5 @@ void draw_world(sfRenderWindow *window, map_t *map)
     draw_map(map, window);
     draw_navig_barre(map, window);
     draw_button_paint(map, window);
+    draw_edit(map, window);
 }

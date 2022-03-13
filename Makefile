@@ -18,6 +18,7 @@ SRC =	src/main.c \
 		src/map/draw/barre_navig.c \
 		src/map/draw/paint.c \
 		src/map/draw/draw_map.c \
+		src/map/draw/edit.c \
 		src/map/shade.c \
 		src/map/effect/shuffle.c \
 		src/map/effect/smooth.c \
@@ -41,6 +42,7 @@ SRC =	src/main.c \
 		src/button/save.c \
 		src/button/texture.c \
 		src/button/text.c \
+		src/button/edit.c \
 		src/mod/angle.c \
 		src/mod/close.c \
 		src/mod/offset.c \

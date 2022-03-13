@@ -21,7 +21,7 @@
     #define LENGTH 1080
     #define PI 3.14159265358979323846
 
-enum texture {
+enum paint {
     RED_SAND,
     WHITE_SAND,
     DIRT,
@@ -36,13 +36,31 @@ enum texture {
     LAST
 };
 
-enum barre_edit {
+enum barre_navig {
     MENU,
     EDIT,
     SAVE,
     PAINT,
     RENDER,
     LAST_BARRE
+};
+
+enum edit {
+    RADIUS_EDIT,
+    SIZE_MAP,
+    RANDOM_GEN,
+    SIZE_RAND,
+    FORCE_EDIT,
+    LAST_EDIT
+};
+
+enum render {
+    DISPLAY_LST,
+    DISPLAY_POINT,
+    DISPLAY_TEXTURE,
+    DISPLAY_CUBE,
+    DISPLAY_LIGHT,
+    LAST_RENDER
 };
 
 typedef struct button {
@@ -107,10 +125,11 @@ typedef struct map {
     camera_t cam;
     int actual;
     int is_editing;
-    all_textures_t *texture;
-    all_buttons_t *button;
     int bool_barre;
+    all_textures_t *texture;
+    all_buttons_t *btn_t;
     all_buttons_t *btn;
+    all_buttons_t *btn_e;
 } map_t;
 
 window_t *window_unit(void);
@@ -145,7 +164,7 @@ void load_map(map_t *map);
 all_buttons_t *init_struct_all_buttons(void);
 void shuffle_map(map_t *map);
 void smooth_map(map_t *map);
-all_buttons_t *init_struct_buttons_edit(void);
+all_buttons_t *init_struct_buttons_navig(void);
 int **create_map(int heigth, int width);
 void reset_map(map_t *map);
 void first_part_cube(sfRenderWindow *window, map_t *map);
@@ -169,5 +188,8 @@ void button_texture(window_t *window, sfMouseButtonEvent coord, map_t *map);
 void button_back(window_t *window, sfMouseButtonEvent coord, map_t *map);
 void button_paint(window_t *window, sfMouseButtonEvent coord, map_t *map);
 void button_in_menu(window_t *window, sfMouseButtonEvent coord, map_t *map);
+all_buttons_t *init_struct_buttons_edit(void);
+void draw_edit(map_t *map, sfRenderWindow *wind);
+void button_edit(window_t *window, sfMouseButtonEvent coord, map_t *map);
 
 #endif

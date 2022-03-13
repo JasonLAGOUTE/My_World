@@ -38,8 +38,9 @@ map_t *create_struct_map(camera_t camera)
     map_pos->bool_barre = 0;
     map_pos->points3 = (sfVector2f){0, 0};
     map_pos->texture = init_struct_all_textures();
-    map_pos->button = init_struct_all_buttons();
-    map_pos->btn = init_struct_buttons_edit();
+    map_pos->btn_t = init_struct_all_buttons();
+    map_pos->btn = init_struct_buttons_navig();
+    map_pos->btn_e = init_struct_buttons_edit();
     return map_pos;
 }
 
