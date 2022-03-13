@@ -51,3 +51,16 @@ all_buttons_t *init_struct_buttons_edit(void)
     all->tab[FORCE_EDIT] = crt_btn("img/b2.png", "Force Edit", 1720, 680);
     return all;
 }
+
+all_buttons_t *init_struct_buttons_rander(void)
+{
+    all_buttons_t *all = malloc(sizeof(all_buttons_t));
+
+    all->tab = malloc(sizeof(all_buttons_t *) * LAST_RANDER);
+    all->tab[DISP_LINE] = crt_btn("img/b2.png", "Display line", 1720, 40);
+    all->tab[DISP_POINT] = crt_btn("img/b2.png", "Display point", 1720, 200);
+    all->tab[DISP_TXT] = crt_btn("img/b2.png", "Display texture", 1720, 360);
+    all->tab[DISP_CUBE] = crt_btn("img/b2.png", "Display cube", 1720, 520);
+    all->tab[DISP_LIGHT] = crt_btn("img/b2.png", "Display light", 1720, 680);
+    return all;
+}

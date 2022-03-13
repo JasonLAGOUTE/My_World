@@ -25,4 +25,5 @@ void reset_map(map_t *map)
     map->actual = 0;
     map->is_editing = 1;
     map->btn_e = init_struct_buttons_edit();
+    map->btn_r = init_struct_buttons_rander();
 }

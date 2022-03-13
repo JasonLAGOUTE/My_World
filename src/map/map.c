@@ -40,6 +40,7 @@ map_t *create_struct_map(camera_t camera)
     map_pos->texture = init_struct_all_textures();
     map_pos->btn_t = init_struct_all_buttons();
     map_pos->btn = init_struct_buttons_navig();
+    map_pos->btn_r = init_struct_buttons_rander();
     map_pos->btn_e = init_struct_buttons_edit();
     return map_pos;
 }

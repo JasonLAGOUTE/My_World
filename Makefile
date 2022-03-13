@@ -19,6 +19,7 @@ SRC =	src/main.c \
 		src/map/draw/paint.c \
 		src/map/draw/draw_map.c \
 		src/map/draw/edit.c \
+		src/map/draw/rander.c \
 		src/map/shade.c \
 		src/map/effect/shuffle.c \
 		src/map/effect/smooth.c \
@@ -36,6 +37,7 @@ SRC =	src/main.c \
 		src/init_struct/all_texture.c \
 		src/init_struct/all_buttons.c \
 		src/button/button.c \
+		src/button/rander.c \
 		src/button/back.c \
 		src/button/in_menu.c \
 		src/button/paint.c \

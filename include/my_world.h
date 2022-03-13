@@ -55,12 +55,12 @@ enum edit {
 };
 
 enum render {
-    DISPLAY_LST,
-    DISPLAY_POINT,
-    DISPLAY_TEXTURE,
-    DISPLAY_CUBE,
-    DISPLAY_LIGHT,
-    LAST_RENDER
+    DISP_LINE,
+    DISP_POINT,
+    DISP_TXT,
+    DISP_CUBE,
+    DISP_LIGHT,
+    LAST_RANDER
 };
 
 typedef struct button {
@@ -127,8 +127,9 @@ typedef struct map {
     int is_editing;
     int bool_barre;
     all_textures_t *texture;
-    all_buttons_t *btn_t;
     all_buttons_t *btn;
+    all_buttons_t *btn_t;
+    all_buttons_t *btn_r;
     all_buttons_t *btn_e;
 } map_t;
 
@@ -192,5 +193,8 @@ all_buttons_t *init_struct_buttons_edit(void);
 void draw_edit(map_t *map, sfRenderWindow *wind);
 void button_edit(window_t *window, sfMouseButtonEvent coord, map_t *map);
 button_t *crt_btn_t(char *filename, char *text, int x, int y);
+all_buttons_t *init_struct_buttons_rander(void);
+void button_rander(window_t *window, sfMouseButtonEvent coord, map_t *map);
+void draw_render(map_t *m, sfRenderWindow *w);
 
 #endif
