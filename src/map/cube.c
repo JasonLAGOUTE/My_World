@@ -52,3 +52,29 @@ void second_part_cube(sfRenderWindow *window, map_t *map)
                 (sfColor){197, 96, 62, 255}), NULL);
     }
 }
+
+void third_part_cube(sfRenderWindow *window, map_t *map)
+{
+    map->points3d = (sfVector3f){MAP_X - 1, 0, 0};
+    map->points = to2d(map->points3d, map);
+    map->points.y += MAP_X * 3 / 4 * map->cam.zoom;
+
+    map->points3d = (sfVector3f){0, MAP_X - 1, 0};
+    map->points2 = to2d(map->points3d, map);
+    map->points2.y += MAP_X * 3 / 4 * map->cam.zoom;
+
+    map->points3d = (sfVector3f){0, 0, 0};
+    map->points3 = to2d(map->points3d, map);
+    map->points3.y += MAP_X * 3 / 4 * map->cam.zoom;
+
+    map->points3d = (sfVector3f){MAP_X - 1, MAP_X - 1, 0};
+    map->points4 = to2d(map->points3d, map);
+    map->points4.y += MAP_X * 3 / 4 * map->cam.zoom;
+
+    sfRenderWindow_drawVertexArray(window,
+        crt_triangle_l(&map->points, &map->points3, &map->points2,
+            (sfColor){130, 72, 53, 255}), NULL);
+    sfRenderWindow_drawVertexArray(window,
+        crt_triangle_l(&map->points2, &map->points, &map->points4,
+            (sfColor){130, 72, 53, 255}), NULL);
+}
