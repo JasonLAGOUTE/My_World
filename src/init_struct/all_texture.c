@@ -14,7 +14,7 @@ all_textures_t *init_struct_all_textures()
     all->tab = malloc(sizeof(textures_t *) * LAST);
     all->tab[RED_SAND] = init_struct_texture("img/red_sand.png");
     all->tab[WHITE_SAND] = init_struct_texture("img/sand.png");
-    all->tab[DIRT] = init_struct_texture("img/dirte.png");
+    all->tab[DIRT] = init_struct_texture("img/dirt.png");
     all->tab[DIRT_BROKE] = init_struct_texture("img/dirt_broke.png");
     all->tab[GRASS] = init_struct_texture("img/grass.png");
     all->tab[SNOW] = init_struct_texture("img/snow.png");
