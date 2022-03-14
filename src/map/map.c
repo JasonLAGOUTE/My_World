@@ -32,6 +32,7 @@ map_t *create_struct_map(camera_t camera)
     map_pos->points3d = (sfVector3f){0, 0, 0};
     map_pos->map = create_map(MAP_X, MAP_Y);
     map_pos->texture_map = create_map(MAP_X, MAP_Y);
+    map_pos->water_map = create_map(MAP_X, MAP_Y);
     map_pos->cam = camera;
     map_pos->actual = 0;
     map_pos->is_editing = 1;
