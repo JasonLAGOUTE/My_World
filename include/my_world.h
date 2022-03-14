@@ -117,6 +117,7 @@ typedef struct all_buttons {
 typedef struct map {
     int **map;
     int **texture_map;
+    int **water_map;
     sfVector2f points;
     sfVector2f points2;
     sfVector2f points3;
@@ -197,5 +198,8 @@ button_t *crt_btn_t(char *filename, char *text, int x, int y);
 all_buttons_t *init_struct_buttons_rander(void);
 void button_rander(window_t *window, sfMouseButtonEvent coord, map_t *map);
 void draw_render(map_t *m, sfRenderWindow *w);
-
+sfColor water_get_left_color(map_t *map, int i, int j);
+sfColor water_get_right_color(map_t *map, int i, int j);
+void water_shuffle_map(map_t *map);
+void smooth_water_map(map_t *map);
 #endif
