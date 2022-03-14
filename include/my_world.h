@@ -33,6 +33,7 @@ enum paint {
     STONE,
     WATER1,
     WATER2,
+    WATER3,
     LAST
 };
 
@@ -202,4 +203,6 @@ sfColor water_get_left_color(map_t *map, int i, int j);
 sfColor water_get_right_color(map_t *map, int i, int j);
 void water_shuffle_map(map_t *map);
 void smooth_water_map(map_t *map);
+void draw_circle(sfRenderWindow *window, map_t *map);
+void draw_line(sfRenderWindow *window ,map_t *map);
 #endif

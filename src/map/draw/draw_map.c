@@ -51,28 +51,11 @@ static void draw_water(map_t *map, sfRenderWindow *window, int i, int j)
             colors_2 = water_get_left_color(map, i, j);
             sfRenderWindow_drawVertexArray(window, crt_triangle_r(&map->points,
                 &map->points4, &map->points3, colors_1),
-                    map->texture->tab[WATER1]->state);
+                    map->texture->tab[WATER3]->state);
             sfRenderWindow_drawVertexArray(window, crt_triangle_l(&map->points,
                 &map->points4, &map->points2, colors_2),
-                    map->texture->tab[WATER1]->state);
+                    map->texture->tab[WATER3]->state);
         }
-    }
-}
-
-static void condit(map_t *map, sfRenderWindow *window, int i, int j)
-{
-    condit_draw(map, window, i, j);
-    if (i + 1 < MAP_X) {
-        map->points3d = (sfVector3f){i + 1, j, map->map[i + 1][j]};
-        map->points2 = to2d(map->points3d, map);
-        sfRenderWindow_drawVertexArray(window,
-            create_line(&map->points, &map->points2), NULL);
-    }
-    if (j + 1 < MAP_Y) {
-        map->points3d = (sfVector3f){i, j + 1, map->map[i][j + 1]};
-        map->points2 = to2d(map->points3d, map);
-        sfRenderWindow_drawVertexArray(window,
-            create_line(&map->points, &map->points2), NULL);
     }
 }
 
@@ -82,10 +65,7 @@ void draw_map(map_t *map, sfRenderWindow *window)
         for (int j = 0; j < MAP_Y; j++) {
             map->points3d = (sfVector3f){i, j, map->map[i][j]};
             map->points = to2d(map->points3d, map);
-            condit(map, window, i, j);
-            sfCircleShape *circle = create_circle(map->points.x, map->points.y,
-                (float)sqrt(map->cam.radius));
-            sfRenderWindow_drawCircleShape(window, circle, NULL);
+            condit_draw(map, window, i, j);
             draw_water(map, window, i, j);
         }
     }

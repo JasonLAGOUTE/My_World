@@ -17,6 +17,8 @@ SRC =	src/main.c \
 		src/map/cube.c \
 		src/map/draw/barre_navig.c \
 		src/map/draw/paint.c \
+		src/map/draw/circle.c \
+		src/map/draw/line.c \
 		src/map/draw/draw_map.c \
 		src/map/draw/edit.c \
 		src/map/draw/rander.c \

@@ -23,5 +23,6 @@ all_textures_t *init_struct_all_textures()
     all->tab[WATER1] = init_struct_texture("img/water_1.png");
     all->tab[WATER2] = init_struct_texture("img/water_2.png");
     all->tab[MARS_DIRT] = init_struct_texture("img/mars_dirt.png");
+    all->tab[WATER3] = init_struct_texture("img/water_3.png");
     return all;
 }
