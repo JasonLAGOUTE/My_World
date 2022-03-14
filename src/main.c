@@ -14,7 +14,7 @@ static void gather(window_t *windo, font_map_t *font, menu_t *menu, map_t *map)
         display_menu(windo, menu);
     } else {
         sfRenderWindow_drawSprite(windo->wd, font->sprite, NULL);
-        draw_world(windo->wd, map);
+        draw_world(windo, map);
         sfRenderWindow_display(windo->wd);
     }
 }

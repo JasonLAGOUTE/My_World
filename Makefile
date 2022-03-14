@@ -19,6 +19,7 @@ SRC =	src/main.c \
 		src/map/draw/paint.c \
 		src/map/draw/circle.c \
 		src/map/draw/line.c \
+		src/map/draw/draw_water.c \
 		src/map/draw/draw_map.c \
 		src/map/draw/edit.c \
 		src/map/draw/rander.c \
@@ -38,6 +39,7 @@ SRC =	src/main.c \
 		src/texture/init_texture.c \
 		src/init_struct/all_texture.c \
 		src/init_struct/all_buttons.c \
+		src/init_struct/bool_render.c \
 		src/button/button.c \
 		src/button/rander.c \
 		src/button/back.c \
@@ -45,6 +47,7 @@ SRC =	src/main.c \
 		src/button/paint.c \
 		src/button/save.c \
 		src/button/texture.c \
+		src/button/render_tools.c \
 		src/button/text.c \
 		src/button/edit.c \
 		src/mod/angle.c \

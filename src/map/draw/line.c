@@ -24,7 +24,7 @@ static void condit(map_t *map, sfRenderWindow *window, int i, int j)
 }
 
 void draw_line(sfRenderWindow *window ,map_t *map)
-{   
+{
     for (int i = 0; i < MAP_X; i++) {
         for (int j = 0; j < MAP_Y; j++) {
             map->points3d = (sfVector3f){i, j, map->map[i][j]};

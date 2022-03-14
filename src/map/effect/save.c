@@ -18,5 +18,5 @@ void save_map(map_t *map)
             fwrite(&map->texture_map[i][j], sizeof(int), 1, output);
         }
     }
-    fclose(output);
+    fclose(output);;
 }

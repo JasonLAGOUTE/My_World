@@ -115,6 +115,14 @@ typedef struct all_buttons {
     button_t **tab;
 } all_buttons_t;
 
+typedef struct bool_render {
+    int line;
+    int point;
+    int texture;
+    int cube;
+    int light;
+} bool_render_t;
+
 typedef struct map {
     int **map;
     int **texture_map;
@@ -133,11 +141,12 @@ typedef struct map {
     all_buttons_t *btn_t;
     all_buttons_t *btn_r;
     all_buttons_t *btn_e;
+    bool_render_t *bool_r;
 } map_t;
 
 window_t *window_unit(void);
 sfVertexArray *create_line(sfVector2f *point1, sfVector2f *point2);
-void draw_world(sfRenderWindow *window, map_t *map);
+void draw_world(window_t *window, map_t *map);
 void third_part_cube(sfRenderWindow *window, map_t *map);
 void update_map(map_t *map);
 float degrees_to_radiant(int degrees);
@@ -205,4 +214,9 @@ void water_shuffle_map(map_t *map);
 void smooth_water_map(map_t *map);
 void draw_circle(sfRenderWindow *window, map_t *map);
 void draw_line(sfRenderWindow *window ,map_t *map);
+void button_rander_tool(window_t *window, sfMouseButtonEvent coord,
+    map_t *map);
+bool_render_t *init_struct_bool_render(void);
+void draw_water(map_t *map, sfRenderWindow *window, int i, int j);
+
 #endif

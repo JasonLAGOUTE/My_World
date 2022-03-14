@@ -16,4 +16,5 @@ void verif_box(window_t *window, sfMouseButtonEvent coord, map_t *map)
     button_texture(window, coord, map);
     button_edit(window, coord, map);
     button_rander(window, coord, map);
+    button_rander_tool(window, coord, map);
 }

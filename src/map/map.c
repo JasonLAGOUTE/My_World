@@ -25,8 +25,6 @@ map_t *create_struct_map(camera_t camera)
 {
     map_t *map_pos = malloc(sizeof(map_t));
 
-    if (map_pos == NULL)
-        return NULL;
     map_pos->points = (sfVector2f){0, 0};
     map_pos->points2 = (sfVector2f){0, 0};
     map_pos->points3d = (sfVector3f){0, 0, 0};
@@ -43,6 +41,7 @@ map_t *create_struct_map(camera_t camera)
     map_pos->btn = init_struct_buttons_navig();
     map_pos->btn_r = init_struct_buttons_rander();
     map_pos->btn_e = init_struct_buttons_edit();
+    map_pos->bool_r = init_struct_bool_render();
     return map_pos;
 }
 
