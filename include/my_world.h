@@ -136,6 +136,7 @@ typedef struct map {
 window_t *window_unit(void);
 sfVertexArray *create_line(sfVector2f *point1, sfVector2f *point2);
 void draw_world(sfRenderWindow *window, map_t *map);
+void third_part_cube(sfRenderWindow *window, map_t *map);
 void update_map(map_t *map);
 float degrees_to_radiant(int degrees);
 void even(sfEvent event, window_t *window, map_t *map);
