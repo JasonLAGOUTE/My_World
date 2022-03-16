@@ -42,6 +42,8 @@ static void condit_draw(map_t *map, sfRenderWindow *window, int i, int j)
 
 static void condit_2(map_t *map, sfRenderWindow *window, int i, int j)
 {
+    first_water_cube(window, map);
+    second_water_cube(window, map);
     if (map->bool_r->texture == 0)
         draw_water(map, window, i, j);
 }
