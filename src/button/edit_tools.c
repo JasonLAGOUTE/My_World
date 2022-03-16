@@ -26,9 +26,8 @@ static void condit(window_t *window, sfMouseButtonEvent coord,
         (coord.y >= 731 && coord.y <= 804)) && window->menu == false) {
         if (map->bool_barre == 2 && event.mouseButton.button == sfMouseLeft)
             map->cam.edit_strenght += 1;
-        if (map->bool_barre == 2 && event.mouseButton.button == sfMouseRight) {
+        if (map->bool_barre == 2 && event.mouseButton.button == sfMouseRight)
             map->cam.edit_strenght -= 1;
-        }
     }
 }
 
