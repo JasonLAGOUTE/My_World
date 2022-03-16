@@ -13,56 +13,15 @@
 #include <stdio.h>
 #include <time.h>
 
-#ifndef MY_WORLD_
-    #define MY_WORLD_
+#include "enum.h"
+
+#ifndef MY_WORLD_H
+    #define MY_WORLD_H
     #define MAP_X 20
     #define MAP_Y 20
     #define WIDTH 1920
     #define LENGTH 1080
     #define PI 3.14159265358979323846
-
-enum paint {
-    RED_SAND,
-    WHITE_SAND,
-    DIRT,
-    DIRT_BROKE,
-    GRASS,
-    MARS_DIRT,
-    SNOW,
-    STONE2,
-    STONE,
-    WATER1,
-    WATER2,
-    WATER3,
-    LAST
-};
-
-enum barre_navig {
-    MENU,
-    EDIT,
-    SAVE,
-    PAINT,
-    RENDER,
-    LAST_BARRE
-};
-
-enum edit {
-    RADIUS_EDIT,
-    SIZE_MAP,
-    RANDOM_GEN,
-    SIZE_RAND,
-    FORCE_EDIT,
-    LAST_EDIT
-};
-
-enum render {
-    DISP_LINE,
-    DISP_POINT,
-    DISP_TXT,
-    DISP_CUBE,
-    DISP_LIGHT,
-    LAST_RANDER
-};
 
 typedef struct button {
     sfTexture *texture;
