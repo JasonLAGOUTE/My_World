@@ -15,8 +15,8 @@
 
 #ifndef MY_WORLD_
     #define MY_WORLD_
-    #define MAP_X 10
-    #define MAP_Y 10
+    #define MAP_X 20
+    #define MAP_Y 20
     #define WIDTH 1920
     #define LENGTH 1080
     #define PI 3.14159265358979323846

@@ -15,7 +15,7 @@ static void condit(map_t *map, int i, int j)
     map->points2 = to2d(map->points3d, map);
     map->points3d = (sfVector3f){i + 1, j, map->water_map[i + 1][j]};
     map->points3 = to2d(map->points3d, map);
-    map->points3d = (sfVector3f){i + 1, j + 1, map->map[i + 1][j + 1]};
+    map->points3d = (sfVector3f){i + 1, j + 1, map->water_map[i + 1][j + 1]};
     map->points4 = to2d(map->points3d, map);
 }
 
