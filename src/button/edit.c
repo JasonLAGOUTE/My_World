@@ -13,7 +13,11 @@ void button_edit(window_t *window, sfMouseButtonEvent coord, map_t *map)
         (coord.y >= 18 && coord.y <= 91)) && window->menu == false) {
         if (map->bool_barre == 2) {
             map->bool_barre = 0;
-        } else if (map->bool_barre == 0)
+            sfRectangleShape_setFillColor(map->btn->tab[EDIT]->rec, sfWhite);
+        } else if (map->bool_barre == 0) {
             map->bool_barre = 2;
+            sfRectangleShape_setFillColor(map->btn->tab[EDIT]->rec,
+                (sfColor){150, 150, 150, 255});
+        }
     }
 }

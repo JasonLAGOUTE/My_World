@@ -14,9 +14,12 @@ void button_paint(window_t *window, sfMouseButtonEvent coord, map_t *map)
         if (map->bool_barre == 1) {
             map->is_editing = 1;
             map->bool_barre = 0;
+            sfRectangleShape_setFillColor(map->btn->tab[PAINT]->rec, sfWhite);
         } else if (map->bool_barre == 0) {
             map->bool_barre = 1;
             map->is_editing = 0;
+            sfRectangleShape_setFillColor(map->btn->tab[PAINT]->rec,
+                (sfColor){150, 150, 150, 255});
         }
     }
 }
