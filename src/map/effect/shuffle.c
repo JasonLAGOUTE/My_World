@@ -56,10 +56,8 @@ void shuffle_map(map_t *map)
     
     int value = 0;
     for (int i = 0; i < MAP_X; i++) {
-        for (int j = 0; j < MAP_Y; j++) {
+        for (int j = 0; j < MAP_Y; j++)
             map->map[i][j] = (int){perlin(i, j, 10) * 180};
-            printf("%f\n",perlin(i, j, 10) * 180);
-        }
     }
 }
 
