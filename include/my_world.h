@@ -196,5 +196,7 @@ void button_edit_tool(window_t *window, sfMouseButtonEvent coord,
     map_t *map, sfEvent event);
 bool_edit_t *init_struct_bool_edit(void);
 point_t *create_struct_point(void);
+void first_water_cube(sfRenderWindow *window, map_t *map);
+void second_water_cube(sfRenderWindow *window, map_t *map);
 
 #endif
