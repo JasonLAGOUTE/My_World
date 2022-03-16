@@ -9,12 +9,10 @@
 
 void reset_map(map_t *map)
 {
-    map->points = (sfVector2f){0, 0};
-    map->points2 = (sfVector2f){0, 0};
-    map->points3d = (sfVector3f){0, 0, 0};
+    map->point = create_struct_point();
     map->actual = 0;
     map->is_editing = 1;
-    map->points3 = (sfVector2f){0, 0};
+    map->point->points3 = (sfVector2f){0, 0};
     map->map = create_map(MAP_X, MAP_Y);
     map->water_map = create_map(MAP_X, MAP_Y);
     map->texture_map = create_map(MAP_X, MAP_Y);

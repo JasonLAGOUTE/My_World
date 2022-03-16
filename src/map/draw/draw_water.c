@@ -9,14 +9,15 @@
 
 static void condit(map_t *map, int i, int j)
 {
-    map->points3d = (sfVector3f){i, j, map->water_map[i][j]};
-    map->points = to2d(map->points3d, map);
-    map->points3d = (sfVector3f){i, j + 1, map->water_map[i][j + 1]};
-    map->points2 = to2d(map->points3d, map);
-    map->points3d = (sfVector3f){i + 1, j, map->water_map[i + 1][j]};
-    map->points3 = to2d(map->points3d, map);
-    map->points3d = (sfVector3f){i + 1, j + 1, map->water_map[i + 1][j + 1]};
-    map->points4 = to2d(map->points3d, map);
+    map->point->points3d = (sfVector3f){i, j, map->water_map[i][j]};
+    map->point->points = to2d(map->point->points3d, map);
+    map->point->points3d = (sfVector3f){i, j + 1, map->water_map[i][j + 1]};
+    map->point->points2 = to2d(map->point->points3d, map);
+    map->point->points3d = (sfVector3f){i + 1, j, map->water_map[i + 1][j]};
+    map->point->points3 = to2d(map->point->points3d, map);
+    map->point->points3d = (sfVector3f){i + 1, j + 1,
+        map->water_map[i + 1][j + 1]};
+    map->point->points4 = to2d(map->point->points3d, map);
 }
 
 void draw_water(map_t *map, sfRenderWindow *window, int i, int j)
@@ -31,12 +32,12 @@ void draw_water(map_t *map, sfRenderWindow *window, int i, int j)
             condit(map, i, j);
             colors_1 = water_get_right_color(map, i, j);
             colors_2 = water_get_left_color(map, i, j);
-            sfRenderWindow_drawVertexArray(window, crt_triangle_r(&map->points,
-                &map->points4, &map->points3, colors_1),
-                    map->texture->tab[WATER3]->state);
-            sfRenderWindow_drawVertexArray(window, crt_triangle_l(&map->points,
-                &map->points4, &map->points2, colors_2),
-                    map->texture->tab[WATER3]->state);
+            sfRenderWindow_drawVertexArray(window,
+            crt_triangle_r(&map->point->points, &map->point->points4,
+            &map->point->points3, colors_1), map->texture->tab[WATER3]->state);
+            sfRenderWindow_drawVertexArray(window,
+            crt_triangle_l(&map->point->points, &map->point->points4,
+            &map->point->points2, colors_2), map->texture->tab[WATER3]->state);
         }
     }
 }

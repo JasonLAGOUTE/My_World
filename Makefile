@@ -34,6 +34,7 @@ SRC =	src/main.c \
 		src/init_struct/map.c \
 		src/init_struct/menu.c \
 		src/init_struct/cam.c \
+		src/init_struct/point.c \
 		src/menu/boxes.c \
 		src/texture/set_texture.c \
 		src/texture/init_texture.c \

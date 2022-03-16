@@ -131,15 +131,19 @@ typedef struct bool_edit {
     int edit_strenght;
 } bool_edit_t;
 
-typedef struct map {
-    int **map;
-    int **texture_map;
-    int **water_map;
+typedef struct point {
     sfVector2f points;
     sfVector2f points2;
     sfVector2f points3;
     sfVector2f points4;
     sfVector3f points3d;
+} point_t;
+
+typedef struct map {
+    int **map;
+    int **texture_map;
+    int **water_map;
+    point_t *point;
     camera_t cam;
     int actual;
     int is_editing;
@@ -231,5 +235,6 @@ void draw_water(map_t *map, sfRenderWindow *window, int i, int j);
 void button_edit_tool(window_t *window, sfMouseButtonEvent coord,
     map_t *map, sfEvent event);
 bool_edit_t *init_struct_bool_edit(void);
+point_t *create_struct_point(void);
 
 #endif
