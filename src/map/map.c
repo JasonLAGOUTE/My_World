@@ -42,6 +42,7 @@ map_t *create_struct_map(camera_t camera)
     map_pos->btn_r = init_struct_buttons_rander();
     map_pos->btn_e = init_struct_buttons_edit();
     map_pos->bool_r = init_struct_bool_render();
+    map_pos->bool_e = init_struct_bool_edit();
     return map_pos;
 }
 

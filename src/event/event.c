@@ -22,7 +22,7 @@ void even(sfEvent event, window_t *windo, map_t *map)
             edit_map(map, event);
         }
         if (event.mouseButton.button == sfMouseLeft)
-            verif_box(windo, event.mouseButton, map);
+            verif_box(event, windo, event.mouseButton, map);
     }
 }
 

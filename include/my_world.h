@@ -123,6 +123,14 @@ typedef struct bool_render {
     int light;
 } bool_render_t;
 
+typedef struct bool_edit {
+    int radius;
+    int size;
+    int ran_gen;
+    int water_height;
+    int edit_strenght;
+} bool_edit_t;
+
 typedef struct map {
     int **map;
     int **texture_map;
@@ -142,6 +150,7 @@ typedef struct map {
     all_buttons_t *btn_r;
     all_buttons_t *btn_e;
     bool_render_t *bool_r;
+    bool_edit_t *bool_e;
 } map_t;
 
 window_t *window_unit(void);
@@ -156,7 +165,8 @@ sfVector2f to2d(sfVector3f p, map_t *map);
 map_t *create_struct_map(camera_t camera);
 framebuffer_t *framebuffer_create(size_t width, size_t height);
 int display_menu(window_t *window, menu_t *menu);
-void verif_box(window_t *window, sfMouseButtonEvent coord, map_t *map);
+void verif_box(sfEvent event, window_t *window,
+    sfMouseButtonEvent coord, map_t *map);
 font_map_t *init_struct_map(void);
 menu_t *init_struct_menu(void);
 void edit_map(map_t *map, sfEvent event);
@@ -218,5 +228,8 @@ void button_rander_tool(window_t *window, sfMouseButtonEvent coord,
     map_t *map);
 bool_render_t *init_struct_bool_render(void);
 void draw_water(map_t *map, sfRenderWindow *window, int i, int j);
+void button_edit_tool(window_t *window, sfMouseButtonEvent coord,
+    map_t *map, sfEvent event);
+bool_edit_t *init_struct_bool_edit(void);
 
 #endif
