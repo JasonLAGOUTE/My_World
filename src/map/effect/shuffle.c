@@ -24,28 +24,41 @@ const unsigned int perm[] =
     93,222,114,67,29,24,72,243,141,128,195,78,66,215,61,
     156,180};
 
+static void condit(float x, float y, perlin_t *perlin)
+{
+    float g[][2] = {{1, 1}, {-1, 1}, {1, -1},
+        {-1, -1}, {1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
+    perlin->gi0 = perm[(int)(x) + perm[(int)(y)]] % 8;
+    perlin->gi1 = perm[(int)(x) + 1 + perm[(int)(y)]] % 8;
+    perlin->gi2 = perm[(int)(x) + perm[(int)(y) + 1]] % 8;
+    perlin->gi3 = perm[(int)(x) + 1 + perm[(int)(y) + 1]] % 8;
+    perlin->s = g[perlin->gi0][0] * (x - (int)(x)) +
+        g[perlin->gi0][1] * (y - (int)(y));
+    perlin->t = g[perlin->gi1][0] * (x - ((int)(x) + 1))
+        + g[perlin->gi1][1] * (y - (int)(y));
+    perlin->u = g[perlin->gi2][0] * (x - (int)(x))
+        + g[perlin->gi2][1] * (y - ((int)(y) + 1));
+    perlin->v = g[perlin->gi3][0] * (x - ((int)(x) + 1))
+        + g[perlin->gi3][1] * (y - ((int)(y) + 1));
+    perlin->tmp = x - (int)(x);
+}
+
 float perlin(float x, float y, float res)
 {
-    int gi0,gi1,gi2,gi3;
-    float tmp,s,t,u,v,Cx,Cy,Li1,Li2;
-    float g[][2] = {{1, 1},{-1,1},{1,-1},{-1,-1},{1,0},{-1,0},{0,1},{0,-1}};
+    perlin_t *perlin = init_struct_perlin();
+
     x /= res;
     y /= res;
-    gi0 = perm[(int)(x) + perm[(int)(y)]] % 8;
-    gi1 = perm[(int)(x) + 1 + perm[(int)(y)]] % 8;
-    gi2 = perm[(int)(x) + perm[(int)(y) + 1]] % 8;
-    gi3 = perm[(int)(x) + 1 + perm[(int)(y) + 1]] % 8;
-    s = g[gi0][0]*(x-(int)(x)) + g[gi0][1]*(y-(int)(y));
-    t = g[gi1][0]*(x-((int)(x)+1)) + g[gi1][1]*(y-(int)(y));
-    u = g[gi2][0]*(x-(int)(x)) + g[gi2][1]*(y-((int)(y)+1));
-    v = g[gi3][0]*(x-((int)(x)+1))+ g[gi3][1]*(y-((int)(y)+1));
-    tmp = x-(int)(x);
-    Cx = 3 * tmp * tmp - 2 * tmp * tmp * tmp;
-    Li1 = s + Cx*(t-s);
-    Li2 = u + Cx*(v-u);
-    tmp = y - (int)(y);
-    Cy = 3 * tmp * tmp - 2 * tmp * tmp * tmp;
-    return Li1 + Cy*(Li2-Li1);
+    condit(x, y, perlin);
+    perlin->Cx = 3 * perlin->tmp * perlin->tmp - 2 * perlin->tmp *
+        perlin->tmp * perlin->tmp;
+    perlin->Li1 = perlin->s + perlin->Cx * (perlin->t - perlin->s);
+    perlin->Li2 = perlin->u + perlin->Cx * (perlin->v - perlin->u);
+    perlin->tmp = y - (int)(y);
+    perlin->Cy = 3 * perlin->tmp * perlin->tmp - 2 * perlin->tmp *
+        perlin->tmp * perlin->tmp;
+    return perlin->Li1 + perlin->Cy * (perlin->Li2 - perlin->Li1);
 }
 
 void shuffle_map(map_t *map)

@@ -24,6 +24,22 @@
     #define LENGTH 1080
     #define PI 3.14159265358979323846
 
+typedef struct perlin {
+    float tmp;
+    float s;
+    float t;
+    float u;
+    float v;
+    float Cx;
+    float Cy;
+    float Li1;
+    float Li2;
+    int gi0;
+    int gi1;
+    int gi2;
+    int gi3;
+} perlin_t;
+
 typedef struct button {
     sfTexture *texture;
     sfRectangleShape *rec;
@@ -210,5 +226,6 @@ void hover_glace_1(window_t *window, sfMouseMoveEvent co, map_t *map);
 void hover_glace_2(window_t *window, sfMouseMoveEvent co, map_t *map);
 void hover_grass(window_t *window, sfMouseMoveEvent co, map_t *map);
 void hover_mars_dirt(window_t *window, sfMouseMoveEvent co, map_t *map);
+perlin_t *init_struct_perlin(void);
 
 #endif

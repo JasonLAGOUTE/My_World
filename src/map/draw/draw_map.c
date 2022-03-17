@@ -17,7 +17,7 @@ static void condit(map_t *map, int i, int j)
     map->point->points4 = to2d(map->point->points3d, map);
 }
 
-static void condit_draw(map_t *map, sfRenderWindow *window, int i, int j)
+static void condit_draw(map_t *map, sfRenderWindow *w, int i, int j)
 {
     sfColor colors_1 = sfWhite;
     sfColor colors_2 = sfWhite;
@@ -31,10 +31,10 @@ static void condit_draw(map_t *map, sfRenderWindow *window, int i, int j)
             colors_1 = get_right_color(map, i, j);
             colors_2 = get_left_color(map, i, j);
         }
-        sfRenderWindow_drawVertexArray(window, crt_triangle_r(&map->point->points,
+        sfRenderWindow_drawVertexArray(w, crt_triangle_r(&map->point->points,
             &map->point->points4, &map->point->points3, colors_1),
                 map->texture->tab[map->texture_map[i][j]]->state);
-        sfRenderWindow_drawVertexArray(window, crt_triangle_l(&map->point->points,
+        sfRenderWindow_drawVertexArray(w, crt_triangle_l(&map->point->points,
             &map->point->points4, &map->point->points2, colors_2),
                 map->texture->tab[map->texture_map[i][j]]->state);
     }

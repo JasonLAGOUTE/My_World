@@ -35,6 +35,7 @@ SRC =	src/main.c \
 		src/init_struct/menu.c \
 		src/init_struct/cam.c \
 		src/init_struct/point.c \
+		src/init_struct/perlin.c \
 		src/menu/boxes.c \
 		src/texture/set_texture.c \
 		src/texture/init_texture.c \
@@ -71,7 +72,8 @@ SRC =	src/main.c \
 		src/mod/save.c \
 		src/mod/shuffle.c \
 		src/mod/smooth.c \
-		src/mod/zoom.c
+		src/mod/zoom.c \
+		src/map/water.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -79,11 +81,13 @@ NAME = my_world
 
 CFLAGS += -W -Wall -Wextra -I include -I lib/my/include
 
+FLAG_CSFML += -lcsfml-window -lcsfml-system -lcsfml-graphics
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	make -C lib/my
-	gcc -o $(NAME) $(OBJ) -Llib/my -lmy -lcsfml-window -lcsfml-system -lcsfml-graphics -lm
+	gcc -o $(NAME) $(OBJ) -Llib/my -lmy $(FLAG_CSFML) -lm
 
 clean:
 	rm -f $(OBJ)

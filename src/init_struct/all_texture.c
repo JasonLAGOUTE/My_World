@@ -7,7 +7,7 @@
 
 #include "my_world.h"
 
-all_textures_t *init_struct_all_textures()
+all_textures_t *init_struct_all_textures(void)
 {
     all_textures_t *all = malloc(sizeof(all_textures_t));
 
