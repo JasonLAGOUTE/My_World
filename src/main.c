@@ -35,6 +35,7 @@ int main(void)
     while (sfRenderWindow_isOpen(window->wd)) {
         while (sfRenderWindow_pollEvent(window->wd, &event))
             even(event, window, map);
+        hover_texture(window, event.mouseMove, map);
         gather(window, font_map, menu, map);
     }
     sfRenderWindow_destroy(window->wd);

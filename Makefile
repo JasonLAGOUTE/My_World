@@ -52,6 +52,18 @@ SRC =	src/main.c \
 		src/button/edit_tools.c \
 		src/button/text.c \
 		src/button/edit.c \
+		src/button/hover/dirt_broke.c \
+		src/button/hover/dirt.c \
+		src/button/hover/gather.c \
+		src/button/hover/glace_1.c \
+		src/button/hover/glace_2.c \
+		src/button/hover/grass.c \
+		src/button/hover/mars_dirt.c \
+		src/button/hover/red_sand.c \
+		src/button/hover/snow.c \
+		src/button/hover/stone_1.c \
+		src/button/hover/stone_2.c \
+		src/button/hover/white_sand.c \
 		src/mod/angle.c \
 		src/mod/close.c \
 		src/mod/offset.c \
