@@ -5,7 +5,9 @@
 ** main
 */
 
-#include "my_world.h"
+#include <stdlib.h>
+#include <stdio.h>
+// #include "my_world.h"
 
 static int for_random(FILE *file)
 {

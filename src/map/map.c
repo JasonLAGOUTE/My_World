@@ -33,6 +33,7 @@ map_t *create_struct_map(camera_t camera)
     map->actual = 0;
     map->is_editing = 1;
     map->bool_barre = 0;
+    map->actual_time = sfClock_create();
     map->texture = init_struct_all_textures();
     map->btn_t = init_struct_all_buttons();
     map->btn = init_struct_buttons_navig();

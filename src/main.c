@@ -6,6 +6,8 @@
 */
 
 #include "my_world.h"
+#include <SFML/System/Time.h>
+
 
 static void gather(window_t *windo, font_map_t *font, menu_t *menu, map_t *map)
 {
