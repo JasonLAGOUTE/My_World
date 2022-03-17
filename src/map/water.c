@@ -59,7 +59,7 @@ void second_water_cube(sfRenderWindow *window, map_t *map)
         [i]};
         map->point->points3 = to2d(map->point->points3d, map);
         map->point->points3d = (sfVector3f){MAP_X - 1, i + 1,
-        map->map[MAP_X - 1][i - 1]};
+        map->map[MAP_X - 1][i + 1]};
         map->point->points4 = to2d(map->point->points3d, map);
         condit2(window, map);
     }
