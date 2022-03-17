@@ -46,6 +46,7 @@ typedef struct button {
     sfText *text;
     sfVector2f coord;
     sfVector2f size;
+    sfCursor *cursor;
 } button_t;
 
 typedef struct window {
@@ -215,17 +216,20 @@ point_t *create_struct_point(void);
 void hover_texture(window_t *window, sfMouseMoveEvent co, map_t *map);
 void first_water_cube(sfRenderWindow *window, map_t *map);
 void second_water_cube(sfRenderWindow *window, map_t *map);
-void hover_red_sand(window_t *window, sfMouseMoveEvent co, map_t *map);
-void hover_white_sand(window_t *window, sfMouseMoveEvent co, map_t *map);
-void hover_snow(window_t *window, sfMouseMoveEvent co, map_t *map);
-void hover_dirt(window_t *window, sfMouseMoveEvent co, map_t *map);
-void hover_dirt_broke(window_t *window, sfMouseMoveEvent co, map_t *map);
-void hover_stone_1(window_t *window, sfMouseMoveEvent co, map_t *map);
-void hover_stone_2(window_t *window, sfMouseMoveEvent co, map_t *map);
-void hover_glace_1(window_t *window, sfMouseMoveEvent co, map_t *map);
-void hover_glace_2(window_t *window, sfMouseMoveEvent co, map_t *map);
-void hover_grass(window_t *window, sfMouseMoveEvent co, map_t *map);
-void hover_mars_dirt(window_t *window, sfMouseMoveEvent co, map_t *map);
+void hover_red_sand(window_t *window, sfMouseMoveEvent co, map_t *map, int nb);
+void hover_white_sand(window_t *window, sfMouseMoveEvent co,
+    map_t *map, int nb);
+void hover_snow(window_t *window, sfMouseMoveEvent co, map_t *map, int nb);
+void hover_dirt(window_t *window, sfMouseMoveEvent co, map_t *map, int nb);
+void hover_dirt_broke(window_t *window, sfMouseMoveEvent co,
+    map_t *map, int nb);
+void hover_stone_1(window_t *window, sfMouseMoveEvent co, map_t *map, int nb);
+void hover_stone_2(window_t *window, sfMouseMoveEvent co, map_t *map, int nb);
+void hover_glace_1(window_t *window, sfMouseMoveEvent co, map_t *map, int nb);
+void hover_glace_2(window_t *window, sfMouseMoveEvent co, map_t *map, int nb);
+void hover_grass(window_t *window, sfMouseMoveEvent co, map_t *map, int nb);
+void hover_mars_dirt(window_t *window, sfMouseMoveEvent co,
+    map_t *map, int nb);
 perlin_t *init_struct_perlin(void);
 int random_manuel(void);
 
