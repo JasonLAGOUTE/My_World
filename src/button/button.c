@@ -41,6 +41,5 @@ button_t *crt_btn_t(char *filename, char *text, int x, int y)
     button->texture = sfTexture_createFromFile(filename, NULL);
     button->rec = create_rect(button->coord, button->size, button->texture);
     button->text = create_text(text, char_size, button->coord, button->size);
-    button->cursor = sfCursor_createFromSystem(sfCursorHand);
     return button;
 }

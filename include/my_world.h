@@ -46,7 +46,6 @@ typedef struct button {
     sfText *text;
     sfVector2f coord;
     sfVector2f size;
-    sfCursor *cursor;
 } button_t;
 
 typedef struct window {

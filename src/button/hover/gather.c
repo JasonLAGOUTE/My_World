@@ -9,6 +9,8 @@
 
 void hover_texture(window_t *window, sfMouseMoveEvent co, map_t *map)
 {
+    sfCursor *cursor;
+
     if (map->bool_barre == 1) {
         hover_red_sand(window, co, map);
         hover_dirt(window, co, map);
@@ -21,5 +23,10 @@ void hover_texture(window_t *window, sfMouseMoveEvent co, map_t *map)
         hover_stone_1(window, co, map);
         hover_stone_2(window, co, map);
         hover_white_sand(window, co, map);
+        cursor = sfCursor_createFromSystem(sfCursorHand);
+        sfRenderWindow_setMouseCursor(window->wd, cursor);
+    } else {
+        cursor = sfCursor_createFromSystem(sfCursorArrow);
+        sfRenderWindow_setMouseCursor(window->wd, cursor);
     }
 }
