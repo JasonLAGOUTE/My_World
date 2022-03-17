@@ -63,9 +63,11 @@ float perlin(float x, float y, float res)
 
 void shuffle_map(map_t *map)
 {
+    int random = rand() % 1000;
+
     for (int i = 0; i < MAP_X; i++) {
         for (int j = 0; j < MAP_Y; j++)
-            map->map[i][j] = (int){perlin(i, j, 10) * 180};
+            map->map[i][j] = (int){perlin(i + random, j, 10) * 80};
     }
 }
 
