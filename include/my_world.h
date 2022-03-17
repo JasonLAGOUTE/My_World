@@ -118,6 +118,8 @@ typedef struct point {
 typedef struct map {
     int **map;
     int **texture_map;
+    sfClock *last_time;
+    sfClock *actual_time;
     int **water_map;
     point_t *point;
     camera_t cam;

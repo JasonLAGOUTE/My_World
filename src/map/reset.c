@@ -17,6 +17,7 @@ void reset_map(map_t *map)
     map->water_map = create_map(MAP_X, MAP_Y);
     map->texture_map = create_map(MAP_X, MAP_Y);
     map->texture = init_struct_all_textures();
+    map->actual_time = sfClock_create();
     map->btn_t = init_struct_all_buttons();
     map->btn = init_struct_buttons_navig();
     map->cam = (camera_t) {64, (sfVector2i) {WIDTH / 2, LENGTH / 4},

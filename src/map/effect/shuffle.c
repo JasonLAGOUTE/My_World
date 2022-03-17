@@ -71,9 +71,14 @@ void shuffle_map(map_t *map)
 
 void water_shuffle_map(map_t *map)
 {
-    for (int i = 0; i < MAP_X; i++) {
-        for (int j = 0; j < MAP_Y; j++)
-            map->water_map[i][j] = rand() % 5;
+    sfTime time = sfClock_getElapsedTime(map->actual_time);
+
+    if (map->last_time != (int)sfTime_asSeconds(time)) {
+        for (int i = 0; i < MAP_X; i++) {
+            for (int j = 0; j < MAP_Y; j++)
+                map->water_map[i][j] = rand() % 5;
+        }
+        map->last_time = (int)sfTime_asSeconds(time);
     }
-    smooth_water_map(map);
+    //smooth_water_map(map);
 }
