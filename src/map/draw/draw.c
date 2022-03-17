@@ -9,7 +9,6 @@
 
 void draw_world(window_t *window, map_t *map)
 {
-    
     if (map->bool_r->cube == 0)
         third_part_cube(window->wd, map);
     draw_map(map, window->wd);

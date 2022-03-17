@@ -32,8 +32,6 @@ void first_water_cube(sfRenderWindow *window, map_t *map)
         map->point->points3d = (sfVector3f){i + 1, MAP_X - 1, map->map[i + 1]
         [MAP_X - 1]};
         map->point->points4 = to2d(map->point->points3d, map);
-        map->point->points3.y += MAP_X * 3 / 4 * map->cam.zoom;
-        map->point->points4.y += MAP_X * 3 / 4 * map->cam.zoom;
         condit(window, map);
     }
 }
@@ -63,8 +61,6 @@ void second_water_cube(sfRenderWindow *window, map_t *map)
         map->point->points3d = (sfVector3f){MAP_X - 1, i + 1,
         map->map[MAP_X - 1][i - 1]};
         map->point->points4 = to2d(map->point->points3d, map);
-        map->point->points3.y += MAP_X * 3 / 4 * map->cam.zoom;
-        map->point->points4.y += MAP_X * 3 / 4 * map->cam.zoom;
         condit2(window, map);
     }
 }
