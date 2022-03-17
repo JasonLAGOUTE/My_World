@@ -14,6 +14,6 @@ void hover_mars_dirt(window_t *window, sfMouseMoveEvent co, map_t *map)
         sfRectangleShape_setFillColor(map->btn_t->tab[MARS_DIRT]->rec,
             (sfColor){255, 255, 255, 120});
     } else
-        sfRectangleShape_setFillColor(map->btn_t->ta
+        sfRectangleShape_setFillColor(map->btn_t->tab
             [MARS_DIRT]->rec, sfWhite);
 }

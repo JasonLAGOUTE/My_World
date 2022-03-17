@@ -227,5 +227,6 @@ void hover_glace_2(window_t *window, sfMouseMoveEvent co, map_t *map);
 void hover_grass(window_t *window, sfMouseMoveEvent co, map_t *map);
 void hover_mars_dirt(window_t *window, sfMouseMoveEvent co, map_t *map);
 perlin_t *init_struct_perlin(void);
+int random_manuel(void);
 
 #endif
