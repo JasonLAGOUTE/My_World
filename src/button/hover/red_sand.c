@@ -13,6 +13,15 @@ void hover_red_sand(window_t *window, sfMouseMoveEvent co, map_t *map)
         && (co.y >= 50 && co.y <= 110)) && window->menu == false) {
         sfRectangleShape_setFillColor(map->btn_t->tab[RED_SAND]->rec,
             (sfColor){255, 255, 255, 120});
-    } else
+        map->btn_t->tab[RED_SAND]->cursor =
+            sfCursor_createFromSystem(sfCursorHand);
+        sfRenderWindow_setMouseCursor(window->wd,
+            map->btn_t->tab[RED_SAND]->cursor);
+    } else {
         sfRectangleShape_setFillColor(map->btn_t->tab[RED_SAND]->rec, sfWhite);
+        map->btn_t->tab[RED_SAND]->cursor =
+            sfCursor_createFromSystem(sfCursorArrow);
+        sfRenderWindow_setMouseCursor(window->wd,
+            map->btn_t->tab[RED_SAND]->cursor);
+    }
 }
