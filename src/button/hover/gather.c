@@ -23,7 +23,7 @@ void hover_texture(window_t *window, sfMouseMoveEvent co, map_t *map)
         hover_stone_1(window, co, map);
         hover_stone_2(window, co, map);
         hover_white_sand(window, co, map);
-        cursor = sfCursor_createFromSystem(sfCursorHand);
+        cursor = sfCursor_createFromSystem(sfCursorCross);
         sfRenderWindow_setMouseCursor(window->wd, cursor);
     } else {
         cursor = sfCursor_createFromSystem(sfCursorArrow);
