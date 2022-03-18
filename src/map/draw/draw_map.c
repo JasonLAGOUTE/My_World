@@ -20,7 +20,7 @@ static void condit(map_t *map, int i, int j)
 static void condit_draw(map_t *map, sfRenderWindow *w, int i, int j)
 {
     sfColor colors_1 = sfWhite;
-    sfColor colors_2 = sfWhite; 
+    sfColor colors_2 = sfWhite;
     sfVertexArray *triangle_1;
     sfVertexArray *triangle_2;
     int texture;

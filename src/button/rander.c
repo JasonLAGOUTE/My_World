@@ -20,5 +20,6 @@ void button_rander(window_t *window, sfMouseButtonEvent coord, map_t *map)
             sfRectangleShape_setFillColor(map->btn->tab[RENDER]->rec,
                 (sfColor){150, 150, 150, 255});
         }
+        play_sound(map);
     }
 }

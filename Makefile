@@ -75,7 +75,8 @@ SRC =	src/main.c \
 		src/mod/smooth.c \
 		src/mod/zoom.c \
 		src/map/water.c \
-		src/music/music.c
+		src/music/music.c \
+		src/music/sound.c
 
 OBJ = $(SRC:.c=.o)
 

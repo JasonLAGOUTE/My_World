@@ -44,5 +44,6 @@ map_t *create_struct_map(camera_t camera)
     map->bool_r = init_struct_bool_render();
     map->bool_e = init_struct_bool_edit();
     map->music = init_music();
+    map->sound = init_sound();
     return map;
 }

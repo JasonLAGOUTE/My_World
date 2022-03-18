@@ -39,5 +39,5 @@ void keyboard_control(sfEvent event, map_t *map, window_t *window)
         mod_shuffle(event, map);
         mod_smooth(event, map);
     }
-    mod_close(event, window, map);
+    mod_close(event, window);
 }

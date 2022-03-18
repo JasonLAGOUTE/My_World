@@ -14,6 +14,7 @@ static void condit(window_t *window, sfMouseButtonEvent co, map_t *map, int i)
         && window->menu == false && window->settings == false) {
         map->actual = i;
         map->is_editing = 0;
+        play_sound(map);
     }
 }
 

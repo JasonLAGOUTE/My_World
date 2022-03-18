@@ -26,5 +26,6 @@ void button_edit(window_t *window, sfMouseButtonEvent coord, map_t *map)
             cursor = sfCursor_createFromSystem(sfCursorArrow);
             sfRenderWindow_setMouseCursor(window->wd, cursor);
         }
+        play_sound(map);
     }
 }

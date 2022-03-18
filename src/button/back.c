@@ -14,5 +14,6 @@ void button_back(window_t *window, sfMouseButtonEvent coord, map_t *map)
         && window->settings == false) {
         window->menu = true;
         reset_map(map);
+        play_sound(map);
     }
 }

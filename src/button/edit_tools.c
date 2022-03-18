@@ -13,10 +13,11 @@ static void condit2(window_t *window, sfMouseButtonEvent coord,
     if (((coord.x >= 1740 && coord.x <= 1900) &&
         (coord.y >= 731 && coord.y <= 804)) && window->menu == false
         && window->settings == false) {
+        play_sound(map);
         if (map->bool_barre == 2 && event.mouseButton.button == sfMouseLeft)
-            map->cam.edit_strenght += 1;
+            map->cam.edit_strenght += 3;
         if (map->bool_barre == 2 && event.mouseButton.button == sfMouseRight)
-            map->cam.edit_strenght -= 1;
+            map->cam.edit_strenght -= 3;
     }
 }
 
@@ -28,15 +29,19 @@ static void condit(window_t *window, sfMouseButtonEvent coord,
         && window->settings == false) {
         if (map->bool_barre == 2 && map->bool_e->ran_gen == 1)
             map->bool_e->ran_gen = 0;
-        else if (map->bool_barre == 2 && map->bool_e->ran_gen == 0)
+        else if (map->bool_barre == 2 && map->bool_e->ran_gen == 0) {
             map->bool_e->ran_gen = 1;
+        }
+        play_sound(map);
     } if (((coord.x >= 1740 && coord.x <= 1900) &&
         (coord.y >= 575 && coord.y <= 648)) && window->menu == false
         && window->settings == false) {
         if (map->bool_barre == 2 && map->bool_e->water_height == 1)
             map->bool_e->water_height = 0;
-        else if (map->bool_barre == 2 && map->bool_e->water_height == 0)
+        else if (map->bool_barre == 2 && map->bool_e->water_height == 0) {
             map->bool_e->water_height = 1;
+        }
+        play_sound(map);
     }
     condit2(window, coord, map, event);
 }
@@ -49,15 +54,19 @@ void button_edit_tool(window_t *window, sfMouseButtonEvent coord,
         && window->settings == false) {
         if (map->bool_barre == 2 && map->bool_e->radius == 0)
             map->bool_e->radius = 1;
-        else if (map->bool_barre == 2 && map->bool_e->radius == 1)
+        else if (map->bool_barre == 2 && map->bool_e->radius == 1) {
             map->bool_e->radius = 0;
+        }
+        play_sound(map);
     } if (((coord.x >= 1740 && coord.x <= 1900) &&
         (coord.y >= 263 && coord.y <= 336)) && window->menu == false
         && window->settings == false) {
         if (map->bool_barre == 2 && map->bool_e->size == 0)
             map->bool_e->size = 1;
-        else if (map->bool_barre == 2 && map->bool_e->size == 1)
+        else if (map->bool_barre == 2 && map->bool_e->size == 1) {
             map->bool_e->size = 0;
+        }
+        play_sound(map);
     }
     condit(window, coord, map, event);
 }

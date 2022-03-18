@@ -20,6 +20,7 @@ static void disp_light(window_t *window, sfMouseButtonEvent coord, map_t *map)
             sfRectangleShape_setFillColor(map->btn_r->tab[DISP_LIGHT]->rec,
                 (sfColor){0, 255, 40, 255});
         }
+        play_sound(map);
     }
 }
 
@@ -36,6 +37,7 @@ static void disp_cube(window_t *window, sfMouseButtonEvent coord, map_t *map)
             sfRectangleShape_setFillColor(map->btn_r->tab[DISP_CUBE]->rec,
                 (sfColor){0, 255, 40, 255});
         }
+        play_sound(map);
     }
 }
 
@@ -53,6 +55,7 @@ static void disp_light_cube_texture(window_t *window,
             sfRectangleShape_setFillColor(map->btn_r->tab[DISP_TXT]->rec,
                 (sfColor){0, 255, 40, 255});
         }
+        play_sound(map);
     }
     disp_cube(window, coord, map);
     disp_light(window, coord, map);
@@ -71,6 +74,7 @@ static void disp_point(window_t *window, sfMouseButtonEvent coord, map_t *map)
             sfRectangleShape_setFillColor(map->btn_r->tab[DISP_POINT]->rec,
                 (sfColor){0, 255, 40, 255});
         }
+        play_sound(map);
     }
 }
 
@@ -88,6 +92,7 @@ void button_rander_tool(window_t *window, sfMouseButtonEvent coord, map_t *map)
             sfRectangleShape_setFillColor(map->btn_r->tab[DISP_LINE]->rec,
                 (sfColor){0, 255, 40, 255});
         }
+        play_sound(map);
     }
     disp_point(window, coord, map);
     disp_light_cube_texture(window, coord, map);

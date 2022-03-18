@@ -130,6 +130,12 @@ typedef struct {
 } music_t;
 
 typedef struct {
+    sfSoundBuffer *buffer;
+    sfSound *sound;
+    bool on;
+} sound_t;
+
+typedef struct {
     int **map;
     int **texture_map;
     int last_time;
@@ -148,6 +154,7 @@ typedef struct {
     all_buttons_t *btn_e;
     bool_render_t *bool_r;
     music_t *music;
+    sound_t *sound;
     bool_edit_t *bool_e;
 } map_t;
 
@@ -203,7 +210,7 @@ void mod_zoom(sfEvent event,  map_t *map);
 void mod_radius(sfEvent event,  map_t *map);
 void mod_save(sfEvent event,  map_t *map);
 void mod_smooth(sfEvent event, map_t *map);
-void mod_close(sfEvent event, window_t *window, map_t *map);
+void mod_close(sfEvent event, window_t *window);
 void mod_shuffle(sfEvent event, map_t *map);
 void button_save(window_t *window, sfMouseButtonEvent coord, map_t *map);
 void button_texture(window_t *window, sfMouseButtonEvent coord, map_t *map);
@@ -252,5 +259,7 @@ perlin_t *init_struct_perlin(void);
 int random_manuel(void);
 int button_in_setting(window_t *window, sfMouseButtonEvent coord, map_t *map);
 music_t *init_music(void);
+void play_sound(map_t *map);
+sound_t *init_sound(void);
 
 #endif
