@@ -85,6 +85,6 @@ void water_shuffle_map(map_t *map)
         map->counter += 1;
         map->last_time = (int)sfTime_asMilliseconds(time);
     }
-    printf("%d : %d\n", (int)sfTime_asMilliseconds(time),map->last_time);
+    // printf("%d : %d\n", (int)sfTime_asMilliseconds(time),map->last_time);
     //smooth_water_map(map);
 }

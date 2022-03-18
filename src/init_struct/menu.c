@@ -22,6 +22,6 @@ settings_t *init_struct_settings(void)
     settings_t *settings = malloc(sizeof(settings_t));
 
     settings->sprite = sfSprite_create();
-    settings->texture = sfTexture_createFromFile("img/background.png", NULL);
+    settings->texture = sfTexture_createFromFile("img/settings.jpg", NULL);
     return settings;
 }

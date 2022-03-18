@@ -11,7 +11,7 @@ static void condit(window_t *window, sfMouseButtonEvent co, map_t *map, int i)
 {
     if (((co.x >= 1740 && co.x <= 1900)
         && (co.y >= (25 + i * 80) && co.y <= (25 + i * 80 + 60)))
-        && window->menu == false) {
+        && window->menu == false && window->settings == false) {
         map->actual = i;
         map->is_editing = 0;
     }

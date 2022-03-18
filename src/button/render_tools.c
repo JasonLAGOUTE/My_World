@@ -77,7 +77,8 @@ static void disp_point(window_t *window, sfMouseButtonEvent coord, map_t *map)
 void button_rander_tool(window_t *window, sfMouseButtonEvent coord, map_t *map)
 {
     if (((coord.x >= 1740 && coord.x <= 1900) &&
-        (coord.y >= 110 && coord.y <= 180)) && window->menu == false) {
+        (coord.y >= 110 && coord.y <= 180)) && window->menu == false
+        && window->settings == false) {
         if (map->bool_barre == 3 && map->bool_r->line == 1) {
             map->bool_r->line = 0;
             sfRectangleShape_setFillColor(map->btn_r->tab[DISP_LINE]->rec,

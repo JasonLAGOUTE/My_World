@@ -47,6 +47,7 @@ SRC =	src/main.c \
 		src/button/back.c \
 		src/button/in_menu.c \
 		src/button/paint.c \
+		src/button/in_settings.c \
 		src/button/save.c \
 		src/button/texture.c \
 		src/button/render_tools.c \

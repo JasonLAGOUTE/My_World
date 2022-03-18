@@ -202,7 +202,7 @@ void button_save(window_t *window, sfMouseButtonEvent coord, map_t *map);
 void button_texture(window_t *window, sfMouseButtonEvent coord, map_t *map);
 void button_back(window_t *window, sfMouseButtonEvent coord, map_t *map);
 void button_paint(window_t *window, sfMouseButtonEvent coord, map_t *map);
-void button_in_menu(window_t *window, sfMouseButtonEvent coord, map_t *map);
+int button_in_menu(window_t *window, sfMouseButtonEvent coord, map_t *map);
 all_buttons_t *init_struct_buttons_edit(void);
 void draw_edit(map_t *map, sfRenderWindow *wind);
 void button_edit(window_t *window, sfMouseButtonEvent coord, map_t *map);
@@ -243,5 +243,6 @@ void hover_mars_dirt(window_t *window, sfMouseMoveEvent co,
     map_t *map);
 perlin_t *init_struct_perlin(void);
 int random_manuel(void);
+int button_in_setting(window_t *window, sfMouseButtonEvent coord);
 
 #endif

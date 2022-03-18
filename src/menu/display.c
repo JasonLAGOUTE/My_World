@@ -14,9 +14,9 @@ int display_menu(window_t *window, menu_t *menu)
     return 0;
 }
 
-int display_settings(window_t *window, settings_t *set)
+int display_settings(window_t *w, settings_t *set)
 {
-    sfRenderWindow_drawSprite(window->wd, set->sprite, NULL);
-    sfRenderWindow_display(window->wd);
+    sfRenderWindow_drawSprite(w->wd, set->sprite, NULL);
+    sfRenderWindow_display(w->wd);
     return 0;
 }

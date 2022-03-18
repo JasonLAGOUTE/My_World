@@ -11,12 +11,14 @@ void even(sfEvent event, window_t *windo, map_t *map)
 {
     keyboard_control(event, map, windo);
     if (event.type == sfEvtMouseButtonReleased) {
-        if (event.mouseButton.button == sfMouseLeft && windo->menu == false) {
+        if (event.mouseButton.button == sfMouseLeft && windo->menu == false
+        && windo->settings == false) {
             map->cam.edit_strenght = (map->cam.edit_strenght < 0) ?
             map->cam.edit_strenght * -1 : map->cam.edit_strenght;
             edit_map(map, event);
         }
-        if (event.mouseButton.button == sfMouseRight && windo->menu == false) {
+        if (event.mouseButton.button == sfMouseRight && windo->menu == false
+        && windo->settings == false) {
             map->cam.edit_strenght = (map->cam.edit_strenght > 0) ?
             map->cam.edit_strenght * -1 : map->cam.edit_strenght;
             edit_map(map, event);
