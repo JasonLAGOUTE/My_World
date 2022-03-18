@@ -17,6 +17,8 @@ void reset_map(map_t *map)
     map->water_map = create_map(MAP_X, MAP_Y);
     map->texture_map = create_map(MAP_X, MAP_Y);
     map->texture = init_struct_all_textures();
+    map->last_time = 0;
+    map->counter = 0;
     map->actual_time = sfClock_create();
     map->btn_t = init_struct_all_buttons();
     map->btn = init_struct_buttons_navig();
