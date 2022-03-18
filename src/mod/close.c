@@ -7,7 +7,7 @@
 
 #include "my_world.h"
 
-void mod_close(sfEvent event, window_t *window)
+void mod_close(sfEvent event, window_t *window, map_t *map)
 {
     if (event.type == sfEvtKeyReleased) {
         if (event.key.code == sfKeyEscape)

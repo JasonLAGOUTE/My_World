@@ -7,6 +7,7 @@
 
 #include <SFML/Graphics.h>
 #include <SFML/Window/Export.h>
+#include <SFML/Audio.h>
 #include <math.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -40,7 +41,7 @@ typedef struct perlin {
     int gi3;
 } perlin_t;
 
-typedef struct button {
+typedef struct {
     sfTexture *texture;
     sfRectangleShape *rec;
     sfText *text;
@@ -48,7 +49,7 @@ typedef struct button {
     sfVector2f size;
 } button_t;
 
-typedef struct window {
+typedef struct {
     int width;
     int height;
     sfRenderWindow *wd;
@@ -57,7 +58,7 @@ typedef struct window {
     bool settings;
 } window_t;
 
-typedef struct camera{
+typedef struct {
     int zoom;
     sfVector2i offset;
     sfVector2i angle;
@@ -65,40 +66,40 @@ typedef struct camera{
     int radius;
 } camera_t;
 
-typedef struct framebuffer {
+typedef struct {
     size_t width;
     size_t height;
 } framebuffer_t;
 
-typedef struct font_map {
+typedef struct {
     sfTexture *texture;
     sfSprite *sprite;
 } font_map_t;
 
-typedef struct settings {
+typedef struct {
     sfTexture *texture;
     sfSprite *sprite;
 } settings_t;
 
-typedef struct menu {
+typedef struct {
     sfTexture *texture;
     sfSprite *sprite;
     settings_t *settings;
 } menu_t;
 
-typedef struct textures {
+typedef struct {
     sfRenderStates *state;
 } textures_t;
 
-typedef struct all_textures {
+typedef struct {
     textures_t **tab;
 } all_textures_t;
 
-typedef struct all_buttons {
+typedef struct {
     button_t **tab;
 } all_buttons_t;
 
-typedef struct bool_render {
+typedef struct {
     int line;
     int point;
     int texture;
@@ -106,7 +107,7 @@ typedef struct bool_render {
     int light;
 } bool_render_t;
 
-typedef struct bool_edit {
+typedef struct {
     int radius;
     int size;
     int ran_gen;
@@ -114,7 +115,7 @@ typedef struct bool_edit {
     int edit_strenght;
 } bool_edit_t;
 
-typedef struct point {
+typedef struct {
     sfVector2f points;
     sfVector2f points2;
     sfVector2f points3;
@@ -122,7 +123,12 @@ typedef struct point {
     sfVector3f points3d;
 } point_t;
 
-typedef struct map {
+typedef struct {
+    sfMusic *music;
+    bool on;
+} music_t;
+
+typedef struct {
     int **map;
     int **texture_map;
     int last_time;
@@ -140,6 +146,7 @@ typedef struct map {
     all_buttons_t *btn_r;
     all_buttons_t *btn_e;
     bool_render_t *bool_r;
+    music_t *music;
     bool_edit_t *bool_e;
 } map_t;
 
@@ -195,7 +202,7 @@ void mod_zoom(sfEvent event,  map_t *map);
 void mod_radius(sfEvent event,  map_t *map);
 void mod_save(sfEvent event,  map_t *map);
 void mod_smooth(sfEvent event, map_t *map);
-void mod_close(sfEvent event, window_t *window);
+void mod_close(sfEvent event, window_t *window, map_t *map);
 void mod_shuffle(sfEvent event, map_t *map);
 void button_save(window_t *window, sfMouseButtonEvent coord, map_t *map);
 void button_texture(window_t *window, sfMouseButtonEvent coord, map_t *map);
@@ -242,6 +249,7 @@ void hover_mars_dirt(window_t *window, sfMouseMoveEvent co,
     map_t *map);
 perlin_t *init_struct_perlin(void);
 int random_manuel(void);
-int button_in_setting(window_t *window, sfMouseButtonEvent coord);
+int button_in_setting(window_t *window, sfMouseButtonEvent coord, map_t *map);
+music_t *init_music(void);
 
 #endif

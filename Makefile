@@ -74,7 +74,8 @@ SRC =	src/main.c \
 		src/mod/shuffle.c \
 		src/mod/smooth.c \
 		src/mod/zoom.c \
-		src/map/water.c
+		src/map/water.c \
+		src/music/music.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -82,7 +83,7 @@ NAME = my_world
 
 CFLAGS += -W -Wall -Wextra -I include -I lib/my/include
 
-FLAG_CSFML += -lcsfml-window -lcsfml-system -lcsfml-graphics
+FLAG_CSFML += -lcsfml-window -lcsfml-system -lcsfml-graphics -lcsfml-audio
 
 all: $(NAME)
 

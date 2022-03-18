@@ -41,6 +41,7 @@ int main(void)
         hover_texture(window, event.mouseMove, map);
         gather(window, font_map, menu, map);
     }
+    sfMusic_destroy(map->music->music);
     sfRenderWindow_destroy(window->wd);
     return 0;
 }

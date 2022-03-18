@@ -11,7 +11,7 @@ void verif_box(sfEvent event, window_t *window,
     sfMouseButtonEvent coord, map_t *map)
 {
     if (button_in_menu(window, coord, map) == 0)
-        button_in_setting(window, coord);
+        button_in_setting(window, coord, map);
     button_back(window, coord, map);
     button_save(window, coord, map);
     button_paint(window, coord, map);
