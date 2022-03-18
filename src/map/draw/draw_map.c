@@ -21,6 +21,8 @@ static void condit_draw(map_t *map, sfRenderWindow *w, int i, int j)
 {
     sfColor colors_1 = sfWhite;
     sfColor colors_2 = sfWhite;
+    sfVertexArray *triangle_1;
+    sfVertexArray *triangle_2;
 
     if ((j + 1 < MAP_Y) && (i + 1 < MAP_X)) {
         condit(map, i, j);
@@ -31,12 +33,16 @@ static void condit_draw(map_t *map, sfRenderWindow *w, int i, int j)
             colors_1 = get_right_color(map, i, j);
             colors_2 = get_left_color(map, i, j);
         }
-        sfRenderWindow_drawVertexArray(w, crt_triangle_r(&map->point->points,
-            &map->point->points4, &map->point->points3, colors_1),
+        triangle_1 = crt_triangle_r(&map->point->points,
+            &map->point->points4, &map->point->points3, colors_1);
+        triangle_2 = crt_triangle_l(&map->point->points,
+            &map->point->points4, &map->point->points2, colors_2);
+        sfRenderWindow_drawVertexArray(w, triangle_1,
                 map->texture->tab[map->texture_map[i][j]]->state);
-        sfRenderWindow_drawVertexArray(w, crt_triangle_l(&map->point->points,
-            &map->point->points4, &map->point->points2, colors_2),
+        sfRenderWindow_drawVertexArray(w, triangle_2,
                 map->texture->tab[map->texture_map[i][j]]->state);
+        sfVertexArray_destroy(triangle_1);
+        sfVertexArray_destroy(triangle_2);
     }
 }
 

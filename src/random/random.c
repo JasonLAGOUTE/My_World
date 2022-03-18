@@ -17,7 +17,7 @@ static int for_random(FILE *file)
         return 1;
     if (fread(&seed, sizeof(seed), 1, file)) {
         fclose(file);
-        srand(seed);
+        srand(8);
         return 0;
     }
     fclose(file);
