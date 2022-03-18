@@ -53,6 +53,8 @@ static void condit2(sfRenderWindow *window, map_t *map)
 
     sfRenderWindow_drawVertexArray(window, triangle_1, NULL);
     sfRenderWindow_drawVertexArray(window, triangle_2, NULL);
+    sfVertexArray_destroy(triangle_1);
+    sfVertexArray_destroy(triangle_2);
 }
 
 void second_water_cube(sfRenderWindow *window, map_t *map)
