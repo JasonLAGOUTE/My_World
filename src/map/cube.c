@@ -11,6 +11,7 @@ void first_part_cube(sfRenderWindow *window, map_t *map)
 {
     sfVertexArray *triangle_1;
     sfVertexArray *triangle_2;
+
     for (int i = 0; i < MAP_X - 1; i++) {
         map->point->points3d = (sfVector3f){i, MAP_X - 1,
             map->map[i][MAP_X - 1]};
@@ -66,6 +67,9 @@ void second_part_cube(sfRenderWindow *window, map_t *map)
 
 void third_part_cube(sfRenderWindow *window, map_t *map)
 {
+    sfVertexArray *triangle_1;
+    sfVertexArray *triangle_2;
+
     map->point->points3d = (sfVector3f){MAP_X - 1, 0, 0};
     map->point->points = to2d(map->point->points3d, map);
     map->point->points.y += MAP_X * 3 / 4 * map->cam.zoom;
@@ -78,11 +82,12 @@ void third_part_cube(sfRenderWindow *window, map_t *map)
     map->point->points3d = (sfVector3f){MAP_X - 1, MAP_X - 1, 0};
     map->point->points4 = to2d(map->point->points3d, map);
     map->point->points4.y += MAP_X * 3 / 4 * map->cam.zoom;
-    sfRenderWindow_drawVertexArray(window,
-        crt_triangle_l(&map->point->points, &map->point->points3,
-        &map->point->points2, (sfColor){130, 72, 53, 255}), NULL);
-    sfRenderWindow_drawVertexArray(window,
-        crt_triangle_l(&map->point->points2, &map->point->points,
-        &map->point->points4, (sfColor){130, 72, 53, 255}), NULL);
-    
+    triangle_1 = crt_triangle_l(&map->point->points, &map->point->points3,
+        &map->point->points2, (sfColor){130, 72, 53, 255});
+    triangle_2 = crt_triangle_l(&map->point->points2, &map->point->points,
+        &map->point->points4, (sfColor){130, 72, 53, 255});
+    sfRenderWindow_drawVertexArray(window, triangle_1, NULL);
+    sfRenderWindow_drawVertexArray(window, triangle_2, NULL);
+    sfVertexArray_destroy(triangle_1);
+    sfVertexArray_destroy(triangle_2);
 }
