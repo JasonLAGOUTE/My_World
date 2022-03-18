@@ -14,6 +14,8 @@ static void gather(window_t *windo, font_map_t *font, menu_t *menu, map_t *map)
     update_map(map);
     if (windo->menu == true) {
         display_menu(windo, menu);
+    } else if (windo->menu == true && windo->settings == true) {
+        display_settings(windo, menu->settings);
     } else {
         sfRenderWindow_drawSprite(windo->wd, font->sprite, NULL);
         draw_world(windo, map);

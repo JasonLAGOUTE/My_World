@@ -16,5 +16,6 @@ window_t *window_unit(void)
     wid->wd = sfRenderWindow_create(wid->mode, "My_World",
         sfResize | sfClose, NULL);
     wid->menu = true;
+    wid->settings = false;
     return wid;
 }

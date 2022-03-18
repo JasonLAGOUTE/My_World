@@ -54,6 +54,7 @@ typedef struct window {
     sfRenderWindow *wd;
     sfVideoMode mode;
     bool menu;
+    bool settings;
 } window_t;
 
 typedef struct camera{
@@ -74,9 +75,15 @@ typedef struct font_map {
     sfSprite *sprite;
 } font_map_t;
 
+typedef struct settings {
+    sfTexture *texture;
+    sfSprite *sprite;
+} settings_t;
+
 typedef struct menu {
     sfTexture *texture;
     sfSprite *sprite;
+    settings_t *settings;
 } menu_t;
 
 typedef struct textures {
@@ -147,10 +154,12 @@ sfVector2f to2d(sfVector3f p, map_t *map);
 map_t *create_struct_map(camera_t camera);
 framebuffer_t *framebuffer_create(size_t width, size_t height);
 int display_menu(window_t *window, menu_t *menu);
+int display_settings(window_t *window, settings_t *set);
 void verif_box(sfEvent event, window_t *window,
     sfMouseButtonEvent coord, map_t *map);
 font_map_t *init_struct_map(void);
 menu_t *init_struct_menu(void);
+settings_t *init_struct_settings(void);
 void edit_map(map_t *map, sfEvent event);
 void set_texture(font_map_t *font_map, menu_t *menu);
 textures_t *init_struct_texture(char *path);
