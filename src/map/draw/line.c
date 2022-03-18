@@ -17,15 +17,15 @@ static void condit(map_t *map, sfRenderWindow *window, int i, int j)
         map->point->points2 = to2d(map->point->points3d, map);
         line_1 = create_line(&map->point->points, &map->point->points2);
         sfRenderWindow_drawVertexArray(window, line_1, NULL);
+        sfVertexArray_destroy(line_1);
     }
     if (j + 1 < MAP_Y) {
         map->point->points3d = (sfVector3f){i, j + 1, map->map[i][j + 1]};
         map->point->points2 = to2d(map->point->points3d, map);
         line_2 = create_line(&map->point->points, &map->point->points2);
         sfRenderWindow_drawVertexArray(window, line_2, NULL);
+        sfVertexArray_destroy(line_2);
     }
-    sfVertexArray_destroy(line_1);
-    sfVertexArray_destroy(line_2);
 }
 
 void draw_line(sfRenderWindow *window ,map_t *map)

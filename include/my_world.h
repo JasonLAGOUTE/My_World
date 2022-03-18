@@ -190,6 +190,7 @@ sfText *create_text(char *str, int char_size, sfVector2f coord,
 button_t *set_button_texture(void);
 void save_map(map_t *map);
 void load_map(map_t *map);
+void zero_map(map_t *map);
 all_buttons_t *init_struct_all_buttons(void);
 void shuffle_map(map_t *map);
 void smooth_map(map_t *map);
