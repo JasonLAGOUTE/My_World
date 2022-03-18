@@ -45,11 +45,3 @@ map_t *create_struct_map(camera_t camera)
     map->bool_e = init_struct_bool_edit();
     return map;
 }
-
-void update_map(map_t *map)
-{
-    map->point->points = (sfVector2f){0, 0};
-    map->point->points2 = (sfVector2f){0, 0};
-    map->point->points3d = (sfVector3f){0, 0, 0};
-    map->cam = map->cam;
-}
