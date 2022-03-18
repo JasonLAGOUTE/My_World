@@ -31,6 +31,7 @@ static void free_all(map_t *map)
 
 void destroy_all(map_t *map, window_t *window)
 {
+    free_buttons(map);
     free_all(map);
     sfMusic_destroy(map->music->music);
     sfSound_destroy(map->sound->sound);

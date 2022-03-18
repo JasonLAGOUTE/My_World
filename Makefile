@@ -77,7 +77,8 @@ SRC =	src/main.c \
 		src/map/water.c \
 		src/music/music.c \
 		src/music/sound.c \
-		src/free/destroy.c
+		src/free/destroy.c \
+		src/free/free_button.c
 
 OBJ = $(SRC:.c=.o)
 

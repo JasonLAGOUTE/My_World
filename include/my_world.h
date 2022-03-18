@@ -262,5 +262,6 @@ music_t *init_music(void);
 void play_sound(map_t *map);
 sound_t *init_sound(void);
 void destroy_all(map_t *map, window_t *window);
+void free_buttons(map_t *map);
 
 #endif
