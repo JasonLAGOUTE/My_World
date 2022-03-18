@@ -46,12 +46,13 @@ void first_water_cube(sfRenderWindow *window, map_t *map)
 
 static void condit2(sfRenderWindow *window, map_t *map)
 {
-    sfRenderWindow_drawVertexArray(window,
-        crt_triangle_l(&map->point->points, &map->point->points3,
-            &map->point->points2, (sfColor){50, 50, 100, 5}), NULL);
-    sfRenderWindow_drawVertexArray(window,
-        crt_triangle_l(&map->point->points2, &map->point->points4,
-            &map->point->points3, (sfColor){50, 50, 100, 5}), NULL);
+    sfVertexArray *triangle_1 = crt_triangle_l(&map->point->points,
+        &map->point->points3, &map->point->points2, (sfColor){50, 50, 100, 5});
+    sfVertexArray *triangle_2 = crt_triangle_l(&map->point->points2,
+        &map->point->points4, &map->point->points3, (sfColor){50, 50, 100, 5});
+
+    sfRenderWindow_drawVertexArray(window, triangle_1, NULL);
+    sfRenderWindow_drawVertexArray(window, triangle_2, NULL);
 }
 
 void second_water_cube(sfRenderWindow *window, map_t *map)
