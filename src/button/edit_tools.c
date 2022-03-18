@@ -21,6 +21,21 @@ static void condit2(window_t *window, sfMouseButtonEvent coord,
     }
 }
 
+static void condit3(window_t *window, sfMouseButtonEvent coord,
+    map_t *map)
+{
+    if (((coord.x >= 1740 && coord.x <= 1900) &&
+        (coord.y >= 575 && coord.y <= 648)) && window->menu == false
+        && window->settings == false) {
+        if (map->bool_barre == 2 && map->bool_e->water_height == 1)
+            map->bool_e->water_height = 0;
+        else if (map->bool_barre == 2 && map->bool_e->water_height == 0) {
+            map->bool_e->water_height = 1;
+        }
+        play_sound(map);
+    }
+}
+
 static void condit(window_t *window, sfMouseButtonEvent coord,
     map_t *map, sfEvent event)
 {
@@ -31,19 +46,28 @@ static void condit(window_t *window, sfMouseButtonEvent coord,
             map->bool_e->ran_gen = 0;
         else if (map->bool_barre == 2 && map->bool_e->ran_gen == 0) {
             map->bool_e->ran_gen = 1;
-        }
-        play_sound(map);
-    } if (((coord.x >= 1740 && coord.x <= 1900) &&
-        (coord.y >= 575 && coord.y <= 648)) && window->menu == false
-        && window->settings == false) {
-        if (map->bool_barre == 2 && map->bool_e->water_height == 1)
-            map->bool_e->water_height = 0;
-        else if (map->bool_barre == 2 && map->bool_e->water_height == 0) {
-            map->bool_e->water_height = 1;
+            shuffle_map(map);
         }
         play_sound(map);
     }
+    condit3(window, coord, map);
     condit2(window, coord, map, event);
+}
+
+static void condit4(window_t *window, sfMouseButtonEvent coord,
+    map_t *map)
+{
+    if (((coord.x >= 1740 && coord.x <= 1900) &&
+        (coord.y >= 263 && coord.y <= 336)) && window->menu == false
+        && window->settings == false) {
+        if (map->bool_barre == 2 && map->bool_e->reset == 0)
+            map->bool_e->reset = 1;
+        else if (map->bool_barre == 2 && map->bool_e->reset == 1) {
+            map->bool_e->reset = 0;
+            reset_map(map);
+        }
+        play_sound(map);
+    }
 }
 
 void button_edit_tool(window_t *window, sfMouseButtonEvent coord,
@@ -58,15 +82,7 @@ void button_edit_tool(window_t *window, sfMouseButtonEvent coord,
             map->bool_e->radius = 0;
         }
         play_sound(map);
-    } if (((coord.x >= 1740 && coord.x <= 1900) &&
-        (coord.y >= 263 && coord.y <= 336)) && window->menu == false
-        && window->settings == false) {
-        if (map->bool_barre == 2 && map->bool_e->size == 0)
-            map->bool_e->size = 1;
-        else if (map->bool_barre == 2 && map->bool_e->size == 1) {
-            map->bool_e->size = 0;
-        }
-        play_sound(map);
     }
+    condit4(window, coord, map);
     condit(window, coord, map, event);
 }

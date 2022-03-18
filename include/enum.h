@@ -35,7 +35,7 @@ enum barre_navig {
 
 enum edit {
     RADIUS_EDIT,
-    SIZE_MAP,
+    RESET_MAP,
     RANDOM_GEN,
     SIZE_RAND,
     FORCE_EDIT,

@@ -110,7 +110,7 @@ typedef struct {
 
 typedef struct {
     int radius;
-    int size;
+    int reset;
     int ran_gen;
     int water_height;
     int edit_strenght;
