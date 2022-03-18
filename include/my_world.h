@@ -8,6 +8,7 @@
 #include <SFML/Graphics.h>
 #include <SFML/Window/Export.h>
 #include <SFML/Audio.h>
+#include <SFML/System/Time.h>
 #include <math.h>
 #include <stdlib.h>
 #include <stdbool.h>
