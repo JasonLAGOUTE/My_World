@@ -36,7 +36,6 @@ If the button is grey, the mode is enable.
                    Left click to decrease the square corners variable.
     - Reset map : Right click to reset your map.
     - Random gen : Right click to automaticaly create map.
-    - Help : Right click to open the window help with all commands available.
     - Force edit : Right click to increase the strenght edition variable.
                    Left click to decrease the strenght edition variable.
 
