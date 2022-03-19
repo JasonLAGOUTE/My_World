@@ -12,8 +12,8 @@ isometric lines, a radius around each vertex...
 ## Menu
 
     - Create new map : Left click for create new map and open the editor window.
-    - Loading yout map : Left click for load yout map and open the editor window.
-    - Settings : : Left click to go to settings.
+    - Loading your map : Left click for load your map and open the editor window.
+    - Settings : Left click to go to settings.
 
 ## Settings
 
@@ -60,18 +60,18 @@ is already present.
 
     ESCAPE = CLOSE \
     L = SMOOTH \
-    R = RANDOM MAP BRUIT PERLIN \
+    R = RANDOM MAP PERLIN NOISE \
     S = SAVE MAP \
-    J = INCREASE RADIUS DE CLICK \
-    K = DECREASE RADIUS DE CLICK \
+    J = INCREASE CLICK RADIUS\
+    K = DECREASE CLICK RADIUS\
     "+" = ZOOM IN \
     "-" = ZOOM OUT \
     UP ARROW : ASCEND MAP \
     DOWN ARROW : DESCEND MAP \
     RIGHT ARROW : MOVE MAP RIGHT \
     LEFT ARROW : MOVE MAP LEFT \
-    E : DECREASE HEIGHT Y \
-    A : INCREASE HEIGHT Y \
+    E : MOVE ARROUND Y ANGLE\
+    A : MOVE ARROUD Y ANGLE\
 ## Screenshots
 
 ### Menu
