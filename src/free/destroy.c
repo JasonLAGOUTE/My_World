@@ -24,15 +24,19 @@ static void free_all(map_t *map)
     free(map->btn_r);
     free(map->btn_t);
     free(map->point);
-    free(map->texture);
+    free_texture(map);
     free(map->bool_e);
     free(map->bool_r);
 }
 
-void destroy_all(map_t *map, window_t *window)
+void destroy_all(map_t *map, window_t *window, menu_t *menu)
 {
     free_buttons(map);
     free_all(map);
+    sfTexture_destroy(menu->settings->texture);
+    sfSprite_destroy(menu->settings->sprite);
+    sfTexture_destroy(menu->texture);
+    sfSprite_destroy(menu->sprite);
     sfMusic_destroy(map->music->music);
     sfSound_destroy(map->sound->sound);
     sfClock_destroy(map->actual_time);

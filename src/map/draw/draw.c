@@ -20,7 +20,6 @@ void draw_world(window_t *window, map_t *map)
         draw_circle(window->wd, map);
     if (map->bool_r->line == 1)
         draw_line(window->wd, map);
-    
     draw_navig_barre(map, window->wd);
     draw_button_paint(map, window->wd);
     draw_edit(map, window->wd);

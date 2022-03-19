@@ -40,6 +40,6 @@ int main(void)
         hover_texture(window, event.mouseMove, map);
         gather(window, font_map, menu, map);
     }
-    destroy_all(map, window);
+    destroy_all(map, window, menu);
     return 0;
 }

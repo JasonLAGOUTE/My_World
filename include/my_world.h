@@ -262,7 +262,8 @@ int button_in_setting(window_t *window, sfMouseButtonEvent coord, map_t *map);
 music_t *init_music(void);
 void play_sound(map_t *map);
 sound_t *init_sound(void);
-void destroy_all(map_t *map, window_t *window);
+void destroy_all(map_t *map, window_t *window, menu_t *menu);
 void free_buttons(map_t *map);
+void free_texture(map_t *map);
 
 #endif
