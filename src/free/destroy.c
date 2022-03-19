@@ -9,8 +9,11 @@
 
 static void free_tab(int **tab)
 {
-    for (int i = 0; tab[i] != NULL; i++)
+    int i = 0;
+
+    for (; tab[i] != NULL; i++)
         free(tab[i]);
+    free(tab[i]);
     free(tab);
 }
 

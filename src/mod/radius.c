@@ -10,7 +10,7 @@
 void mod_radius(sfEvent event,  map_t *map)
 {
     if (event.key.code == sfKeyK)
-        map->cam.radius -= 50;
+        map->cam.radius -= 100;
     if (event.key.code == sfKeyJ)
-        map->cam.radius += 50;
+        map->cam.radius += 100;
 }

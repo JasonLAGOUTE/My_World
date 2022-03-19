@@ -80,7 +80,7 @@ void button_edit_tool(window_t *window, sfMouseButtonEvent coord,
             map->bool_e->radius = 1;
         else if (map->bool_barre == 2 && map->bool_e->radius == 1) {
             map->bool_e->radius = 0;
-            map->cam.radius += 30;
+            map->cam.radius += 100;
         }
         play_sound(map);
     }
