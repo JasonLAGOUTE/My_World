@@ -77,9 +77,9 @@ is already present.
 ![Menu](screenshot/menu.png)
 ![Settings](screenshot/settings.png)
 ![Editor](screenshot/editor_map.png)
-![Editor_edit](editor_map_render.png)
-![Editor_render](editor_map_render.png)
-![Editor_texture](editor_map_texture.png)
+![Editor_edit](screenshot/editor_map_render.png)
+![Editor_render](screenshot/editor_map_render.png)
+![Editor_texture](screenshot/editor_map_texture.png)
 
 
 ## Used By
