@@ -28,11 +28,10 @@ static void condit(float x, float y, perlin_t *perlin)
 {
     float g[][2] = {{1, 1}, {-1, 1}, {1, -1},
         {-1, -1}, {1, 0}, {-1, 0}, {0, 1}, {0, -1}};
-
-    perlin->gi0 = perm[(int)(x) + perm[(int)(y)]] % 8;
-    perlin->gi1 = perm[(int)(x) + 1 + perm[(int)(y)]] % 8;
-    perlin->gi2 = perm[(int)(x) + perm[(int)(y) + 1]] % 8;
-    perlin->gi3 = perm[(int)(x) + 1 + perm[(int)(y) + 1]] % 8;
+    perlin->gi0 = perm[((int)(x) + perm[(int)(y)]) % 254] % 8;
+    perlin->gi1 = perm[(int)(x) + 1 + perm[(int)(y)] % 254] % 8;
+    perlin->gi2 = perm[(int)(x) + perm[(int)(y) + 1] % 254] % 8;
+    perlin->gi3 = perm[(int)(x) + 1 + perm[(int)(y) + 1] % 254] % 8;
     perlin->s = g[perlin->gi0][0] * (x - (int)(x)) +
         g[perlin->gi0][1] * (y - (int)(y));
     perlin->t = g[perlin->gi1][0] * (x - ((int)(x) + 1))
