@@ -88,7 +88,7 @@ is already present.
 
 ### Editor Edit
 
-![Editor_edit](screenshot/editor_map_render.png)
+![Editor_edit](screenshot/editor_map_edit.png)
 
 ### Editor Render
 
