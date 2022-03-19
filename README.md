@@ -74,13 +74,29 @@ is already present.
     A : INCREASE HEIGHT Y \
 ## Screenshots
 
-![Menu](screenshot/menu.png)
-![Settings](screenshot/settings.png)
-![Editor](screenshot/editor_map.png)
-![Editor_edit](screenshot/editor_map_render.png)
-![Editor_render](screenshot/editor_map_render.png)
-![Editor_texture](screenshot/editor_map_texture.png)
+### Menu
 
+![Menu](screenshot/menu.png)
+
+### Settings
+
+![Settings](screenshot/settings.png)
+
+### Editor
+
+![Editor](screenshot/editor_map.png)
+
+### Editor Edit
+
+![Editor_edit](screenshot/editor_map_render.png)
+
+### Editor Render
+
+![Editor_render](screenshot/editor_map_render.png)
+
+### Editor Texture
+
+![Editor_texture](screenshot/editor_map_texture.png)
 
 ## Used By
 
