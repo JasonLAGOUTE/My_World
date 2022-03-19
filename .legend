@@ -1,0 +1,9 @@
+Votre fichier map dois impérativement être nommé comme ceci : "Save.map".
+
+Ce générateur de map permet de créer des map mais aussi d'en load.
+Seulement, il ne peut load que les maps qu'il a lui même générer c'est pourquoi
+le seul moyen que vous avez de load une map c'est d'en faire une en créant un
+nouvelle map et de la télécharger.
+Après avoir télécharer vôtre map via notre générateur vérifié que votre
+"Save.map" s'est bien générer et qu'il est présent dans le même dossier
+que l'executable.
