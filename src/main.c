@@ -7,7 +7,7 @@
 
 #include "my_world.h"
 
-static void gather(window_t *windo, font_map_t *font, menu_t *menu, map_t *map)
+static void gather(window_t *windo, image_t *font, menu_t *menu, map_t *map)
 {
     if (windo->menu == true && windo->settings == false) {
         display_menu(windo, menu);
@@ -26,7 +26,7 @@ int main(void)
     sfEvent event;
     window_t *window = window_unit();
     camera_t cam = init_struct_cam(&cam);
-    font_map_t *font_map = init_struct_map();
+    image_t *font_map = init_struct_map();
     menu_t *menu = init_struct_menu();
     map_t *map = create_struct_map(cam);
 

@@ -47,7 +47,6 @@ all_buttons_t *init_struct_buttons_edit(void)
     all->tab[RADIUS_EDIT] = crt_btn("img/b2.png", "Radius Map", 1720, 40);
     all->tab[RESET_MAP] = crt_btn("img/b2.png", "Reset Map", 1720, 200);
     all->tab[RANDOM_GEN] = crt_btn("img/b2.png", "Random Gen", 1720, 360);
-    all->tab[SIZE_RAND] = crt_btn("img/b2.png", "Random Size", 1720, 520);
     all->tab[FORCE_EDIT] = crt_btn("img/b2.png", "Force Edit", 1720, 680);
     return all;
 }

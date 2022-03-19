@@ -21,21 +21,6 @@ static void condit2(window_t *window, sfMouseButtonEvent coord,
     }
 }
 
-static void condit3(window_t *window, sfMouseButtonEvent coord,
-    map_t *map)
-{
-    if (((coord.x >= 1740 && coord.x <= 1900) &&
-        (coord.y >= 575 && coord.y <= 648)) && window->menu == false
-        && window->settings == false) {
-        if (map->bool_barre == 2 && map->bool_e->water_height == 1)
-            map->bool_e->water_height = 0;
-        else if (map->bool_barre == 2 && map->bool_e->water_height == 0) {
-            map->bool_e->water_height = 1;
-        }
-        play_sound(map);
-    }
-}
-
 static void condit(window_t *window, sfMouseButtonEvent coord,
     map_t *map, sfEvent event)
 {
@@ -50,7 +35,6 @@ static void condit(window_t *window, sfMouseButtonEvent coord,
         }
         play_sound(map);
     }
-    condit3(window, coord, map);
     condit2(window, coord, map, event);
 }
 

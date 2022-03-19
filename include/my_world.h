@@ -75,17 +75,12 @@ typedef struct {
 typedef struct {
     sfTexture *texture;
     sfSprite *sprite;
-} font_map_t;
+} image_t;
 
 typedef struct {
     sfTexture *texture;
     sfSprite *sprite;
-} settings_t;
-
-typedef struct {
-    sfTexture *texture;
-    sfSprite *sprite;
-    settings_t *settings;
+    image_t *settings;
 } menu_t;
 
 typedef struct {
@@ -112,7 +107,6 @@ typedef struct {
     int radius;
     int reset;
     int ran_gen;
-    int water_height;
     int edit_strenght;
 } bool_edit_t;
 
@@ -169,14 +163,14 @@ sfVector2f to2d(sfVector3f p, map_t *map);
 map_t *create_struct_map(camera_t camera);
 framebuffer_t *framebuffer_create(size_t width, size_t height);
 int display_menu(window_t *window, menu_t *menu);
-int display_settings(window_t *window, settings_t *set);
+int display_settings(window_t *window, image_t *set);
 void verif_box(sfEvent event, window_t *window,
     sfMouseButtonEvent coord, map_t *map);
-font_map_t *init_struct_map(void);
+image_t *init_struct_map(void);
 menu_t *init_struct_menu(void);
-settings_t *init_struct_settings(void);
+image_t *init_struct_settings(void);
 void edit_map(map_t *map, sfEvent event);
-void set_texture(font_map_t *font_map, menu_t *menu);
+void set_texture(image_t *font_map, menu_t *menu);
 textures_t *init_struct_texture(char *path);
 sfVertexArray *crt_triangle_r(sfVector2f *point1, sfVector2f *point2,
     sfVector2f *point3, sfColor colors);
@@ -262,7 +256,7 @@ int button_in_setting(window_t *window, sfMouseButtonEvent coord, map_t *map);
 music_t *init_music(void);
 void play_sound(map_t *map);
 sound_t *init_sound(void);
-void destroy_all(map_t *map, window_t *window, menu_t *menu, font_map_t *font);
+void destroy_all(map_t *map, window_t *window, menu_t *menu, image_t *font);
 void free_buttons(map_t *map);
 void free_texture(map_t *map);
 

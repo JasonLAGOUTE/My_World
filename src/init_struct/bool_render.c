@@ -27,6 +27,5 @@ bool_edit_t *init_struct_bool_edit(void)
     ed->radius = 0;
     ed->ran_gen = 0;
     ed->reset = 0;
-    ed->water_height = 0;
     return ed;
 }

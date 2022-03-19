@@ -37,7 +37,6 @@ enum edit {
     RADIUS_EDIT,
     RESET_MAP,
     RANDOM_GEN,
-    SIZE_RAND,
     FORCE_EDIT,
     LAST_EDIT
 };

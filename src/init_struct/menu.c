@@ -17,9 +17,9 @@ menu_t *init_struct_menu(void)
     return menu;
 }
 
-settings_t *init_struct_settings(void)
+image_t *init_struct_settings(void)
 {
-    settings_t *settings = malloc(sizeof(settings_t));
+    image_t *settings = malloc(sizeof(image_t));
 
     settings->sprite = sfSprite_create();
     settings->texture = sfTexture_createFromFile("img/settings.jpg", NULL);

@@ -32,7 +32,7 @@ static void free_all(map_t *map)
     free(map->bool_r);
 }
 
-void destroy_all(map_t *map, window_t *window, menu_t *menu, font_map_t *font)
+void destroy_all(map_t *map, window_t *window, menu_t *menu, image_t *font)
 {
     free_buttons(map);
     free_all(map);
