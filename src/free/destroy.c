@@ -29,10 +29,12 @@ static void free_all(map_t *map)
     free(map->bool_r);
 }
 
-void destroy_all(map_t *map, window_t *window, menu_t *menu)
+void destroy_all(map_t *map, window_t *window, menu_t *menu, font_map_t *font)
 {
     free_buttons(map);
     free_all(map);
+    sfTexture_destroy(font->texture);
+    sfSprite_destroy(font->sprite);
     sfTexture_destroy(menu->settings->texture);
     sfSprite_destroy(menu->settings->sprite);
     sfTexture_destroy(menu->texture);
