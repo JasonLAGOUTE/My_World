@@ -6,12 +6,13 @@
 */
 
 #include "my.h"
+#include <limits.h>
 
 void my_put_nbr(int nb)
 {
     int nb_tmp = 0;
-
-    if (nb < 0 && nb > -2147483648) {
+    
+    if (nb < 0 && nb > INT_MIN) {
         my_putchar(45);
         nb = nb * (-1);
     } if (nb > 9 && nb <= 2147483647) {

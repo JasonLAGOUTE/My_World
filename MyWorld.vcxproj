@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\enum.h" />
+    <ClInclude Include="include\my_world.h" />
+    <ClInclude Include="lib\my\include\my.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\button\back.c" />
+    <ClCompile Include="src\button\button.c" />
+    <ClCompile Include="src\button\edit2.c" />
+    <ClCompile Include="src\button\edit_tools.c" />
+    <ClCompile Include="src\button\hover\dirt.c" />
+    <ClCompile Include="src\button\hover\dirt_broke.c" />
+    <ClCompile Include="src\button\hover\gather.c" />
+    <ClCompile Include="src\button\hover\glace_1.c" />
+    <ClCompile Include="src\button\hover\glace_2.c" />
+    <ClCompile Include="src\button\hover\grass.c" />
+    <ClCompile Include="src\button\hover\mars_dirt.c" />
+    <ClCompile Include="src\button\hover\red_sand.c" />
+    <ClCompile Include="src\button\hover\snow.c" />
+    <ClCompile Include="src\button\hover\stone_1.c" />
+    <ClCompile Include="src\button\hover\stone_2.c" />
+    <ClCompile Include="src\button\hover\white_sand.c" />
+    <ClCompile Include="src\button\in_menu.c" />
+    <ClCompile Include="src\button\in_settings.c" />
+    <ClCompile Include="src\button\paint1.c" />
+    <ClCompile Include="src\button\rander1.c" />
+    <ClCompile Include="src\button\render_tools.c" />
+    <ClCompile Include="src\button\save2.c" />
+    <ClCompile Include="src\button\text.c" />
+    <ClCompile Include="src\button\texture.c" />
+    <ClCompile Include="src\event\event.c" />
+    <ClCompile Include="src\free\destroy.c" />
+    <ClCompile Include="src\free\free_button.c" />
+    <ClCompile Include="src\init_struct\all_buttons.c" />
+    <ClCompile Include="src\init_struct\all_texture.c" />
+    <ClCompile Include="src\init_struct\bool_render.c" />
+    <ClCompile Include="src\init_struct\cam.c" />
+    <ClCompile Include="src\init_struct\colors.c" />
+    <ClCompile Include="src\init_struct\map1.c" />
+    <ClCompile Include="src\init_struct\menu.c" />
+    <ClCompile Include="src\init_struct\perlin.c" />
+    <ClCompile Include="src\init_struct\point.c" />
+    <ClCompile Include="src\line\line1.c" />
+    <ClCompile Include="src\main.c" />
+    <ClCompile Include="src\map\calcul.c" />
+    <ClCompile Include="src\map\cube.c" />
+    <ClCompile Include="src\map\display_destroy_vertex.c" />
+    <ClCompile Include="src\map\draw\barre_navig.c" />
+    <ClCompile Include="src\map\draw\circle1.c" />
+    <ClCompile Include="src\map\draw\draw.c" />
+    <ClCompile Include="src\map\draw\draw_map.c" />
+    <ClCompile Include="src\map\draw\draw_water.c" />
+    <ClCompile Include="src\map\draw\edit1.c" />
+    <ClCompile Include="src\map\draw\line.c" />
+    <ClCompile Include="src\map\draw\paint.c" />
+    <ClCompile Include="src\map\draw\rander.c" />
+    <ClCompile Include="src\map\edit.c" />
+    <ClCompile Include="src\map\effect\save.c" />
+    <ClCompile Include="src\map\effect\shuffle1.c" />
+    <ClCompile Include="src\map\effect\smooth1.c" />
+    <ClCompile Include="src\map\map.c" />
+    <ClCompile Include="src\map\read_map.c" />
+    <ClCompile Include="src\map\reset.c" />
+    <ClCompile Include="src\map\shade.c" />
+    <ClCompile Include="src\map\to_fill_triangle.c" />
+    <ClCompile Include="src\map\water.c" />
+    <ClCompile Include="src\menu\boxes.c" />
+    <ClCompile Include="src\menu\display.c" />
+    <ClCompile Include="src\mod\angle.c" />
+    <ClCompile Include="src\mod\close.c" />
+    <ClCompile Include="src\mod\offset.c" />
+    <ClCompile Include="src\mod\radius.c" />
+    <ClCompile Include="src\mod\save1.c" />
+    <ClCompile Include="src\mod\shuffle.c" />
+    <ClCompile Include="src\mod\smooth.c" />
+    <ClCompile Include="src\mod\zoom.c" />
+    <ClCompile Include="src\music\music.c" />
+    <ClCompile Include="src\music\sound.c" />
+    <ClCompile Include="src\random\random.c" />
+    <ClCompile Include="src\texture\init_texture.c" />
+    <ClCompile Include="src\texture\set_texture.c" />
+    <ClCompile Include="src\utils\circle.c" />
+    <ClCompile Include="src\utils\radiant.c" />
+    <ClCompile Include="src\window\window.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{f5fe737d-ccd6-4c14-9120-1dcd75228d8e}</ProjectGuid>
+    <RootNamespace>MyWorld</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Gabriel Hamel\Desktop\MyWorld\MyWorld\lib\my\include;C:\Users\Gabriel Hamel\Desktop\MyWorld\MyWorld\include;C:\Users\Gabriel Hamel\Desktop\MyWorld\MyWorld\lib\csfml\include;C:\Users\Gabriel Hamel\Desktop\MyWorld\MyWorld\lib\sfml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Gabriel Hamel\Desktop\MyWorld\MyWorld\lib\csfml\lib\msvc;C:\Users\Gabriel Hamel\Desktop\MyWorld\MyWorld\lib\sfml\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-main.lib;sfml-system.lib;sfml-graphics.lib;sfml-window.lib;sfml-audio.lib;csfml-system.lib;csfml-graphics.lib;csfml-window.lib;csfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

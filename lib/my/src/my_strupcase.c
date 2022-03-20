@@ -5,7 +5,7 @@
 ** puts letter in suppercase
 */
 
-#include <unistd.h>
+#include <stdlib.h>
 
 char *my_strupcase(char *str)
 {

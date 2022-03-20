@@ -5,8 +5,6 @@
 ** reverses string
 */
 
-#include <unistd.h>
-
 char *my_revstr(char *str)
 {
     size_t len = 0;

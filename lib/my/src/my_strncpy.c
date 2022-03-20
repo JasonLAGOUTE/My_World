@@ -5,8 +5,6 @@
 ** copie n character
 */
 
-#include <unistd.h>
-
 char *my_strncpy(char *dest, char const *src, size_t n)
 {
     size_t i = 0;

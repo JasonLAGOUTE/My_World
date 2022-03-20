@@ -5,7 +5,8 @@
 ** search number in str
 */
 
-#include <unistd.h>
+#include <stdlib.h>
+#include <limits.h>
 
 static size_t research_number(char c)
 {
@@ -39,7 +40,7 @@ int my_getnbr(char const *str)
         }
         if (count_sign(str) % 2 != 0)
             total = total * (-1);
-        if (total != 0 && (total >= -2147483648 && total <= 2147483647))
+        if (total != 0 && (total > INT_MIN && total <= INT_MAX))
             return (int)total;
         return 0;
     }

@@ -8,10 +8,9 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 
 #ifndef MY_H_
-    #define MY_H_
+#define MY_H_
 
 int my_compute_power_rec(int nb, int p);
 int my_getnbr(char const *str);
