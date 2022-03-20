@@ -16,20 +16,20 @@ sfColor get_right_color(map_t *map, int i, int j)
     if ((map->map[i][j] < map->map[i + 1][j]
         || map->map[i][j] > map->map[i + 1][j + 1])
         && map->map[i + 1][j] > map->map[i + 1][j + 1])
-        return (sfColor) {150, 150, 150, 255};
+        return map->colors.first;
     if (map->map[i][j] < map->map[i + 1][j + 1])
-        return (sfColor) {180, 180, 180, 255};
-    return (sfColor) {210, 210, 210, 255};
+        return map->colors.second;
+    return map->colors.third;
 }
 
 sfColor get_left_color(map_t *map, int i, int j)
 {
     if (map->map[i][j] < map->map[i + 1][j + 1]
         && map->map[i][j] < map->map[i][j + 1])
-        return (sfColor) {180, 180, 180, 255};
+        return map->colors.second;
     if (map->map[i][j] > map->map[i + 1][j + 1]
         && map->map[i][j] > map->map[i][j + 1])
-        return (sfColor) {150, 150, 150, 255};
+        return map->colors.first;
     if (map->map[i][j] > (map->map[i + 1][j + 1] + 1) * 2
         && map->map[i][j + 1] > (map->map[i + 1][j + 1] + 1) * 2)
         return sfWhite;
@@ -40,43 +40,43 @@ sfColor get_left_color(map_t *map, int i, int j)
     if (map->map[i][j] < map->map[i + 1][j + 1]
         || (map->map[i][j] > map->map[i][j + 1]
         && map->map[i][j] > map->map[i + 1][j + 1]))
-        return (sfColor) {150, 150, 150, 255};
-    return (sfColor) {210, 210, 210, 255};
+        return map->colors.first;
+    return map->colors.third;
 }
 
 sfColor water_get_right_color(map_t *map, int i, int j)
 {
     if (map->water_map[i][j] > (map->water_map[i + 1][j + 1] + 1) * 2 &&
         map->water_map[i][j] > (map->water_map[i + 1][j] + 1) * 2) {
-        return (sfColor) {210, 210, 210, 120};
+        return map->colors.six;
     }
     if ((map->water_map[i][j] < map->water_map[i + 1][j]
         || map->water_map[i][j] > map->water_map[i + 1][j + 1])
         && map->water_map[i + 1][j] > map->water_map[i + 1][j + 1])
-        return (sfColor) {150, 150, 150, 120};
+        return map->colors.four;
     if (map->water_map[i][j] < map->water_map[i + 1][j + 1])
-        return (sfColor){180, 180, 180, 120};
-    return (sfColor) {210, 210, 210, 120};
+        return map->colors.five;
+    return map->colors.six;
 }
 
 sfColor water_get_left_color(map_t *map, int i, int j)
 {
     if (map->water_map[i][j] < map->water_map[i + 1][j + 1]
         && map->water_map[i][j] < map->water_map[i][j + 1])
-        return (sfColor) {180, 180, 180, 120};
+        return map->colors.five;
     if (map->water_map[i][j] > map->water_map[i + 1][j + 1]
         && map->water_map[i][j] > map->water_map[i][j + 1])
-        return (sfColor) {150, 150, 150, 120};
+        return map->colors.four;
     if (map->water_map[i][j] > (map->water_map[i + 1][j + 1] + 1) * 2
         && map->water_map[i][j + 1] > (map->water_map[i + 1][j + 1] + 1) * 2)
-        return (sfColor) {210, 210, 210, 120};
+        return map->colors.six;
     if ((map->water_map[i][j] < map->water_map[i][j + 1]
         || map->water_map[i][j] > map->water_map[i + 1][j + 1])
         && map->water_map[i][j + 1] > map->water_map[i + 1][j + 1])
-        return (sfColor) {210, 210, 210, 120};
+        return map->colors.six;
     if (map->water_map[i][j] < map->water_map[i + 1][j + 1]
         || (map->water_map[i][j] > map->water_map[i][j + 1]
         && map->water_map[i][j] > map->water_map[i + 1][j + 1]))
-        return (sfColor) {150, 150, 150, 120};
-    return (sfColor) {210, 210, 210, 120};
+        return map->colors.four;
+    return map->colors.six;
 }

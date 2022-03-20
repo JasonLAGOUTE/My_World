@@ -13,6 +13,8 @@ SRC =	src/main.c \
 		src/map/read_map.c	\
 		src/map/draw/draw.c \
 		src/map/map.c \
+		src/map/display_destroy_vertex.c \
+		src/map/to_fill_triangle.c \
 		src/map/reset.c \
 		src/map/cube.c \
 		src/map/draw/barre_navig.c \
@@ -35,6 +37,7 @@ SRC =	src/main.c \
 		src/init_struct/menu.c \
 		src/init_struct/cam.c \
 		src/init_struct/point.c \
+		src/init_struct/colors.c \
 		src/init_struct/perlin.c \
 		src/menu/boxes.c \
 		src/texture/set_texture.c \

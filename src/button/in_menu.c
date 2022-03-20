@@ -7,6 +7,17 @@
 
 #include "my_world.h"
 
+static void condit(window_t *window, sfMouseButtonEvent coord, map_t *map)
+{
+    if (((coord.x >= 815 && coord.x <= 1790) &&
+        (coord.y >= 288 && coord.y <= 414)) && window->menu == true
+        && window->settings == false) {
+        load_map(map);
+        window->menu = false;
+        play_sound(map);
+    }
+}
+
 int button_in_menu(window_t *window, sfMouseButtonEvent coord, map_t *map)
 {
     if (((coord.x >= 815 && coord.x <= 1790) &&
@@ -15,13 +26,7 @@ int button_in_menu(window_t *window, sfMouseButtonEvent coord, map_t *map)
         window->menu = false;
         play_sound(map);
     }
-    if (((coord.x >= 815 && coord.x <= 1790) &&
-        (coord.y >= 288 && coord.y <= 414)) && window->menu == true
-        && window->settings == false) {
-        load_map(map);
-        window->menu = false;
-        play_sound(map);
-    }
+    condit(window, coord, map);
     if (((coord.x >= 818 && coord.x <= 1789) &&
         (coord.y >= 447 && coord.y <= 573)) && window->menu == true
         && window->settings == false) {

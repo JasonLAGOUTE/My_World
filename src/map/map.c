@@ -21,6 +21,20 @@ int **create_map(int heigth, int width)
     return map;
 }
 
+static void init_all_struct_in_map(map_t *map)
+{
+    map->texture = init_struct_all_textures();
+    map->btn_t = init_struct_all_buttons();
+    map->btn = init_struct_buttons_navig();
+    map->btn_r = init_struct_buttons_rander();
+    map->btn_e = init_struct_buttons_edit();
+    map->bool_r = init_struct_bool_render();
+    map->bool_e = init_struct_bool_edit();
+    map->music = init_music();
+    map->sound = init_sound();
+    map->colors = init_struct_colors();
+}
+
 map_t *create_struct_map(camera_t camera)
 {
     map_t *map = malloc(sizeof(map_t));
@@ -36,14 +50,6 @@ map_t *create_struct_map(camera_t camera)
     map->counter = 0;
     map->last_time = 0;
     map->actual_time = sfClock_create();
-    map->texture = init_struct_all_textures();
-    map->btn_t = init_struct_all_buttons();
-    map->btn = init_struct_buttons_navig();
-    map->btn_r = init_struct_buttons_rander();
-    map->btn_e = init_struct_buttons_edit();
-    map->bool_r = init_struct_bool_render();
-    map->bool_e = init_struct_bool_edit();
-    map->music = init_music();
-    map->sound = init_sound();
+    init_all_struct_in_map(map);
     return map;
 }

@@ -11,7 +11,7 @@ static void condit(map_t *map, sfRenderWindow *window, int i, int j)
 {
     sfVertexArray *line_1;
     sfVertexArray *line_2;
-    
+
     if (i + 1 < MAP_X) {
         map->point->points3d = (sfVector3f){i + 1, j, map->map[i + 1][j]};
         map->point->points2 = to2d(map->point->points3d, map);

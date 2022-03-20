@@ -24,8 +24,8 @@ void draw_water(map_t *m, sfRenderWindow *window, int i, int j)
 {
     sfColor colors_1 = sfWhite;
     sfColor colors_2 = sfWhite;
-    sfVertexArray *triangle_1;
-    sfVertexArray *triangle_2;
+    sfVertexArray *tr_1;
+    sfVertexArray *tr_2;
 
     if ((j + 1 < MAP_Y) && (i + 1 < MAP_X)) {
         water_shuffle_map(m);
@@ -34,16 +34,11 @@ void draw_water(map_t *m, sfRenderWindow *window, int i, int j)
             condit(m, i, j);
             colors_1 = water_get_right_color(m, i, j);
             colors_2 = water_get_left_color(m, i, j);
-            triangle_1 = crt_triangle_r(&m->point->points, &m->point->points4,
+            tr_1 = crt_triangle_r(&m->point->points, &m->point->points4,
             &m->point->points3, colors_1);
-            triangle_2 = crt_triangle_l(&m->point->points, &m->point->points4,
+            tr_2 = crt_triangle_l(&m->point->points, &m->point->points4,
             &m->point->points2, colors_2);
-            sfRenderWindow_drawVertexArray(window,
-            triangle_1, m->texture->tab[WATER3]->state);
-            sfRenderWindow_drawVertexArray(window,
-            triangle_2, m->texture->tab[WATER3]->state);
-            sfVertexArray_destroy(triangle_1);
-            sfVertexArray_destroy(triangle_2);
+            display_vertex(window, tr_1, tr_2, m->texture->tab[WATER3]->state);
         }
     }
 }

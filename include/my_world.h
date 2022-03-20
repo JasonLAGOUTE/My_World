@@ -43,6 +43,15 @@ typedef struct perlin {
 } perlin_t;
 
 typedef struct {
+    sfColor first;
+    sfColor second;
+    sfColor third;
+    sfColor four;
+    sfColor five;
+    sfColor six;
+} color_t;
+
+typedef struct {
     sfTexture *texture;
     sfRectangleShape *rec;
     sfText *text;
@@ -150,6 +159,7 @@ typedef struct {
     music_t *music;
     sound_t *sound;
     bool_edit_t *bool_e;
+    color_t colors;
 } map_t;
 
 window_t *window_unit(void);
@@ -259,5 +269,11 @@ sound_t *init_sound(void);
 void destroy_all(map_t *map, window_t *window, menu_t *menu, image_t *font);
 void free_buttons(map_t *map);
 void free_texture(map_t *map);
+sfVertexArray *to_fill_triangle(map_t *m, sfColor color);
+void display_vertex(sfRenderWindow *window, sfVertexArray *triangle_1,
+    sfVertexArray *triangle_2, sfRenderStates *states);
+sfVertexArray *fill_tri_map(map_t *m, sfColor color,
+    sfVector2f first, sfVector2f second);
+color_t init_struct_colors(void);
 
 #endif

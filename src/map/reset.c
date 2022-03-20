@@ -7,6 +7,19 @@
 
 #include "my_world.h"
 
+static camera_t reset_cam(camera_t cam)
+{
+    sfVector2i offset = {WIDTH / 2, LENGTH / 4};
+    sfVector2i angle = {45, 35};
+
+    cam.zoom = 64;
+    cam.offset = offset;
+    cam.angle = angle;
+    cam.edit_strenght = 1;
+    cam.radius = 100;
+    return cam;
+}
+
 void reset_map(map_t *map)
 {
     map->point = create_struct_point();
@@ -22,8 +35,7 @@ void reset_map(map_t *map)
     map->actual_time = sfClock_create();
     map->btn_t = init_struct_all_buttons();
     map->btn = init_struct_buttons_navig();
-    map->cam = (camera_t) {64, (sfVector2i) {WIDTH / 2, LENGTH / 4},
-        (sfVector2i) {45, 35}, 1, 100};
+    map->cam = reset_cam(map->cam);
     map->actual = 0;
     map->is_editing = 1;
     map->btn_e = init_struct_buttons_edit();

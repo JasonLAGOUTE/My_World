@@ -70,17 +70,21 @@ void shuffle_map(map_t *map)
     }
 }
 
+static void condit_2(map_t *map, int i, int cnt)
+{
+    for (int j = 0; j < MAP_Y; j++) {
+        map->water_map[i][j] = (int){perlin(i + cnt, j + cnt, 10) * 15};
+    }
+}
+
 void water_shuffle_map(map_t *map)
 {
     sfTime time = sfClock_getElapsedTime(map->actual_time);
     int cnt = map->counter;
 
     if ((int)sfTime_asMilliseconds(time) - map->last_time > 100) {
-        for (int i = 0; i < MAP_X; i++) {
-            for (int j = 0; j < MAP_Y; j++) {
-            map->water_map[i][j] = (int){perlin(i + cnt, j + cnt, 10) * 15};
-            }
-        }
+        for (int i = 0; i < MAP_X; i++)
+            condit_2(map, i, cnt);
         map->counter += 1;
         map->last_time = (int)sfTime_asMilliseconds(time);
     }
