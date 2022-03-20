@@ -7,7 +7,7 @@
 
 SRC =	src/main.c \
 		src/event/event.c \
-		src/line/line.c \
+		src/line/line1.c \
 		src/map/calcul.c \
 		src/map/edit.c	\
 		src/map/read_map.c	\
@@ -19,21 +19,21 @@ SRC =	src/main.c \
 		src/map/cube.c \
 		src/map/draw/barre_navig.c \
 		src/map/draw/paint.c \
-		src/map/draw/circle.c \
+		src/map/draw/circle1.c \
 		src/map/draw/line.c \
 		src/map/draw/draw_water.c \
 		src/map/draw/draw_map.c \
-		src/map/draw/edit.c \
+		src/map/draw/edit1.c \
 		src/map/draw/rander.c \
 		src/map/shade.c \
-		src/map/effect/shuffle.c \
-		src/map/effect/smooth.c \
+		src/map/effect/shuffle1.c \
+		src/map/effect/smooth1.c \
 		src/map/effect/save.c \
 		src/utils/radiant.c \
 		src/utils/circle.c \
 		src/window/window.c \
 		src/menu/display.c \
-		src/init_struct/map.c \
+		src/init_struct/map1.c \
 		src/init_struct/menu.c \
 		src/init_struct/cam.c \
 		src/init_struct/point.c \
@@ -46,17 +46,17 @@ SRC =	src/main.c \
 		src/init_struct/all_buttons.c \
 		src/init_struct/bool_render.c \
 		src/button/button.c \
-		src/button/rander.c \
+		src/button/rander1.c \
 		src/button/back.c \
 		src/button/in_menu.c \
-		src/button/paint.c \
+		src/button/paint1.c \
 		src/button/in_settings.c \
-		src/button/save.c \
+		src/button/save2.c \
 		src/button/texture.c \
 		src/button/render_tools.c \
 		src/button/edit_tools.c \
 		src/button/text.c \
-		src/button/edit.c \
+		src/button/edit2.c \
 		src/button/hover/dirt_broke.c \
 		src/button/hover/dirt.c \
 		src/button/hover/gather.c \
@@ -73,7 +73,7 @@ SRC =	src/main.c \
 		src/mod/close.c \
 		src/mod/offset.c \
 		src/mod/radius.c \
-		src/mod/save.c \
+		src/mod/save1.c \
 		src/mod/shuffle.c \
 		src/mod/smooth.c \
 		src/mod/zoom.c \
