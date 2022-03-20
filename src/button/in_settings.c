@@ -20,7 +20,7 @@ static void condit(window_t *window, sfMouseButtonEvent coord, map_t *map)
             map->music->on = true;
         }
         play_sound(map);
-    } 
+    }
 }
 
 int button_in_setting(window_t *window, sfMouseButtonEvent coord, map_t *map)
@@ -33,7 +33,7 @@ int button_in_setting(window_t *window, sfMouseButtonEvent coord, map_t *map)
         } else
             map->sound->on = true;
         play_sound(map);
-    } 
+    }
     condit(window, coord, map);
     if (((coord.x >= 815 && coord.x <= 1790) &&
         (coord.y >= 447 && coord.y <= 573)) && window->menu == false

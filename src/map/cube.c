@@ -4,7 +4,7 @@
 ** File description:
 ** main
 */
- 
+
 #include "my_world.h"
 
 static sfVertexArray *to_fill_tr_2(map_t *m, sfColor color)
@@ -47,16 +47,17 @@ void first_part_cube(sfRenderWindow *window, map_t *m)
         display_vertex(window, triangle_1, triangle_2, NULL);
     }
 }
- 
+
 void second_part_cube(sfRenderWindow *window, map_t *m)
 {
     sfVertexArray *triangle_1;
     sfVertexArray *triangle_2;
-    
+
     for (int i = 0; i < MAP_X - 1; i++) {
         m->point->points3d = (sfVector3f){MAP_X - 1, i, m->map[MAP_X - 1][i]};
         m->point->points = to2d(m->point->points3d, m);
-        m->point->points3d = (sfVector3f){MAP_X - 1, i + 1, m->map[MAP_X - 1][i + 1]};
+        m->point->points3d = (sfVector3f){MAP_X - 1, i + 1,
+            m->map[MAP_X - 1][i + 1]};
         m->point->points2 = to2d(m->point->points3d, m);
         m->point->points3d = (sfVector3f){MAP_X - 1, i, 0};
         m->point->points3 = to2d(m->point->points3d, m);
@@ -69,7 +70,7 @@ void second_part_cube(sfRenderWindow *window, map_t *m)
         display_vertex(window, triangle_1, triangle_2, NULL);
     }
 }
- 
+
 void third_part_cube(sfRenderWindow *window, map_t *map)
 {
     sfVertexArray *triangle_1;
