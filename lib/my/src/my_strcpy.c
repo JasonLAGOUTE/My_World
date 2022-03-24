@@ -5,8 +5,6 @@
 ** copies a string into another
 */
 
-#include <unistd.h>
-
 char *my_strcpy(char *dest, char const *src)
 {
     size_t i = 0;

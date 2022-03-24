@@ -5,7 +5,7 @@
 ** capitalizes the first letter of each word
 */
 
-#include <unistd.h>
+#include <stdlib.h>
 
 static void condit(size_t i, char *str)
 {

@@ -14,7 +14,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <time.h>
-#include <unistd.h>
 
 #include "enum.h"
 
